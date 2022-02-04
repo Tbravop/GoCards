@@ -3,6 +3,7 @@ package com.coding.dojo.projecto.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,9 +13,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -34,9 +41,16 @@ public class User {
 	private String password;
 	@Transient
 	private String passwordConfirm;
+	@NotBlank
+	private String phone;
+	@Min(1)
+	@Max(5)
+	private int rating;
 	@Column(updatable=false)
 	private Date createdAt;
 	private Date updatedAt;
+	@OneToOne(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private BankAccount account;
 	@ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
     		name="role_user",
@@ -44,6 +58,15 @@ public class User {
     		inverseJoinColumns = @JoinColumn(name="role_id"))
 	private List<Role> role;
 	
+	
+	@PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
 	public long getId() {
 		return id;
 	}
