@@ -1,5 +1,11 @@
 package com.coding.dojo.projecto.controller;
 
-public class MarketController {
+import org.springframework.stereotype.Controller;
 
+import com.coding.dojo.projecto.services.UserService;
+
+@Controller
+public class MarketController {
+	private final UserService userService;
+	
 }
