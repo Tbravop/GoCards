@@ -39,7 +39,5 @@ public class Region {
 	}
 	public void setComuna(List<Comuna> comuna) {
 		this.comuna = comuna;
-	}
-	
-	
+	}	
 }
