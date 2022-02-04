@@ -52,6 +52,8 @@ public class User {
 	private Date updatedAt;
 	@OneToOne(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private BankAccount account;
+	@OneToOne(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private Cart cart;
 	@ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
     		name="role_user",
