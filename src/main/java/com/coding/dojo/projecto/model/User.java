@@ -60,6 +60,12 @@ public class User {
     		joinColumns = @JoinColumn(name="user_id"),
     		inverseJoinColumns = @JoinColumn(name="role_id"))
 	private List<Role> role;
+	@ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+    		name="comuna_user",
+    		joinColumns = @JoinColumn(name="user_id"),
+    		inverseJoinColumns = @JoinColumn(name="comuna_id"))
+	private List<Comuna> comuna;
 	@OneToMany(mappedBy="user", fetch = FetchType.LAZY)
     private List<Product> product;
 	
@@ -125,6 +131,42 @@ public class User {
 	}
 	public void setRole(List<Role> role) {
 		this.role = role;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public int getRating() {
+		return rating;
+	}
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+	public BankAccount getAccount() {
+		return account;
+	}
+	public void setAccount(BankAccount account) {
+		this.account = account;
+	}
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
+	public List<Comuna> getComuna() {
+		return comuna;
+	}
+	public void setComuna(List<Comuna> comuna) {
+		this.comuna = comuna;
+	}
+	public List<Product> getProduct() {
+		return product;
+	}
+	public void setProduct(List<Product> product) {
+		this.product = product;
 	}
 	
 	
