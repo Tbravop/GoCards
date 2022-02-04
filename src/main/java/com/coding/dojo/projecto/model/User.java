@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
@@ -57,6 +58,8 @@ public class User {
     		joinColumns = @JoinColumn(name="user_id"),
     		inverseJoinColumns = @JoinColumn(name="role_id"))
 	private List<Role> role;
+	@OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+    private List<Product> product;
 	
 	
 	@PrePersist

@@ -24,6 +24,8 @@ public class BankAccount {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	@Size(min=7)
+	private String rut;
+	@Size(min=7)
 	private BigInteger numeroDeCuenta;
 	@OneToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user_id")
@@ -70,6 +72,12 @@ public class BankAccount {
 	}
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
+	}
+	public String getRut() {
+		return rut;
+	}
+	public void setRut(String rut) {
+		this.rut = rut;
 	}
     
 }
