@@ -27,12 +27,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         
         http.
             authorizeRequests()
-                .antMatchers("/static/**", "/registration", "/dashboard").permitAll()
+                .antMatchers("/static/assets/css/**","/static/assets/img/**", "/registration", "/index").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()    
                 .loginPage("/login")
-                .defaultSuccessUrl("/dashboard")
+                .defaultSuccessUrl("/index")
                 .permitAll()
                 .and()
             .logout()

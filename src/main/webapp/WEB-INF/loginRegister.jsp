@@ -4,12 +4,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="/static/assets/css/style.css">
+		<link rel="stylesheet" href="/src/main/resources/static/assets/css/style.css">
 		<title>Login y registro</title>
 	</head>
 	<body>
@@ -18,7 +18,7 @@
 			<div class="row row-cols-1 row-cols-md-2 g-4">
 			  <div class="card-body">
 			    <div class="card">
-			      <img src="/src/main/webapp/WEB-INF/03.png" class="card-img-top" alt="...">
+			      <img src="/src/main/resources/static/assets/img/03.png" class="card-img-top" alt="...">
 			      <div class="card-body">
 			        <h5 class="card-title">Registrate</h5>
             		<p><form:errors path="user.*"/></p>			        

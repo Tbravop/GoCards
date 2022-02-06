@@ -1,5 +1,8 @@
 package com.coding.dojo.projecto.controller;
 
+import java.security.Principal;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.coding.dojo.projecto.model.Product;
 import com.coding.dojo.projecto.model.User;
+import com.coding.dojo.projecto.services.ProductService;
 import com.coding.dojo.projecto.services.RoleService;
 import com.coding.dojo.projecto.services.UserService;
 import com.coding.dojo.projecto.validator.UserValidator;
@@ -30,6 +35,10 @@ public class MarketController {
 	@Autowired 
 	@Lazy
 	private RoleService roleService;
+	
+	@Autowired
+	@Lazy
+	private ProductService productService;
 	
 	@GetMapping("/registration")
     public String register(@Valid @ModelAttribute("user")User user, Model model) {
@@ -61,4 +70,11 @@ public class MarketController {
         }
         
     }
+	
+	@RequestMapping("/index")
+	public String index(Principal principal, Model model) {
+		List<Product> product = productService.allProduct();
+		model.addAttribute("producto", product);
+		return "index.jsp";
+	}
 }
