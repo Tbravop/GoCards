@@ -14,15 +14,15 @@
 	</head>
 	<body>
 	<nav class="navbar navbar-dark" style="height: 70px;background-color: #312783;">
-  <div class="container-fluid-start">
-    <a class="navbar-brand" href="#">
-      <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-</nav>
+	  <div class="container-fluid-start">
+	    <a class="navbar-brand" href="#">
+	      <img src="/assets/img/logo.png" alt="" width="120" height="30">
+	    </a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	  </div>
+	</nav>
 	<div class="collapse" id="navbarToggleExternalContent">
 	  <div class="bg-white p-4" style="width: 300px;background-color: #312783;">
         <a class="nav-link active" aria-current="page" href="#">Ir a Comunidad</a>
