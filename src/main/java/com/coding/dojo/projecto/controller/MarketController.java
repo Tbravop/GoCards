@@ -66,12 +66,12 @@ public class MarketController {
             return"redirect:/registration";
         }
         else {
-            return"redirect:/registration";
+            return"redirect:/";
         }
         
     }
 	
-	@RequestMapping("/")
+	@GetMapping("/")
 	public String index(Principal principal, Model model) {
 		List<Product> product = productService.allProduct();
 		model.addAttribute("producto", product);
