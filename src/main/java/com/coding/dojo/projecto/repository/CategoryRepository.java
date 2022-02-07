@@ -6,10 +6,10 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.coding.dojo.projecto.model.Product;
+import com.coding.dojo.projecto.model.Category;
 
 @Repository
-public interface ProductRepository extends CrudRepository<Product, Long> {
+public interface CategoryRepository extends CrudRepository<Category, Long> {
 
-	List<Product> findByIdNotIn(Collection<Long> product);
+	List<Category> findByIdNotIn(Collection<Long> categories);
 }

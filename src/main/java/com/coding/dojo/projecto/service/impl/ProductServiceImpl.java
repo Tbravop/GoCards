@@ -66,7 +66,7 @@ public class ProductServiceImpl implements ProductService{
 	public void delete(Long id) throws Exception {
 		try {
 			Product product=this.findProduct(id);
-			if(product != null) {
+			if(product != null) { 
 				productRepository.delete(product);
 			}
 			else {
