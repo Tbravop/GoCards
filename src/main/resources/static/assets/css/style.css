@@ -2,3 +2,8 @@
 body {
 	background-image:url("/assets/img/02.png");
 }
+
+.nav-link {
+	color: #082A5C;
+	font-size: 25px;
+}
