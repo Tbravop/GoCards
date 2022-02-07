@@ -62,6 +62,7 @@ public class ProductServiceImpl implements ProductService{
 		}
 	}
 	@Override
+	@Transactional
 	public void delete(Long id) throws Exception {
 		try {
 			Product product=this.findProduct(id);
