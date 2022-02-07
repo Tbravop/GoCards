@@ -21,6 +21,8 @@ public class Region {
 	@OneToMany(mappedBy="region", fetch = FetchType.LAZY)
     private List<Comuna> comuna;
 	
+	public Region() {
+	}
 	
 	public long getId() {
 		return id;

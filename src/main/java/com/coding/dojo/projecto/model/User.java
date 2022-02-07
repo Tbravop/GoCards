@@ -68,6 +68,8 @@ public class User {
 	@OneToMany(mappedBy="user", fetch = FetchType.LAZY)
     private List<Comment> comment;
 	
+	public User() {
+	}
 	
 	@PrePersist
     protected void onCreate(){

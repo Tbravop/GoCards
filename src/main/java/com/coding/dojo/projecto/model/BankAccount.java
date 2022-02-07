@@ -34,6 +34,8 @@ public class BankAccount {
 	private Date createdAt;
 	private Date updatedAt;
 	
+	public BankAccount() {
+	}
 	
 	@PrePersist
     protected void onCreate(){

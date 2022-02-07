@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -30,6 +32,8 @@ public class Product {
 	private double price;
 	@NotBlank
 	private String description;
+	private String image;
+	private int cantidad;
 	@Column(updatable=false)
 	private Date createdAt;
 	private Date updatedAt;
@@ -51,7 +55,17 @@ public class Product {
     )
     private List<Category> categories;
 	
+	public Product() {
+	}
 	
+	@PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
 	public long getId() {
 		return id;
 	}
@@ -105,6 +119,18 @@ public class Product {
 	}
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public int getCantidad() {
+		return cantidad;
+	}
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
 	}
 
 }

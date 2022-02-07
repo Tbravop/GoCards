@@ -40,6 +40,8 @@ public class Comment {
     		inverseJoinColumns = @JoinColumn(name="article_comment"))
 	private List<Article> article;
 	
+	public Comment() {
+	}
 	
 	@PrePersist
     protected void onCreate(){

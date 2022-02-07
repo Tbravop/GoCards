@@ -30,6 +30,8 @@ public class Role {
     		inverseJoinColumns = @JoinColumn(name="user_id"))
 	private List<User> user;
 	
+	public Role() {
+	}
 	
 	public Long getId() {
 		return id;

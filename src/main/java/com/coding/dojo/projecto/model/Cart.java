@@ -34,6 +34,8 @@ public class Cart {
     )
     private List<Product> product;
 	
+	public Cart() {
+	}
 	
 	public long getId() {
 		return id;

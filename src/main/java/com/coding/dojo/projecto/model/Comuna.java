@@ -32,6 +32,8 @@ public class Comuna {
     		inverseJoinColumns = @JoinColumn(name="user_id"))
 	private List<User> user;
 	
+	public Comuna() {
+	}
 	
 	public long getId() {
 		return id;

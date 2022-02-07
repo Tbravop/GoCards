@@ -29,6 +29,8 @@ public class Category {
     )
 	private List<Product> product;
 	
+	public Category() {
+	}
 	
 	public long getId() {
 		return id;

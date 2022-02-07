@@ -43,6 +43,9 @@ public class Article {
     		inverseJoinColumns = @JoinColumn(name="comment_id"))
 	private List<Comment> comment;
 	
+	public Article() {
+	}
+	
 	@PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
