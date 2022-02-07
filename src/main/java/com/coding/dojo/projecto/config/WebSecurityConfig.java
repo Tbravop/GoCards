@@ -27,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         
         http.
             authorizeRequests()
-                .antMatchers("/static/assets/css/**","/static/assets/img/**", "/registration", "/index").permitAll()
+                .antMatchers("/**","static/**","/static/assets/img", "/registration", "/index").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()    
@@ -38,6 +38,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .logout()
                 .permitAll();
     }
+    
+    
     
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
