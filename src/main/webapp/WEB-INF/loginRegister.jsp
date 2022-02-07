@@ -6,22 +6,24 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>	
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<meta charset="UTF-8">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">		
 		<link rel="stylesheet" href="/assets/css/style.css">
-		<title>Login y registro</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<title>Login y Registro</title>
 	</head>
 	<body>
-  	<section class="container xl my-5 pt-5">
+  	<section class="d-flex justify-content-center">
 		<div class="row">
-			<div class="row row-cols-1 row-cols-md-2 g-4">
+			<div class="row">
 			  <div class="card-body">
 			    <div class="card" style="width: 25rem;">
 			      <img src="/assets/img/03.png" class="card-img-top"alt="...">
-			      <div class="card-img-overlay">
-    				<h1 class="card-title text-white" style="padding-top: 35px;font-size: 50px;">Registrate</h1>
-    				</div>
+    				<h1 class="card-title text-white" style="padding-top: 35px;font-size: 50px;margin-top:-127px;margin-bottom:25px;">Registrate</h1>
 			      <div class="card-body">
             		<p><form:errors path="user.*"/></p>			        
 		            <form:form method="POST" action="/registration" modelAttribute="user">
@@ -47,35 +49,6 @@
 		                </p>
 		                <input class="btn btn-primary" type="submit" value="Register!"/>
 		            </form:form>			        
-			      </div>
-			    </div>
-			  </div>
-			  <div class="card-body">
-			    <div class="card" style="width: 25rem;">
-			      <img src="/assets/img/03.png" class="card-img-top" alt="...">
-			      <div class="card-img-overlay">
-    				<h1 class="card-title text-white" style="margin-top: 100px;">Registrate</h1>
-    				</div>
-			      <div class="card-body">
-					<c:if test="${logoutMessage != null}">
-        			<c:out value="${logoutMessage}"></c:out>
-        			</c:if>
-            			<h5>Login</h5>
-            		<c:if test="${errorMessage != null}">
-                	<c:out value="${errorMessage}"></c:out>
-            		</c:if>
-            		<form method="POST" action="/login">
-                		<p>
-	                    	<label class="form-label" for="email">Correo</label>
-	                    	<input class="form-control" type="text" id="email" name="username"/>
-                		</p>
-                		<p>
-                    		<label class="form-label" for="password">Contraseña</label>
-                    		<input class="form-control" type="password" id="password" name="password"/>
-                		</p>
-                		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                		<input class="btn btn-primary" type="submit" value="Login!"/>
-            		</form>			      
 			      </div>
 			    </div>
 			  </div>
