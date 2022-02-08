@@ -59,10 +59,11 @@ public class CategoryServiceImpl implements CategoryService {
 		Product p = productService.findProduct(id);
 		if(!p.getCategories().isEmpty()) {
 			for(Category c: p.getCategories()) {
-			ids.add(c.getId());
-			return (List<Category>) categoryRepository.findByIdNotIn(ids);
+				ids.add(c.getId());
+				return (List<Category>) categoryRepository.findByIdNotIn(ids);
+			}
 		}
+		return allCateg();
 	}
-	return allCateg();
-}
+	
 }

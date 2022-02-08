@@ -1,24 +1,29 @@
 package com.coding.dojo.projecto.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
+import com.coding.dojo.projecto.model.Category;
 import com.coding.dojo.projecto.model.Product;
 import com.coding.dojo.projecto.repository.ProductRepository;
+import com.coding.dojo.projecto.services.CategoryService;
 import com.coding.dojo.projecto.services.ProductService;
-
-
 
 @Service
 public class ProductServiceImpl implements ProductService{
 
 	@Autowired
 	private ProductRepository productRepository;
+	@Autowired
+	@Lazy
+	private CategoryService categoryService;
 	
 	@Override
 	public List<Product> allProduct(){
@@ -77,5 +82,25 @@ public class ProductServiceImpl implements ProductService{
 			e.printStackTrace();
 			throw e;
 		}
+	}
+	@Override
+	@Transactional
+	public Product addC (long idP, long idC) {
+		Product product = findProduct(idP);
+		Category category = categoryService.findCategory(idC);
+		product.getCategories().add(category);
+		return productRepository.save(product);
+	}
+	@Override
+	public List<Product> listaSinCategorias(long id){
+		List<Long> ids = new ArrayList<Long>(); 
+		Category c = categoryService.findCategory(id);
+		if(!c.getProduct().isEmpty()) {
+			for(Product p: c.getProduct()) {
+				ids.add(c.getId());
+				return (List<Product>) productRepository.findByIdNotIn(ids);
+			}
+		}
+		return allProduct();
 	}
 }

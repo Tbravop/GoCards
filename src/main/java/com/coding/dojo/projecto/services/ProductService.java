@@ -19,4 +19,8 @@ public interface ProductService {
 
 	void delete(Long id) throws Exception;
 
+	Product addC(long idP, long idC);
+
+	List<Product> listaSinCategorias(long id);
+
 }
