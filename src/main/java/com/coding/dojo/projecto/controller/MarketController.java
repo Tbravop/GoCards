@@ -66,7 +66,7 @@ public class MarketController {
             return"redirect:/registration";
         }
         else {
-            return"redirect:/registration";
+            return"redirect:/";
         }
         
     }

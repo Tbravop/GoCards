@@ -22,7 +22,7 @@
 	    <button class="navbar-toggler m-2" style="border-style: none;color: #312783;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
-	    <a class="navbar-brand" href="#">
+	    <a class="navbar-brand" href="/">
 	      <img src="/assets/img/logo.png" width="120" height="40">
 	    </a>    
 	  </div>
@@ -72,13 +72,23 @@
 	  <div class="bg-white p-4" style="width: 300px;background-color: #312783;">
         <a class="nav-link active" aria-current="page" href="#">Ir a Comunidad</a>
         <a class="nav-link" href="#">Categorías Ventas</a>
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
         <a class="nav-link" href="#">Lo Más Vendido</a>
         <a class="nav-link" href="#">Ofertas Destacadas</a>
         <a class="nav-link" href="#">Bases</a> 
         <a class="nav-link" href="#">Productos Sellados</a>
         <a class="nav-link" href="#">Lo Nuevo</a>
-        <a class="nav-link" href="#">Lotes</a>
-        <a class="nav-link" href="#">Bases</a>       
+        <a class="nav-link" href="#">Lotes</a>       
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Vender</a>
 	  </div>
 	</div>
