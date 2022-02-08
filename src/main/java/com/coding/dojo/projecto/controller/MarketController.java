@@ -71,7 +71,7 @@ public class MarketController {
         
     }
 	
-	@RequestMapping("/")
+	@GetMapping("/")
 	public String index(Principal principal, Model model) {
 		List<Product> product = productService.allProduct();
 		model.addAttribute("producto", product);
