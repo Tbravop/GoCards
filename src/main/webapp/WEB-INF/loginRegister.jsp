@@ -20,6 +20,8 @@
   	<section class="d-flex justify-content-center">
 		<div class="row">
 			<div class="row">
+			<img src="/assets/img/logo.png" style="width: 430px;">
+
 			  <div class="card-body">
 			    <div class="card" style="width: 25rem;">
 			      <img src="/assets/img/03.png" class="card-img-top"alt="...">
@@ -47,7 +49,7 @@
 		                    <form:label class="form-label" path="passwordConfirm">Confirmacion de contraseña:</form:label>
 		                    <form:password class="form-control" path="passwordConfirm"/>
 		                </p>
-		                <input class="btn btn-primary" type="submit" value="Register!"/>
+		                <input class="btn btn-primary" type="submit" value="Registrate"/>
 		            </form:form>			        
 			      </div>
 			    </div>

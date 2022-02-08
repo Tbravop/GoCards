@@ -70,26 +70,17 @@
 	</nav>
 	<div class="collapse" id="navbarToggleExternalContent">
 	  <div class="bg-white p-4" style="width: 300px;background-color: #312783;">
-        <a class="nav-link active" aria-current="page" href="#">Ir a Comunidad</a>
-        <a class="nav-link" href="#">Categorías Ventas</a>
-                <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <a class="nav-link" href="#">Lo Más Vendido</a>
-        <a class="nav-link" href="#">Ofertas Destacadas</a>
-        <a class="nav-link" href="#">Bases</a> 
-        <a class="nav-link" href="#">Productos Sellados</a>
-        <a class="nav-link" href="#">Lo Nuevo</a>
-        <a class="nav-link" href="#">Lotes</a>       
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Vender</a>
+	  <ul class="navbar-nav">
+	  	    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ir a Comunidad</a></li>
+	        <li><a class="nav-link" href="#">Categorías Ventas</a></li>
+	        <li><a class="nav-link" href="#">Lo Más Vendido</a></li>
+	        <li> <a class="nav-link" href="#">Ofertas Destacadas</a></li>
+	        <li><a class="nav-link" href="#">Bases</a></li>
+	        <li><a class="nav-link" href="#">Productos Sellados</a></li>
+	        <li><a class="nav-link" href="#">Lo Nuevo</a></li>
+	        <li><a class="nav-link" href="#">Lotes</a></li>
+	        <li><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Vender</a></li> 
+        </ul>
 	  </div>
 	</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
