@@ -22,7 +22,7 @@
 	    <button class="navbar-toggler m-2" style="border-style: none;color: #312783;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
-	    <a class="navbar-brand" href="#">
+	    <a class="navbar-brand" href="/">
 	      <img src="/assets/img/logo.png" width="120" height="40">
 	    </a>    
 	  </div>
@@ -70,16 +70,17 @@
 	</nav>
 	<div class="collapse" id="navbarToggleExternalContent">
 	  <div class="bg-white p-4" style="width: 300px;background-color: #312783;">
-        <a class="nav-link active" aria-current="page" href="#">Ir a Comunidad</a>
-        <a class="nav-link" href="#">Categorías Ventas</a>
-        <a class="nav-link" href="#">Lo Más Vendido</a>
-        <a class="nav-link" href="#">Ofertas Destacadas</a>
-        <a class="nav-link" href="#">Bases</a> 
-        <a class="nav-link" href="#">Productos Sellados</a>
-        <a class="nav-link" href="#">Lo Nuevo</a>
-        <a class="nav-link" href="#">Lotes</a>
-        <a class="nav-link" href="#">Bases</a>       
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Vender</a>
+	  <ul class="navbar-nav">
+	  	    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ir a Comunidad</a></li>
+	        <li><a class="nav-link" href="#">Categorías Ventas</a></li>
+	        <li><a class="nav-link" href="#">Lo Más Vendido</a></li>
+	        <li> <a class="nav-link" href="#">Ofertas Destacadas</a></li>
+	        <li><a class="nav-link" href="#">Bases</a></li>
+	        <li><a class="nav-link" href="#">Productos Sellados</a></li>
+	        <li><a class="nav-link" href="#">Lo Nuevo</a></li>
+	        <li><a class="nav-link" href="#">Lotes</a></li>
+	        <li><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Vender</a></li> 
+        </ul>
 	  </div>
 	</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

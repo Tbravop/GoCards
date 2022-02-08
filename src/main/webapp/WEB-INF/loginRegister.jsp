@@ -13,10 +13,11 @@
 		<link rel="stylesheet" href="/assets/css/style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-		<title>Login y Registro</title>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 	
+		<title>GoCards</title>
 	</head>
 	<body>
+
   	<section class="d-flex justify-content-center">
 		<div class="row">
 			<div class="row">
@@ -47,7 +48,7 @@
 		                    <form:label class="form-label" path="passwordConfirm">Confirmacion de contraseña:</form:label>
 		                    <form:password class="form-control" path="passwordConfirm"/>
 		                </p>
-		                <input class="btn btn-primary" type="submit" value="Register!"/>
+		                <input class="btn btn-primary" type="submit" value="Registrate"/>
 		            </form:form>			        
 			      </div>
 			    </div>
