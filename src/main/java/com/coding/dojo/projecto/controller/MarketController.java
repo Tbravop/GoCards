@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -87,9 +88,7 @@ public class MarketController {
 		return "nuevoProducto.jsp";
 	}
 	@PostMapping("/crear/producto")
-	public String createP(@Valid @ModelAttribute("product") Product product, BindingResult result, Model model) {
-		List<Category> category = categoryService.allCateg();
-		model.addAttribute("categories", category);
+	public String createP(@Valid @ModelAttribute("product") Product product, BindingResult result) {
 		if(result.hasErrors()) {
 			return "nuevoProducto.jsp";
 		}
@@ -103,4 +102,24 @@ public class MarketController {
 		productService.addC(id, idC);
 		return "redirect:/product/"+id;
 	}
+	@GetMapping("/producto/{id}")
+	public String mostrarP(@PathVariable("id") long id, Model model) {
+		model.addAttribute("product", productService.findProduct(id));
+		return "producto.jsp";
+	}
+	@RequestMapping("/edit/{id}")
+    public String editP(@PathVariable("id") Long id, Model model, @Valid @ModelAttribute("product") Product lang) {
+		Product product = productService.findProduct(id);
+        model.addAttribute("prod", product);
+        return "edit.jsp";
+    }
+	@PutMapping("/{id}")
+    public String update(@Valid @ModelAttribute("lang") Product product, BindingResult result) throws Exception {
+        if (result.hasErrors()) {
+            return "edit.jsp";
+        } else {
+        	productService.create(product);
+            return "redirect:/";
+        }
+    }
 }
