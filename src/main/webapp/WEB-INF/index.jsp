@@ -72,12 +72,17 @@
 	  <div class="bg-white p-4" style="width: 300px;background-color: #312783;">
 	  <ul class="navbar-nav">
 	  	    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ir a Comunidad</a></li>
-	        <li><a class="nav-link" href="#">Categorías Ventas</a></li>
-	        <li><a class="nav-link" href="#">Lo Más Vendido</a></li>
-	        <li> <a class="nav-link" href="#">Ofertas Destacadas</a></li>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
+            MarketPlace
+          </a>
+          <ul class="dropdown-menu p-1" aria-labelledby="navbarDropdownMenuLink" style="background-color: white;">
+            <li><a class="dropdown-item p-4" href="#">Lo más Vendido</a></li>
+            <li><a class="dropdown-item p-4" href="#">Ofertas Destacadas</a></li>
+            <li><a class="dropdown-item p-4" href="#">Lo nuevo</a></li>                       
+          </ul>
+        </li>
 	        <li><a class="nav-link" href="#">Bases</a></li>
 	        <li><a class="nav-link" href="#">Productos Sellados</a></li>
-	        <li><a class="nav-link" href="#">Lo Nuevo</a></li>
 	        <li><a class="nav-link" href="#">Lotes</a></li>
 	        <li><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Vender</a></li> 
         </ul>

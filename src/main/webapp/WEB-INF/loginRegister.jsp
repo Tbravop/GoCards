@@ -9,6 +9,8 @@
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>	
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 		<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">		
     	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">		
 		<link rel="stylesheet" href="/assets/css/style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,14 +19,16 @@
 		<title>GoCards</title>
 	</head>
 	<body>
-
+		<div class="d-flex container justify-content-center">
+			<img src="/assets/img/logo.png" style="width: 250px;" class="mt-5 mb-5">
+		  </div>
   	<section class="d-flex justify-content-center">
 		<div class="row">
 			<div class="row">
 			  <div class="card-body">
 			    <div class="card" style="width: 25rem;">
 			      <img src="/assets/img/03.png" class="card-img-top"alt="...">
-    				<h1 class="card-title text-white" style="padding-top: 35px;font-size: 50px;margin-top:-127px;margin-bottom:25px;">Registrate</h1>
+    				<h1 class="card-title text-white" style="margin-left: 5px; padding-top: 35px;font-size: 50px;margin-top:-127px;margin-bottom:25px;">Registrate</h1>
 			      <div class="card-body">
             		<p><form:errors path="user.*"/></p>			        
 		            <form:form method="POST" action="/registration" modelAttribute="user">
