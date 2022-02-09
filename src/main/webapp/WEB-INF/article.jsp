@@ -7,9 +7,16 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>Articulo</title>
+	<title>Articulos</title>
 	</head>
 	<body>
-	
+		<h1>Crear artículo</h1>
+		<form:form action="/foro/new" method="POST" modelAttribute="articulo">
+			<form:label path="title">Titulo:</form:label>
+			<form:input path="title"/>
+			<form:label path="body">Descripción:</form:label>
+			<form:input path="body"/>
+			<input type="submit" value="Crear"/>
+		</form:form>
 	</body>
 </html>

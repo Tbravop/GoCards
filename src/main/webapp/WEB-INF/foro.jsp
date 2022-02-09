@@ -11,7 +11,10 @@
 	</head>
 	<body>
 		<h1>Comunidad Go Cards</h1>
-		<a href ="/foro/new"> Agregar artículo</a>
-				
+		<a href ="/foro/new"> Agregar artículo</a>	
+		<c:forEach items="${articulos}" var="articulo">
+			<a href="/foro/${foro.id}"><c:out value ="${article.title}"/></a>
+			<c:out value="${article.body}"/>
+		</c:forEach>
 	</body>
 </html>

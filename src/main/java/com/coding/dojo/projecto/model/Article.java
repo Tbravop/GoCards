@@ -27,7 +27,7 @@ public class Article {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	@Size(min=3)
-	private String tilte;
+	private String title;
 	@NotBlank
 	private String body;
 	@Column(updatable=false)
@@ -60,11 +60,11 @@ public class Article {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getTilte() {
-		return tilte;
+	public String getTitle() {
+		return title;
 	}
-	public void setTilte(String tilte) {
-		this.tilte = tilte;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getBody() {
 		return body;

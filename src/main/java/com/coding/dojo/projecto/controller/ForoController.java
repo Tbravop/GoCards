@@ -36,11 +36,11 @@ public class ForoController {
 		return "foro.jsp";
 	}
 	@GetMapping("/foro/new")
-	public String addArticle(@ModelAttribute("postNuevo") Article article) {
+	public String addArticle(@ModelAttribute("articulo") Article article) {
 		return "article.jsp";
 	}
 	@PostMapping("/foro/new")
-	public String addArticle(@Valid @ModelAttribute("postNuevo") Article article, BindingResult result, RedirectAttributes errors) {
+	public String addArticle(@Valid @ModelAttribute("articulo") Article article, BindingResult result, RedirectAttributes errors) {
 		if(result.hasErrors()) {
 			errors.addFlashAttribute("errors" , result.getAllErrors());
 			return "article.jsp";
@@ -51,7 +51,7 @@ public class ForoController {
 		}
 	}
 	@GetMapping("/foro/{id}")
-	public String showArticle(@PathVariable("id")Long artId, @ModelAttribute("articulos") Article article, Model model) {
+	public String showArticle(@PathVariable("id")Long artId, @ModelAttribute("articulo") Article article, Model model) {
 		Article art = articleService.findArticle(artId);
 		model.addAttribute("article", art);
 		return "article.jsp";
