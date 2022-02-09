@@ -13,8 +13,6 @@ public interface ProductService {
 
 	Product findProduct(Long id);
 
-	Product create(Product p);
-
 	Product update(Long id, String name, double price, String description) throws Exception;
 
 	void delete(Long id) throws Exception;
@@ -22,5 +20,8 @@ public interface ProductService {
 	Product addC(long idP, long idC);
 
 	List<Product> listaSinCategorias(long id);
+
+	Product create(Product p, Long id) throws Exception;
+
 
 }

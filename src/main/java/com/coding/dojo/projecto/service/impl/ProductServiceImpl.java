@@ -31,8 +31,14 @@ public class ProductServiceImpl implements ProductService{
 	}
 	@Override
 	@Transactional
-    public Product create(Product p) {
-        return productRepository.save(p);
+    public Product create(Product p, Long id) throws Exception {
+		Optional<Product> optionalProduct = productRepository.findById(id);
+		if(optionalProduct.isPresent()) {
+			throw new Exception("El producto ya existe");
+		}
+		else {
+			return productRepository.save(p);
+		}
     }
 	@Override
 	@Transactional
@@ -58,11 +64,10 @@ public class ProductServiceImpl implements ProductService{
 				return product;
 			}
 			else {
-				throw new Exception("salavado con exito");
+				throw new Exception();
 			}
 		}
 		catch(Exception e) {
-			e.printStackTrace();
 			throw e;
 		}
 	}

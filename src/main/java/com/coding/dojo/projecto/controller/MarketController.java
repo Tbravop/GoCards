@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.coding.dojo.projecto.model.Category;
 import com.coding.dojo.projecto.model.Product;
 import com.coding.dojo.projecto.model.User;
 import com.coding.dojo.projecto.services.CategoryService;
@@ -88,12 +87,12 @@ public class MarketController {
 		return "nuevoProducto.jsp";
 	}
 	@PostMapping("/crear/producto")
-	public String createP(@Valid @ModelAttribute("product") Product product, BindingResult result) {
+	public String createP(@Valid @ModelAttribute("product") Product product, BindingResult result) throws Exception {
 		if(result.hasErrors()) {
 			return "nuevoProducto.jsp";
 		}
 		else {
-			productService.create(product);
+			productService.create(product, null);
 			return "anadirCategoria.jsp";
 		}
 	}
@@ -114,11 +113,11 @@ public class MarketController {
         return "edit.jsp";
     }
 	@PutMapping("/{id}")
-    public String update(@Valid @ModelAttribute("lang") Product product, BindingResult result) throws Exception {
+    public String update(@Valid @ModelAttribute("lang") Product product, BindingResult result, @PathVariable("id") Long id) throws Exception {
         if (result.hasErrors()) {
             return "edit.jsp";
         } else {
-        	productService.create(product);
+        	productService.create(product, id);
             return "redirect:/";
         }
     }
