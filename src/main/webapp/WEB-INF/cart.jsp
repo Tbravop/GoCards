@@ -36,71 +36,117 @@
 		    <i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
 		 </div>
 		 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  	<div class="modal-dialog">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
-			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			      </div>
-			      <div class="modal-body">
-		        <c:if test="${logoutMessage != null}">
-        			<c:out value="${logoutMessage}"></c:out>
+		 	<div class="modal-dialog">
+		 		<div class="modal-content">
+	     			<div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		 			</div>	
+		 		</div>
+		 	</div>
+		 </div>
+	      
+		      <div class="modal-body">
+		        	<c:if test="${logoutMessage != null}">
+        				<c:out value="${logoutMessage}"></c:out>
         			</c:if>
             			<h5>Login</h5>
             		<c:if test="${errorMessage != null}">
-                	<c:out value="${errorMessage}"></c:out>
-            	</c:if>
-            	<div class="container">
-
-				<!-- Page Heading -->
-      			<h1 class="mt-4 mb-3">
-        			Spring eCommerce <small>Carrito</small>
-		        </h1>
-		        <ol class="header">
-			        <button class=" fas fa-house-chimney fa-2x p-1 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-style: none;background-color: #312783;">
-						<li class="header-item"><a href="index.html">Home</a></li>
-					</button>
-						<li class="header-item active">Carrito</li>
-					
-			    </ol>
-			    <!--Shopping table  -->
-			    <div class="card mb-4">
-			      <div class="card-body">
-			        <div class="row">
-			         <div class="col-lg-9">
-			          <table class="table">
-			            <thead>
-			              <tr>
-			                <th scope="col">Producto</th>
-			                <th scope="col">Precio</th>
-			                <th scope="col">Cantidad</th>
-			                <th scope="col">Total</th>
-			                <th scope="col">Acción</th>
-			              </tr>
-			            </thead>
-			            <tbody>
-			              <tr>
-			                <td >Nombre</td>
-			                <td >Precio</td>
-			                <td>Cantidad</td>
-			                <td >Total</td>
-			                <td><a href="#" class="btn btn-danger"><i class="fa-solid fa-trash">Quitar</i></a></td>
-			              </tr>
-			            </tbody>
-			          </table>
-			        </div>
-			        
-			        <div class="col-lg-3">
-            			<h2 class="card-title">SUBTOTAL</h2>
-			          		
-    					<ul class="list-group">
-			              <li class="list-group-item"><h5>Total: $ 1000</h5></li>
-			              <a href="resumenorden.html" class="btn btn-dark">Ver Orden</a>
-			            </ul>
-			          </div>
-			
-			        </div>
-			      </div>
-			    </div>        		
-	</body>
+                		<c:out value="${errorMessage}"></c:out>
+            		</c:if>
+           		</div>
+           		<div class="d-flex container justify-content-center" style="min-height: 100vh,  opacity: .8; ">
+			    <div class="row">
+			        <aside class="col-lg-9">
+			            <div class="card">
+			                <div class="table-responsive">
+			                    <table class="table table-borderless table-shopping-cart">
+			                        <thead class="text-muted">
+			                            <tr class="small text-uppercase">
+			                                <th scope="col">Productos</th>
+			                                <th scope="col" width="120">Cantidad</th>
+			                                <th scope="col" width="120">Precio</th>
+			                                <th scope="col" class="text-right d-none d-md-block" width="200"></th>
+			                            </tr>
+			                        </thead>
+			                        <tbody>
+			                            <tr>
+			                                <td>
+			                                    <figure class="itemside align-items-center">
+			                                        <div class="aside"><img src="#" class="img-sm"></div>
+			                                        <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true"></a>
+			                                        </figcaption>
+			                                    </figure>
+			                                </td>
+			                                <td> <select class="form-control">
+			                                        <option>1</option>
+			                                        <option>2</option>
+			                                        <option>3</option>
+			                                        <option>4</option>
+			                                    </select> </td>
+			                                <td>
+			                                    <div class="price-wrap"> <var class="price">$1.000</var></div>
+			                                </td>
+			                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light" data-abc="true"> Remove</a> </td>
+			                            </tr>
+			                            <tr>
+			                                <td>
+			                                    <figure class="itemside align-items-center">
+			                                        <div class="aside"><img src="#" class="img-sm"></div>
+			                                    </figure>
+			                                </td>
+			                                <td> <select class="form-control">
+			                                        <option>1</option>
+			                                        <option>2</option>
+			                                        <option>3</option>
+			                                        <option>4</option>
+			                                    </select> </td>
+			                                <td>
+			                                    <div class="price-wrap"> <var class="price">$1.500</var></div>
+			                                </td>
+			                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a> </td>
+			                            </tr>
+			                            <tr>
+			                                <td>
+			                                    <figure class="itemside align-items-center">
+			                                        <div class="aside"><img src="#" class="img-sm"></div>
+			                                    </figure>
+			                                </td>
+			                                <td> <select class="form-control">
+			                                        <option>1</option>
+			                                        <option>2</option>
+			                                        <option>3</option>
+			                                    </select> </td>
+			                                <td>
+			                                    <div class="price-wrap"> <var class="price">$9.000</var></div>
+			                                </td>
+			                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a> </td>
+			                            </tr>
+			                        </tbody>
+			                    </table>
+			                </div>
+			            </div>
+			        </aside>
+			        <aside class="col-lg-3">
+			            <div class="card">
+			                <div class="card-body">
+			                    <dl class="dlist-align">
+			                        <dt>Total:</dt>
+			                        <dd class="text-right ml-3">$11.500</dd>
+			                    </dl>
+			                    <dl class="dlist-align">
+			                        <dt>Discount:</dt>
+			                        <dd class="text-right text-danger ml-3">- $0</dd>
+			                    </dl>
+			                    <dl class="dlist-align">
+			                        <dt>Total:</dt>
+			                        <dd class="text-right text-dark b ml-3"><strong>$11.500</strong></dd>
+			                    </dl>
+			                    <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main" style="background-color: #3B3275 !important" data-abc="true"> Comprar </a> <a href="#" class="btn btn-out btn-success btn-square btn-main mt-2"style="background-color: #312783 !important"  data-abc="true">Continuar comprando</a>
+			                </div>
+			            </div>
+			        </aside>
+			    </div>
+			</div>	
+		</body>
 	</html>
