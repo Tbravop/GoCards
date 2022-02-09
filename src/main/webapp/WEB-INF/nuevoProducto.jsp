@@ -19,16 +19,15 @@
 		<title>GoCards</title>
 	</head>
 <body>
-		<form:form class="form-horizontal" method="POST" action="/crear">
-			<form:input path="id" type="hidden"/>
-			<form:input path="productos" type="hidden"/>
-			<<div class="form-group">
-				<form:label class="control-label col-sm-2" path="name">Nombre:</form:label>
-			</div>
-			<div class="buttons has-addons">
-							<input type="submit" value="Update" class="button is-dark" />
-			</div>
-		</form:form>
-
+<section style="margin-top:40px">
+            <form:form  class="mb-3" action="/crear/producto" method="POST" modelAttribute="producto">
+                <p>
+                    <form:label class="form-label" path="name">Nombre del Producto</form:label>
+                    <form:errors path="name"/>
+                    <form:input  class="form-control" path="name"/>
+                </p>
+                <input class="btn btn-primary" type="submit" value="create"/>
+            </form:form>
+        </section>    
 </body>
 </html>
