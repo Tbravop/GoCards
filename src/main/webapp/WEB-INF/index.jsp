@@ -9,6 +9,8 @@
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>	
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">		
 		<link rel="stylesheet" href="/assets/css/style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,15 +28,21 @@
 	      <img src="/assets/img/logo.png" width="120" height="40">
 	    </a>    
 	  </div>
+	  <!-- Buscador web-->
 		<form class="d-flex">
-	      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+	      <input class="form-control me-2 d-none d-xl-block" style="width: 700px;" type="search" placeholder="Buscar una carta" aria-label="Search">
 	      <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
 	    </form>
-	    <div>
+	    <!-- /// -->
+	    <div class="d-flex">
+	    <p>Inicia Sesión</p>
 	    <button class="fas fa-user fa-2x p-1 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-style: none;background-color: #312783;">
 		</button>
+		<p>Inicia Sesión</p>
 	    <i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
 	    </div>
+
+		<!-- Modal login-->
 			    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 		    <div class="modal-content">
@@ -62,12 +70,23 @@
                 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 		<input class="btn btn-primary" type="submit" value="Login!"/>
             		</form>
-            			<a href="/registration">Registrate</a>			 
+            		<a href="/registration">Registrate</a>
+            	<c:if test="${User.getUser != null}">
+	            	<form id="logoutForm" method="POST" action="/logout">
+		                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+		                <input class="btn btn-danger" type="submit" value="Logout!" />
+	            	</form>	
+            	</c:if>
 		      </div>
 		    </div>
 		  </div>
-		</div>		  
+		</div>	
+ 
 	</nav>
+			<!-- Buscador responsivo-->
+			<div class="container-fluid navbar navbar-dark d-none d-md-block" style="height: 80px;background-color: #312783;">
+
+			</div>	 
 	<div class="collapse" id="navbarToggleExternalContent">
 	  <div class="bg-white p-4" style="width: 300px;background-color: #312783;">
 	  <ul class="navbar-nav">
@@ -84,7 +103,7 @@
 	        <li><a class="nav-link" href="#">Bases</a></li>
 	        <li><a class="nav-link" href="#">Productos Sellados</a></li>
 	        <li><a class="nav-link" href="#">Lotes</a></li>
-	        <li><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Vender</a></li> 
+	        <li><a class="nav-link" href="/crear">Vender</a></li> 
         </ul>
 	  </div>
 	</div>
