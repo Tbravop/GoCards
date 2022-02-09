@@ -90,7 +90,7 @@
 	<div class="collapse" id="navbarToggleExternalContent">
 	  <div class="bg-white p-4" style="width: 300px;background-color: #312783;">
 	  <ul class="navbar-nav">
-	  	    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ir a Comunidad</a></li>
+	  	    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/foro">Ir a Comunidad</a></li>
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
             MarketPlace
           </a>
