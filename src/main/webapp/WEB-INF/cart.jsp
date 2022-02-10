@@ -55,7 +55,7 @@
                 		<c:out value="${errorMessage}"></c:out>
             		</c:if>
            		</div>
-           		<div class="d-flex container justify-content-center" style="min-height: 100vh,  opacity: .8; ">
+           		<div class="d-flex container justify-content-center" style="min-height: 100vh">
 			    <div class="row">
 			        <aside class="col-lg-9">
 			            <div class="card">
@@ -87,7 +87,7 @@
 			                                <td>
 			                                    <div class="price-wrap"> <var class="price">$1.000</var></div>
 			                                </td>
-			                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light" data-abc="true"> Remove</a> </td>
+			                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-secondary" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-danger" data-abc="true"> Eliminar</a> </td>
 			                            </tr>
 			                            <tr>
 			                                <td>
@@ -104,7 +104,7 @@
 			                                <td>
 			                                    <div class="price-wrap"> <var class="price">$1.500</var></div>
 			                                </td>
-			                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a> </td>
+			                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-secondary" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-danger btn-round" data-abc="true"> Eliminar</a> </td>
 			                            </tr>
 			                            <tr>
 			                                <td>
@@ -120,7 +120,7 @@
 			                                <td>
 			                                    <div class="price-wrap"> <var class="price">$9.000</var></div>
 			                                </td>
-			                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a> </td>
+			                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-secondary" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-danger btn-round" data-abc="true"> Eliminar</a> </td>
 			                            </tr>
 			                        </tbody>
 			                    </table>
@@ -142,7 +142,7 @@
 			                        <dt>Total:</dt>
 			                        <dd class="text-right text-dark b ml-3"><strong>$11.500</strong></dd>
 			                    </dl>
-			                    <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main" style="background-color: #3B3275 !important" data-abc="true"> Comprar </a> <a href="#" class="btn btn-out btn-success btn-square btn-main mt-2"style="background-color: #312783 !important"  data-abc="true">Continuar comprando</a>
+			                    <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main" style="background-color: #4B98E0 !important" data-abc="true"> Comprar </a> <a href="#" class="btn btn-out btn-success btn-square btn-main mt-2"style="background-color: #082A5C !important"  data-abc="true">Continuar comprando</a>
 			                </div>
 			            </div>
 			        </aside>
