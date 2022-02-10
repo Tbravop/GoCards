@@ -115,20 +115,25 @@
                     <form:input  class="form-control" path="name"/>
                 </p>
                 <p>
-                    <form:label class="form-label" path="name">Nombre del Producto</form:label>
-                    <form:errors path="name"/>
-                    <form:input  class="form-control" path="name"/>
+                    <form:label class="form-label" path="precio">Precio:</form:label>
+                    <form:errors path="precio"/>
+                    <form:input  class="form-control" path="precio"/>
                 </p>
                 <p>
-                    <form:label class="form-label" path="name">Nombre del Producto</form:label>
-                    <form:errors path="name"/>
-                    <form:input  class="form-control" path="name"/>
+                    <form:label class="form-label" path="description">Nombre del Producto</form:label>
+                    <form:errors path="description"/>
+                    <form:input  class="form-control" path="description"/>
                 </p>
                 <p>
-                    <form:label class="form-label" path="name">Nombre del Producto</form:label>
-                    <form:errors path="name"/>
-                    <form:input  class="form-control" path="name"/>
+                    <form:label class="form-label" path="image">Imagen del Producto:</form:label>
+                    <form:errors path="image"/>
+                    <form:input  class="form-control" path="image"/>
                 </p>
+                <p>
+                    <form:label class="form-label" path="image">Cantidad:</form:label>
+                    <form:errors path="image"/>
+                    <form:input  class="form-control" path="image"/>
+                </p>                              
                 <input class="btn btn-primary" type="submit" value="crear"/>
             </form:form>
         </section>    
