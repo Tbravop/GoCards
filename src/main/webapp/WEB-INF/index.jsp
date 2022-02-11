@@ -38,8 +38,10 @@
 	    <p>Inicia Sesión</p>
 	    <button class="fas fa-user fa-2x p-1 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-style: none;background-color: #312783;">
 		</button>
-		<p>Inicia Sesión</p>
+		<p>Carrito</p>
+		<a href="">
 	    <i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
+	    </a>
 	    </div>
 
 		<!-- Modal login-->
@@ -117,13 +119,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/assets/img/logo.png" class="d-block w-100" alt="...">
+      <img src="/assets/img/spyralcarusel.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="/assets/img/logo.png" class="d-block w-100" alt="...">
+      <img src="/assets/img/kaijucarusel.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="/assets/img/logo.png" class="d-block w-100" alt="...">
+      <img src="/assets/img/truedracocarusel.png" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
