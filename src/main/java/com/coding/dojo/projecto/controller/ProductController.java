@@ -60,12 +60,12 @@ public class ProductController {
         model.addAttribute("prod", product);
         return "edit.jsp";
     }
-	@PutMapping("/{id}")
-    public String update(@Valid @ModelAttribute("lang") Product product, BindingResult result, @PathVariable("id") Long id) throws Exception {
+	@PutMapping("/{name}")
+    public String update(@Valid @ModelAttribute("lang") Product product, BindingResult result, @PathVariable("name") String name) throws Exception {
         if (result.hasErrors()) {
             return "edit.jsp";
         } else {
-        	productService.create(product, id);
+        	productService.create(product, name);
             return "redirect:/";
         }
     }
