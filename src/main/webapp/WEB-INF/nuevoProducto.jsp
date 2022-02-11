@@ -110,27 +110,27 @@
 <section style="margin-top:40px">
             <form:form  class="mb-3" action="/crear/producto" method="POST" modelAttribute="product">
                 <p>
-                    <form:label class="form-label" path="name">Nombre del Producto</form:label>
+                    <form:label class="form-label" path="name">Nombre del Producto: </form:label>
                     <form:errors path="name"/>
                     <form:input  class="form-control" path="name"/>
                 </p>
                 <p>
-                    <form:label class="form-label" path="precio">Precio:</form:label>
-                    <form:errors path="precio"/>
-                    <form:input  class="form-control" path="precio"/>
+                    <form:label class="form-label" path="price">Precio: </form:label>
+                    <form:errors path="price"/>
+                    <form:input  class="form-control" path="price"/>
                 </p>
                 <p>
-                    <form:label class="form-label" path="description">Nombre del Producto</form:label>
+                    <form:label class="form-label" path="description">Descripcion: </form:label>
                     <form:errors path="description"/>
                     <form:input  class="form-control" path="description"/>
                 </p>
                 <p>
-                    <form:label class="form-label" path="image">Imagen del Producto:</form:label>
+                    <form:label class="form-label" path="image">Imagen del Producto: </form:label>
                     <form:errors path="image"/>
                     <form:input  class="form-control" path="image"/>
                 </p>
                 <p>
-                    <form:label class="form-label" path="image">Cantidad:</form:label>
+                    <form:label class="form-label" path="image">Cantidad: </form:label>
                     <form:errors path="image"/>
                     <form:input  class="form-control" path="image"/>
                 </p>                              
