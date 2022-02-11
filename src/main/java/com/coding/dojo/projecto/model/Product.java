@@ -25,10 +25,10 @@ public class Product {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	@NotBlank
 	private String name;
-	@Min(100)
+	@Min(3)
 	private double price;
 	@NotBlank
 	private String description;
