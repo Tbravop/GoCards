@@ -31,8 +31,8 @@ public class ProductServiceImpl implements ProductService{
 	}
 	@Override
 	@Transactional
-    public Product create(Product p, Long id) throws Exception {
-		Optional<Product> optionalProduct = productRepository.findById(id);
+    public Product create(Product p, String name) throws Exception {
+		Optional<Product> optionalProduct = productRepository.findByName(name);
 		if(optionalProduct.isPresent()) {
 			throw new Exception("El producto ya existe");
 		}

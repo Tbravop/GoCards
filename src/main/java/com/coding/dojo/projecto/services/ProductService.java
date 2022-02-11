@@ -21,7 +21,7 @@ public interface ProductService {
 
 	List<Product> listaSinCategorias(long id);
 
-	Product create(Product p, Long id) throws Exception;
+	Product create(Product p, String name) throws Exception;
 
 
 }
