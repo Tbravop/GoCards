@@ -39,7 +39,7 @@
 	    <button class="fas fa-user fa-2x p-1 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-style: none;background-color: #312783;">
 		</button>
 		<p>Carrito</p>
-		<a href="">
+		<a href="/carrito">
 	    <i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
 	    </a>
 	    </div>
