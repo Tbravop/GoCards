@@ -14,48 +14,109 @@
 			<link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 	
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css" />
 			<title>Carrito de compras</title>
 	</head>
 	<body>
 		<nav class="container-fluid navbar navbar-dark" style="height: 80px;background-color: #312783;">
-		<div class="justify-content-start">
-		    <button class="navbar-toggler m-2" style="border-style: none;color: #312783;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-		      <span class="navbar-toggler-icon"></span>
-		    </button>
-		    <a class="navbar-brand" href="/">
-		      <img src="/assets/img/logo.png" width="120" height="40">
-		    </a>    
-		 </div>
-		<form class="d-flex">
-		      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-		      <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
-		</form>
-		<div>
-		    <button class="fas fa-user fa-2x p-1 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-style: none;background-color: #312783;">
-			</button>
-		    <i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
-		 </div>
-		 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		 	<div class="modal-dialog">
-		 		<div class="modal-content">
-	     			<div class="modal-header">
-				        <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
-				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		 			</div>	
-		 		</div>
-		 	</div>
-		 </div>
-	      
-		      <div class="modal-body">
-		        	<c:if test="${logoutMessage != null}">
-        				<c:out value="${logoutMessage}"></c:out>
-        			</c:if>
-            			<h5>Login</h5>
-            		<c:if test="${errorMessage != null}">
-                		<c:out value="${errorMessage}"></c:out>
-            		</c:if>
-           		</div>
-           		<div class="d-flex container justify-content-center" style="min-height: 100vh">
+	  		<div class="justify-content-start">
+		    	<button class="navbar-toggler m-2" style="border-style: none;color: #312783;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+		      		<span class="navbar-toggler-icon"></span>
+		    	</button>
+		    	<a class="navbar-brand" href="/">
+		      		<img src="/assets/img/logo.png" width="120" height="40">
+	    		</a>    
+	 		 </div>
+  			<!-- Buscador web-->
+			<form class="d-flex">
+	      		<input class="form-control me-2 d-none d-xl-block" style="width: 700px;" type="search" placeholder="Buscar una carta" aria-label="Search">
+      			<button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
+	    	</form>
+	   		<!-- /// -->
+	    	<div class="d-flex">
+	    		<p>Inicia Sesión<p>
+	    		<button class="fas fa-user fa-2x p-1 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-style: none;background-color: #312783;">
+				</button>
+				<p>Carrito</p>
+				<a href="">
+	    			<i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
+	    		</a>
+	    	</div>
+        </nav>
+		<!-- TimeLiner -->
+		<div class="d-flex container justify-content-center" style="margin: 4vh">
+			<ul class='timeline'>
+			  <li class='active'>Carro</li>
+			  <li>Entrega</li>
+			  <li>Pago</li>
+			</ul>
+		</div>
+			<style>
+				<!-- CSS timeliner -->
+					
+				.timeline {
+				  margin: 0;
+				  padding: 0;
+				  list-style: none;
+				  max-width: 500px; 
+				  margin: 100px auto;  
+				  counter-reset: step;
+				}
+				
+				.timeline li {
+				  float: left;    
+				  text-align: center;
+				  width: 150px;   
+				  position: relative;  
+				}
+				
+				.timeline li:before {
+				  content: counter(step);
+				  counter-increment: step;
+				  line-height: 35px;
+				  width: 35px;
+				  height: 35px;
+				  display: block;
+				  border-radius: 100%;
+				  border: 1px solid #CCC;
+				  margin: 0 auto 15px auto;  
+				  background: #fff;
+				}
+				
+				.timeline li:after {
+				  content: '';
+				  width: 100%;
+				  height: 1px;
+				  background: #DDD;
+				  display: block;
+				  position: absolute;
+				  top: 17.5px;
+				  left: 50%;
+				  z-index: -1;
+				}
+				
+				.timeline li:last-child:after {
+				  content: none;
+				}
+				
+				.timeline li.active {
+				  color: #838383;
+				}
+				
+				.timeline li:first-child:before {
+				  border-color: #838383;  
+				}
+				.timeline li:first-child:after {
+				  background: #838383;  
+				}
+				ul{
+				list-style: none;
+				}
+			</style>
+		
+        
+        		<!-- carrito -->
+           		<div class="d-flex container justify-content-center" style="margin: 10vh">
 			    <div class="row">
 			        <aside class="col-lg-9">
 			            <div class="card">
