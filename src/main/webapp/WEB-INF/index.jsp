@@ -19,99 +19,101 @@
 		<title>GoCards</title>
 	</head>
 	<body>
-	<nav class="container-fluid navbar navbar-dark" style="height: 80px;background-color: #312783;">
-	  <div class="justify-content-start">
-	    <button class="navbar-toggler m-2" style="border-style: none;color: #312783;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-	      <span class="navbar-toggler-icon"></span>
-	    </button>
-	    <a class="navbar-brand" href="/">
-	      <img src="/assets/img/logo.png" width="120" height="40">
-	    </a>    
-	  </div>
-	  <!-- Buscador web-->
-		<form class="d-flex">
-	      <input class="form-control me-2 d-none d-xl-block" style="width: 700px;" type="search" placeholder="Buscar una carta" aria-label="Search">
-	      <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
-	    </form>
-	    <!-- /// -->
-	    <div class="d-flex">
-	    <p>Inicia Sesión</p>
-	    <button class="fas fa-user fa-2x p-1 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-style: none;background-color: #312783;">
-		</button>
-		<p>Carrito</p>
-		<a href="/carrito">
-	    <i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
-	    </a>
-	    </div>
-
-		<!-- Modal login-->
-			    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
-		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		      </div>
-		      <div class="modal-body">
-		        <c:if test="${logoutMessage != null}">
-        			<c:out value="${logoutMessage}"></c:out>
-        			</c:if>
-            			<h5>Login</h5>
-            		<c:if test="${errorMessage != null}">
-                	<c:out value="${errorMessage}"></c:out>
-            		</c:if>
-            		<form method="POST" action="/login">
-                		<p>
-	                    	<label class="form-label" for="email">Correo</label>
-	                    	<input class="form-control" type="text" id="email" name="username"/>
-                		</p>
-                		<p>
-                    		<label class="form-label" for="password">Contraseña</label>
-                    		<input class="form-control" type="password" id="password" name="password"/>
-                		</p>
-                		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                		<input class="btn btn-primary" type="submit" value="Login!"/>
-            		</form>
-            		<a href="/registration">Registrate</a>
-            	<c:if test="${User.getUser != null}">
-	            	<form id="logoutForm" method="POST" action="/logout">
-		                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-		                <input class="btn btn-danger" type="submit" value="Logout!" />
-	            	</form>	
-            	</c:if>
-		      </div>
-		    </div>
-		  </div>
-		</div>	
- 
-	</nav>
-			<!-- Buscador responsivo-->
-			<div class="container-fluid navbar navbar-dark d-none d-lxx-block" style="height: 80px;background-color: #312783;">
-			</div>	
-	<!-- Despliege de menu -->
-	<div class="collapse" id="navbarToggleExternalContent">
-	  <div class="bg-white p-4" style="width: 300px;background-color: #312783;">
-	  <ul class="navbar-nav">
-	  	    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/foro">Ir a Comunidad</a></li>
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
-            MarketPlace
-          </a>
-          <ul class="dropdown-menu p-1" aria-labelledby="navbarDropdownMenuLink" style="background-color: white;">
-            <li><a class="dropdown-item p-4" href="#">Lo más Vendido</a></li>
-            <li><a class="dropdown-item p-4" href="#">Ofertas Destacadas</a></li>
-            <li><a class="dropdown-item p-4" href="#">Lo nuevo</a></li>                       
-          </ul>
-        </li>
-	        <li><a class="nav-link" href="#">Bases</a></li>
-	        <li><a class="nav-link" href="#">Productos Sellados</a></li>
-	        <li><a class="nav-link" href="#">Lotes</a></li>
-	        <li><a class="nav-link" href="/crear">Vender</a></li> 
-        </ul>
-	  </div>
-	</div>
-	
-		
-	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #312783;">
+        <div class="container-fluid col-12">
+         <a href="/">
+	      	<img src="/assets/img/logo.png" width="120" height="40">
+	      	</a>  
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse pt-1" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item px-5 d-none d-lg-block">
+		 		<form class="d-flex">
+			        <input class="form-control me-2" style="width: 500px;" type="search" placeholder="Buscar una carta" aria-label="Search">
+			        <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
+		      	</form>	      	
+              </li>
+              <li class="nav-item">
+		 		<form class="d-flex d-lg-none pt-2">
+			        <input class="form-control me-2" style="width: 300px;" type="search" placeholder="Buscar una carta" aria-label="Search">
+			        <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
+		      	</form>	      	
+              </li>              
+              <li class="nav-item">
+                <a class="nav-link" href="/foro">Ir a Comunidad</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  MarketPlace
+                </a>
+                <ul class="dropdown-menu" style="background-color: white;" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Lo más Vendido</a></li>
+                  <li><a class="dropdown-item" href="#">Ofertas Destacadas</a></li>
+                  <li><a class="dropdown-item" href="#">Lo nuevo</a></li>                  
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Bases</a></li>
+                  <li><a class="dropdown-item" href="#">Productos Sellados</a></li>
+                  <li><a class="dropdown-item" href="#">Lotes</a></li>     
+                  <li><a class="dropdown-item" href="#">Vender</a></li>                                                                                     
+                </ul>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="/producto">Vender</a>
+              </li>        
+            </ul>
+			<a href="#" class="d-flex" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;">
+      		<i class="fas fa-user fa-2x p-1 text-white"></i>
+				<p class="text-white">Inicia sesión</p>
+		    </a>  
+			<a href="/carrito" class="d-flex" style="text-decoration: none;">
+      		<i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
+      		<p class="text-white">Carrito</p>
+      		</a>            
+          </div>
+         </div>
+      </nav>
+       <!-- Modal login-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <c:if test="${logoutMessage != null}">
+                  <c:out value="${logoutMessage}"></c:out>
+                  </c:if>
+                      <h5>Login</h5>
+                  <c:if test="${errorMessage != null}">
+                  <c:out value="${errorMessage}"></c:out>
+                  </c:if>
+                  <form method="POST" action="/login">
+                      <p>
+                          <label class="form-label" for="email">Correo</label>
+                          <input class="form-control" type="text" id="email" name="username"/>
+                      </p>
+                      <p>
+                          <label class="form-label" for="password">Contraseña</label>
+                          <input class="form-control" type="password" id="password" name="password"/>
+                      </p>
+                      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                      <input class="btn btn-primary" type="submit" value="Login!"/>
+                  </form>
+                  <a href="/registration">Registrate</a>
+              <c:if test="${User.getUser != null}">
+                  <form id="logoutForm" method="POST" action="/logout">
+                      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                      <input class="btn btn-danger" type="submit" value="Logout!" />
+                  </form>	
+              </c:if>
+            </div>
+          </div>
+        </div>
+      </div>		
+	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin-top: 55px;">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
