@@ -53,7 +53,7 @@ public class UserController {
             return"loginRegister.jsp";
         }
         	userService.createUser(user);
-            return"redirect:/";
+            return"redirect:/registration";
 		}
 	@RequestMapping("/login")
     public String login(@RequestParam(value="error", required= false)String error, @RequestParam(value="logout", required=false)String logout,Model model) {
@@ -69,10 +69,10 @@ public class UserController {
         }
         
     }
-	@PostMapping("/login")
+	@GetMapping("/")
 	public String index(Principal principal, Model model) {
-		String email = principal.getName();
-		model.addAttribute("currentUser", userService.findByEmail(email));
+		List<Product> product = productService.allProduct();
+		model.addAttribute("producto", product);
 		return "index.jsp";
 	}
 }
