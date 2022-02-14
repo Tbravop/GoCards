@@ -19,6 +19,7 @@
 		<title>GoCards</title>
 	</head>
 	<body>
+	<!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #312783;">
         <div class="container-fluid col-12">
          <a href="/">
@@ -55,12 +56,11 @@
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Bases</a></li>
                   <li><a class="dropdown-item" href="#">Productos Sellados</a></li>
-                  <li><a class="dropdown-item" href="#">Lotes</a></li>     
-                  <li><a class="dropdown-item" href="/crear">Vender</a></li>                                                                                     
+                  <li><a class="dropdown-item" href="#">Lotes</a></li>                                                                                      
                 </ul>
               </li>
                <li class="nav-item">
-                <a class="nav-link" href="/producto">Vender</a>
+                <a class="nav-link" href="/crear">Vender</a>
               </li>        
             </ul>
 			<a href="#" class="d-flex" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;">
