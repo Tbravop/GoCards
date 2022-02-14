@@ -1,5 +1,6 @@
 package com.coding.dojo.projecto.service.impl;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -29,17 +30,12 @@ public class ProductServiceImpl implements ProductService{
 	public List<Product> allProduct(){
 		return (List<Product>) productRepository.findAll();
 	}
+	
 	@Override
-	@Transactional
-    public Product create(Product p, String name) throws Exception {
-		Optional<Product> optionalProduct = productRepository.findByName(name);
-		if(optionalProduct.isPresent()) {
-			throw new Exception("El producto ya existe");
-		}
-		else {
+    public Product createProduct(Product p){
 			return productRepository.save(p);
 		}
-    }
+	
 	@Override
 	@Transactional
 	public Product findProduct(Long id) {
@@ -53,7 +49,7 @@ public class ProductServiceImpl implements ProductService{
 	}
 	@Override
 	@Transactional
-	public Product update(Long id, String name, double price, String description) throws Exception{
+	public Product update(Long id, String name, BigInteger price, String description) throws Exception{
 		try {
 			Product product=this.findProduct(id);
 			if(product!=null) {

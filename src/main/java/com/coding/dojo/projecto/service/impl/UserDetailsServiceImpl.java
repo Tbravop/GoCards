@@ -20,8 +20,11 @@ import com.coding.dojo.projecto.repository.UserRepository;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
-	@Lazy
 	private UserRepository userRepository;
+	
+	@Autowired
+	public UserDetailsServiceImpl(UserRepository userRepository) {	
+	}
 	
 	@Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -35,7 +38,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 	private List<GrantedAuthority> getAuthorities(User user){
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-        for(Role role : user.getRole()) {
+        for(Role role : user.getRoles()) {
             GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role.getName());
             authorities.add(grantedAuthority);
         }

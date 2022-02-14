@@ -1,19 +1,18 @@
 package com.coding.dojo.projecto.services;
 
+import java.math.BigInteger;
 import java.util.List;
-
-import org.springframework.stereotype.Service;
 
 import com.coding.dojo.projecto.model.Product;
 
-@Service
+
 public interface ProductService {
 
 	List<Product> allProduct();
 
 	Product findProduct(Long id);
 
-	Product update(Long id, String name, double price, String description) throws Exception;
+	Product update(Long id, String name, BigInteger price, String description) throws Exception;
 
 	void delete(Long id) throws Exception;
 
@@ -21,7 +20,7 @@ public interface ProductService {
 
 	List<Product> listaSinCategorias(long id);
 
-	Product create(Product p, String name) throws Exception;
+	Product createProduct(Product p);
 
 
 }

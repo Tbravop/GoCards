@@ -3,6 +3,7 @@ package com.coding.dojo.projecto.controller;
 import java.security.Principal;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,22 +41,20 @@ public class UserController {
 	private ProductService productService;
 	
 	
-	@GetMapping("/registration")
-    public String register(@Valid @ModelAttribute("user")User user, Model model) {
-        model.addAttribute("rol", roleService.allRole());
+	@RequestMapping("/registration")
+    public String registerForm(@Valid @ModelAttribute("user")User user) {
         return"loginRegister.jsp";
     }
+	
 	@PostMapping("/registration")
-    public String registerUser(@Valid @ModelAttribute("user")User user, BindingResult result) {
+    public String register(@Valid @ModelAttribute("user")User user, BindingResult result,Model model, HttpSession session) {
         userValidator.validate(user, result);
         if(result.hasErrors()) {
             return"loginRegister.jsp";
         }
-        else {
-            userService.createUser(user);
-            return"redirect:/registration";
-        }
-	}
+        	userService.createUser(user);
+            return"redirect:/";
+		}
 	@RequestMapping("/login")
     public String login(@RequestParam(value="error", required= false)String error, @RequestParam(value="logout", required=false)String logout,Model model) {
         if(error != null) {

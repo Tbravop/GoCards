@@ -28,9 +28,12 @@ public class UserServiceImpl implements UserService {
 	public List<User> allUser(){
 		return (List<User>) userRepository.findAll();
 	}
+	
+	@Override
+	@Transactional
 	public void createUser(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRole(roleRepository.findByName("USER_ROLE"));
+        user.setRoles(roleRepository.findByName("USER_ROLE"));
         userRepository.save(user);
     }
 	@Override
@@ -38,6 +41,7 @@ public class UserServiceImpl implements UserService {
 	public User findByEmail(String email) {
 	    return userRepository.findByEmail(email);
 	}
+	
 	@Override
 	@Transactional
 	public User findById(Long id) {

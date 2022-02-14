@@ -35,31 +35,35 @@ public class ProductController {
 	}
 	
 	@PostMapping("/crear/producto")
-	public String createP(@Valid @ModelAttribute("product") Product product, BindingResult result) throws Exception {
+	public String createProduct(@Valid @ModelAttribute("product") Product userProduct, BindingResult result){
 		if(result.hasErrors()) {
 			return "nuevoProducto.jsp";
 		}
 		else {
-			productService.create(product, null);
+			productService.createProduct(userProduct);
 			return "anadirCategoria.jsp";
 		}
 	}
+	
 	@PostMapping("/añadirCategorias/{idP}")
-	public String addP(@PathVariable("idP") long id, @RequestParam("idC") long idC) {
+	public String addP(@PathVariable("idP") Long id, @RequestParam("idC") Long idC) {
 		productService.addC(id, idC);
 		return "redirect:/product/"+id;
 	}
+	
 	@GetMapping("/producto/{id}")
-	public String mostrarP(@PathVariable("id") long id, Model model) {
+	public String mostrarP(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("product", productService.findProduct(id));
 		return "producto.jsp";
 	}
+	
 	@RequestMapping("/edit/{id}")
     public String editP(@PathVariable("id") Long id, Model model, @Valid @ModelAttribute("product") Product lang) {
 		Product product = productService.findProduct(id);
         model.addAttribute("prod", product);
         return "edit.jsp";
     }
+	
 	@PutMapping("/{name}")
     public String update(@Valid @ModelAttribute("lang") Product product, BindingResult result, @PathVariable("name") String name) throws Exception {
         if (result.hasErrors()) {

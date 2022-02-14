@@ -3,12 +3,9 @@ package com.coding.dojo.projecto.model;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -23,11 +20,7 @@ public class Role {
     private Long id;
 	@NotNull
 	private String name;
-	@ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-    		name="role_user",
-    		joinColumns = @JoinColumn(name="role_id"),
-    		inverseJoinColumns = @JoinColumn(name="user_id"))
+	@ManyToMany(mappedBy = "roles")
 	private List<User> user;
 	
 	public Role() {

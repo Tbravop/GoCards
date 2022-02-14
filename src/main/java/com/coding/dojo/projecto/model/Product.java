@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigInteger;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -29,11 +30,11 @@ public class Product {
 	@NotBlank
 	private String name;
 	@Min(3)
-	private double price;
+	private BigInteger price;
 	@NotBlank
 	private String description;
 	private String image;
-	private int cantidad;
+	private Integer cantidad;
 	@Column(updatable=false)
 	private Date createdAt;
 	private Date updatedAt;
@@ -66,23 +67,14 @@ public class Product {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
-	public long getId() {
+	public Long getId() {
 		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
 	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void setPrice(double price) {
-		this.price = price;
 	}
 	public String getDescription() {
 		return description;
@@ -126,11 +118,22 @@ public class Product {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public int getCantidad() {
+	public Integer getCantidad() {
 		return cantidad;
 	}
-	public void setCantidad(int cantidad) {
+	public void setCantidad(Integer cantidad) {
 		this.cantidad = cantidad;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public BigInteger getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigInteger price) {
+		this.price = price;
 	}
 
 }

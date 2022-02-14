@@ -11,10 +11,12 @@ public interface UserService {
 
 	List<User> allUser();
 	
-	public void createUser(User user);
 
 	User findByEmail(String email);
 
 	User findById(Long id);
+
+
+	void createUser(User user);
 
 }

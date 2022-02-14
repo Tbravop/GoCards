@@ -9,6 +9,8 @@ import com.coding.dojo.projecto.model.Role;
 
 @Repository
 public interface RoleRepository extends CrudRepository<Role, Long> {
+	
+	List <Role> findAll();
 
 	List<Role> findByName(String name);
 }

@@ -130,9 +130,9 @@
                     <form:input  class="form-control" path="image"/>
                 </p>
                 <p>
-                    <form:label class="form-label" path="image">Cantidad: </form:label>
-                    <form:errors path="image"/>
-                    <form:input  class="form-control" path="image"/>
+                    <form:label class="form-label" path="cantidad">Cantidad: </form:label>
+                    <form:errors path="cantidad"/>
+                    <form:input  class="form-control" path="cantidad"/>
                 </p>                              
                 <input class="btn btn-primary" type="submit" value="crear"/>
             </form:form>

@@ -20,7 +20,9 @@
 	</head>
 	<body>
 		<div class="d-flex container justify-content-center">
-			<img src="/assets/img/logo.png" style="width: 250px;" class="mt-5 mb-5">
+			<a href="/">
+				<img src="/assets/img/logo.png" style="width: 250px;" class="mt-5 mb-5">
+			 </a> 
 		  </div>
   	<section class="d-flex justify-content-center">
 		<div class="row">

@@ -29,32 +29,44 @@ public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
+	
 	@Email
 	private String email;
+	
 	@Size(min=3)
 	private String name;
+	
 	@Size(min=3)
 	private String lastName;
+	
 	@Size(min=8)
 	private String password;
+	
 	@Transient
 	private String passwordConfirm;
+	
 	@Size(min=9)
 	private String phone;
+	
 	private int rating;
+	
 	@Column(updatable=false)
 	private Date createdAt;
 	private Date updatedAt;
+	
 	@OneToOne(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private BankAccount account;
+	
 	@OneToOne(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Cart cart;
+	
 	@ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-    		name="role_user",
+    		name="users_roles",
     		joinColumns = @JoinColumn(name="user_id"),
     		inverseJoinColumns = @JoinColumn(name="role_id"))
-	private List<Role> role;
+	private List<Role> roles;
+	
 	@ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
     		name="comuna_user",
@@ -127,12 +139,7 @@ public class User {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	public List<Role> getRole() {
-		return role;
-	}
-	public void setRole(List<Role> role) {
-		this.role = role;
-	}
+
 	public String getPhone() {
 		return phone;
 	}
@@ -168,6 +175,14 @@ public class User {
 	}
 	public void setProduct(List<Product> product) {
 		this.product = product;
+	}
+
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
 	
 	
