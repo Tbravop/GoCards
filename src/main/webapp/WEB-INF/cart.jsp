@@ -18,101 +18,240 @@
 			<title>Carrito de compras</title>
 	</head>
 	<body>
-		<nav class="container-fluid navbar navbar-dark" style="height: 80px;background-color: #312783;">
-	  		<div class="justify-content-start">
-		    	<button class="navbar-toggler m-2" style="border-style: none;color: #312783;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-		      		<span class="navbar-toggler-icon"></span>
-		    	</button>
-		    	<a class="navbar-brand" href="/">
-		      		<img src="/assets/img/logo.png" width="120" height="40">
-	    		</a>    
-	 		 </div>
-  			<!-- Buscador web-->
-			<form class="d-flex">
-	      		<input class="form-control me-2 d-none d-xl-block" style="width: 700px;" type="search" placeholder="Buscar una carta" aria-label="Search">
-      			<button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
-	    	</form>
-	   		<!-- /// -->
-	    	<div class="d-flex">
-	    		<p>Inicia Sesión<p>
-	    		<button class="fas fa-user fa-2x p-1 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-style: none;background-color: #312783;">
-				</button>
-				<p>Carrito</p>
-				<a href="">
-	    			<i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
-	    		</a>
-	    	</div>
-        </nav>
+		 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #312783;">
+        <div class="container-fluid col-12">
+         <a href="/">
+	      	<img src="/assets/img/logo.png" width="120" height="40">
+	      	</a>  
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse pt-1" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item px-5 d-none d-lg-block">
+		 		<form class="d-flex">
+			        <input class="form-control me-2" style="width: 500px;" type="search" placeholder="Buscar una carta" aria-label="Search">
+			        <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
+		      	</form>	      	
+              </li>
+              <li class="nav-item">
+		 		<form class="d-flex d-lg-none pt-2">
+			        <input class="form-control me-2" style="width: 300px;" type="search" placeholder="Buscar una carta" aria-label="Search">
+			        <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
+		      	</form>	      	
+              </li>              
+              <li class="nav-item">
+                <a class="nav-link" href="/foro">Ir a Comunidad</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  MarketPlace
+                </a>
+                <ul class="dropdown-menu" style="background-color: white;" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Lo más Vendido</a></li>
+                  <li><a class="dropdown-item" href="#">Ofertas Destacadas</a></li>
+                  <li><a class="dropdown-item" href="#">Lo nuevo</a></li>                  
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Bases</a></li>
+                  <li><a class="dropdown-item" href="#">Productos Sellados</a></li>
+                  <li><a class="dropdown-item" href="#">Lotes</a></li>     
+                  <li><a class="dropdown-item" href="#">Vender</a></li>                                                                                     
+                </ul>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="/producto">Vender</a>
+              </li>        
+            </ul>
+			<a href="#" class="d-flex" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;">
+      		<i class="fas fa-user fa-2x p-1 text-white"></i>
+				<p class="text-white">Inicia sesión</p>
+		    </a>  
+			<a href="/carrito" class="d-flex" style="text-decoration: none;">
+      		<i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
+      		<p class="text-white">Carrito</p>
+      		</a>            
+          </div>
+         </div>
+      </nav>
+      <!-- Modal login-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <c:if test="${logoutMessage != null}">
+                  <c:out value="${logoutMessage}"></c:out>
+                  </c:if>
+                      <h5>Login</h5>
+                  <c:if test="${errorMessage != null}">
+                  <c:out value="${errorMessage}"></c:out>
+                  </c:if>
+                  <form method="POST" action="/login">
+                      <p>
+                          <label class="form-label" for="email">Correo</label>
+                          <input class="form-control" type="text" id="email" name="username"/>
+                      </p>
+                      <p>
+                          <label class="form-label" for="password">Contraseña</label>
+                          <input class="form-control" type="password" id="password" name="password"/>
+                      </p>
+                      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                      <input class="btn btn-primary" type="submit" value="Login!"/>
+                  </form>
+                  <a href="/registration">Registrate</a>
+              <c:if test="${User.getUser != null}">
+                  <form id="logoutForm" method="POST" action="/logout">
+                      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                      <input class="btn btn-danger" type="submit" value="Logout!" />
+                  </form>	
+              </c:if>
+            </div>
+          </div>
+        </div>
+      </div>		
 		<!-- TimeLiner -->
-		<div class="d-flex container justify-content-center" style="margin: 4vh">
-			<ul class='timeline'>
-			  <li class='active'>Carro</li>
-			  <li>Entrega</li>
-			  <li>Pago</li>
-			</ul>
+		<div class="d-flex container justify-content-center" style="margin: 11vh">
+			<div class="container" margin-left 20px>
+			    <div class="platform-tour-wrapper py-3">
+			      <!-- Nav tabs -->
+				      <ul class="nav nav-tabs justify-content-around border-0 horizontal-tabs-steps">
+				        <li class="nav-item">
+				          <a class="nav-link active" data-toggle="tab"><span>1</span>
+				          </a>
+				          <h4 class="text-center mt-1">Carro</h4>
+				        </li>
+				
+				        <li class="nav-item">
+				          <a class="nav-link" data-toggle="tab" ><span>2</span></a>
+				          <h4 class="text-center mt-1">Envio</h4>
+				        </li>
+				
+				        <li class="nav-item">
+				          <a class="nav-link" data-toggle="tab" ><span>3</span></a>
+				          <h4 class="text-center mt-1">Pago</h4>
+				        </li>
+			       	</ul>
+			        
+				</div>
+			</div>
 		</div>
-			<style>
-				<!-- CSS timeliner -->
-					
-				.timeline {
-				  margin: 0;
-				  padding: 0;
-				  list-style: none;
-				  max-width: 500px; 
-				  margin: 100px auto;  
-				  counter-reset: step;
+		<style>
+			<!-- CSS timeliner -->
+				.horizontal-tabs-steps {
+				  position: relative;
 				}
 				
-				.timeline li {
-				  float: left;    
-				  text-align: center;
-				  width: 150px;   
-				  position: relative;  
+				.horizontal-tabs-steps .nav-item {
+				  z-index: 1;
+				  position: relative;
 				}
 				
-				.timeline li:before {
-				  content: counter(step);
-				  counter-increment: step;
-				  line-height: 35px;
-				  width: 35px;
-				  height: 35px;
-				  display: block;
-				  border-radius: 100%;
-				  border: 1px solid #CCC;
-				  margin: 0 auto 15px auto;  
-				  background: #fff;
-				}
-				
-				.timeline li:after {
-				  content: '';
-				  width: 100%;
-				  height: 1px;
-				  background: #DDD;
-				  display: block;
+				.horizontal-tabs-steps .nav-item:after {
+				  content: "";
+				  border-top: 12px dotted #C4C4C4;
 				  position: absolute;
-				  top: 17.5px;
-				  left: 50%;
-				  z-index: -1;
+				  z-index: 0;
+				  top: 10px;
+				  width: 390px;
+				  left: 0px;
+				  transition: border 1s ease-out;
+				  transition-delay: 0s, 0s, 0.1s;
 				}
 				
-				.timeline li:last-child:after {
-				  content: none;
+				.horizontal-tabs-steps .nav-item:last-child:after {
+				  content: "";
+				  border-top: 0px dotted #C4C4C4;
 				}
 				
-				.timeline li.active {
-				  color: #838383;
+				.horizontal-tabs-steps .nav-item.complete-step:after {
+				  content: "";
+				  border-top: 5px dotted #C4C4C4;
+				  position: absolute;
+				  z-index: 0;
+				  top: 12px;
+				  width: 265px;
+				  left: 0px;
+				  transition: border 1s ease-out;
+				  transition-delay: 0s, 0s, 0.1s
 				}
 				
-				.timeline li:first-child:before {
-				  border-color: #838383;  
+				.horizontal-tabs-steps .nav-link {
+				  background: #fff;
+				  border-radius: 50%;
+				  width: 50px;
+				  height: 50px;
+				  color: #131313;
+				  padding: 0;
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				  font-size: 12px;
+				  border: 2px solid #082A5C;
+				  z-index: 1;
+				  position: relative;
 				}
-				.timeline li:first-child:after {
-				  background: #838383;  
+				
+				
+				
+				.horizontal-tabs-steps .nav-link:hover .horizontal-tabs-steps .nav-link span {
+				  color: #4B98E0  !important;
 				}
-				ul{
-				list-style: none;
+				
+				.horizontal-tabs-steps .nav-item h4 {
+				  font-size: 20px;
+				  color:#838383;
 				}
-			</style>
+				/*********** Responsive CSS Start***************/
+				
+				@media only screen and (max-width: 575px) {
+				  .vertical-tabs-steps .nav-link {
+				    width: 73px;
+				  }  
+				
+				  .vertical-tabs-steps .nav-link.checked-steps {
+				    padding: 10px 7px;
+				  }  
+				
+				  .vertical-tabs-steps .checked-steps:after {
+				    content: "\f00c";
+				    font-family: FontAwesome;
+				    color: #fff;
+				    position: absolute;
+				    right: 7px;
+				  }  
+				}
+
+				@media only screen and (min-width: 992px) and (max-width: 1199px) {
+				  .horizontal-tabs-steps .nav-item:after {
+				    content: "";
+				    width: 219px;
+				  } 
+				}
+				
+				@media only screen and (min-width: 768px) and (max-width: 991px) {
+				  .horizontal-tabs-steps .nav-item:after {
+				    content: "";
+				    width: 160px;
+				  } 
+				}
+				
+				@media only screen and (min-width: 421px) and (max-width: 767px) {
+				  .horizontal-tabs-steps .nav-item:after {
+				    content: "";
+				    width: 115px;
+				  } 
+				}
+				
+				@media only screen and (max-width: 420px) {
+				  .horizontal-tabs-steps .nav-item:after {
+				    content: "";
+				    width: 95px;
+				  } 
+				}
+		</style>
 		
         
         		<!-- carrito -->
