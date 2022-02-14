@@ -56,7 +56,7 @@
                   <li><a class="dropdown-item" href="#">Bases</a></li>
                   <li><a class="dropdown-item" href="#">Productos Sellados</a></li>
                   <li><a class="dropdown-item" href="#">Lotes</a></li>     
-                  <li><a class="dropdown-item" href="#">Vender</a></li>                                                                                     
+                  <li><a class="dropdown-item" href="/crear">Vender</a></li>                                                                                     
                 </ul>
               </li>
                <li class="nav-item">
