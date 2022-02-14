@@ -65,11 +65,11 @@ public class ProductController {
     }
 	
 	@PutMapping("/{name}")
-    public String update(@Valid @ModelAttribute("lang") Product product, BindingResult result, @PathVariable("name") String name) throws Exception {
+    public String update(@Valid @ModelAttribute("product") Product myProduct, BindingResult result){
         if (result.hasErrors()) {
             return "edit.jsp";
         } else {
-        	productService.create(product, name);
+        	productService.createProduct(myProduct);
             return "redirect:/";
         }
     }

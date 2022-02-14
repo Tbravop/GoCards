@@ -69,10 +69,10 @@ public class UserController {
         }
         
     }
-	@GetMapping("/")
+	@PostMapping("/login")
 	public String index(Principal principal, Model model) {
-		List<Product> product = productService.allProduct();
-		model.addAttribute("producto", product);
+		String email = principal.getName();
+		model.addAttribute("currentUser", userService.findByEmail(email));
 		return "index.jsp";
 	}
 }

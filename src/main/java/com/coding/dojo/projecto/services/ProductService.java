@@ -20,7 +20,7 @@ public interface ProductService {
 
 	List<Product> listaSinCategorias(long id);
 
-	Product createProduct(Product p);
+	Product createProduct(Product myproduct);
 
 
 }
