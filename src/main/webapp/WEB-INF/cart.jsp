@@ -19,8 +19,8 @@
 			<title>Carrito de compras</title>
 	</head>
 	<body>
-		 	<!-- NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #312783;">
+	 	<!-- NavBar -->
+    	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #312783;">
         <div class="container-fluid col-12">
          <a href="/">
 	      	<img src="/assets/img/logo.png" width="120" height="40">
