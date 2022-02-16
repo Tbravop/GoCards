@@ -30,7 +30,7 @@
 					<div class="card-body">
 						<div class="card" style="width: 25rem;">
 						<img src="/assets/img/03.png" class="card-img-top"alt="...">
-						<h1 class="card-title text-white" style="margin-left: 5px; padding-top: 35px;font-size: 50px;margin-top:-127px;margin-bottom:25px;">Registrate</h1>
+						<h1 class="card-title text-white" style="margin-left: 5px; padding-top: 35px;font-size: 50px;margin-top:-127px;margin-bottom:25px;">Inicia Sesión</h1>
 							<div class="card-body">
 								<c:if test="${logoutMessage != null}">
 									<c:out value="${logoutMessage}"></c:out>
@@ -42,7 +42,7 @@
 								<form method="POST" action="/login">
 									<p>
 										<label class="form-label" for="email">Correo</label>
-										<input class="form-control" type="text" id="email" name="username"/>
+										<input class="form-control" type="email" id="email" name="username"/>
 									</p>
 									<p>
 										<label class="form-label" for="password">Contraseña</label>

@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -54,9 +55,15 @@ public class UserController {
             return"loginRegister.jsp";
         }
         	userService.createUser(user);
-            return"redirect:/registration";
+            return"redirect:/login";
 		}
+	
 	@RequestMapping("/login")
+	public String loginPage() {
+		return"login.jsp";
+	}
+	
+	@GetMapping("/login")
     public String login(@RequestParam(value="error", required= false)String error, @RequestParam(value="logout", required=false)String logout,Model model) {
         if(error != null) {
             model.addAttribute("errorMessage", "Error o Contraseña Erroneo, Intente de nuevo.");
@@ -65,16 +72,23 @@ public class UserController {
             model.addAttribute("logout", "Se cerro Su session de forma Exitosa!");
             return"redirect:/";
         }
-        else {
-            return"login.jsp";
-        }
-        
+            return"redirect:/login";
+       
     }
+	
 	@GetMapping("/")
 	public String index(Principal principal, Model model) {
 		List<Product> product = productService.allProduct();
 		model.addAttribute("producto", product);
 		return "index.jsp";
 	}
+	
+    @RequestMapping(value = {"/", "/home"})
+    public String home(Principal principal, Model model) {
+        // 1
+        String username = principal.getName();
+        model.addAttribute("currentUser", userService.findByEmail(username));
+        return "index.jsp";
+    }
 	
 }
