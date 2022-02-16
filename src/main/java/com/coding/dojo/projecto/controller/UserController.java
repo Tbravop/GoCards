@@ -63,10 +63,10 @@ public class UserController {
         }
         if(logout != null) {
             model.addAttribute("logout", "Se cerro Su session de forma Exitosa!");
-            return"redirect:/registration";
+            return"redirect:/";
         }
         else {
-            return"redirect:/";
+            return"login.jsp";
         }
         
     }
