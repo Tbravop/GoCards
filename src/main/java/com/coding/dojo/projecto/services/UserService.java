@@ -16,5 +16,9 @@ public interface UserService {
 	User findById(Long id);
 
 	void createUser(User user);
+
+	User findByName(String name);
 	
 }
+
+

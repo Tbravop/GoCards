@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	public void createUser(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(roleRepository.findByName("USER_ROLE"));
+        user.setRoles(roleRepository.findByName("ROLE_USER"));
         userRepository.save(user);
     }
 	@Override
@@ -51,5 +51,11 @@ public class UserServiceImpl implements UserService {
 		} else {
 		    return null;
 		}
+	}
+	
+	@Override
+	@Transactional
+	public User findByName(String name) {
+		return userRepository.findByName(name);	
 	}
 }
