@@ -16,6 +16,7 @@ import com.coding.dojo.projecto.model.Product;
 import com.coding.dojo.projecto.repository.ProductRepository;
 import com.coding.dojo.projecto.services.CategoryService;
 import com.coding.dojo.projecto.services.ProductService;
+import com.coding.dojo.projecto.services.UserService;
 
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -25,6 +26,8 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
 	@Lazy
 	private CategoryService categoryService;
+	@Autowired
+	private UserService userService;
 	
 	@Override
 	public List<Product> allProduct(){
@@ -32,9 +35,16 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	@Override
-    public Product createProduct(Product myproduct){
-			return productRepository.save(myproduct);
+    public Product createProduct(Product myProduct) throws Exception {
+		//buscar product por name
+		Optional<Product> product = productRepository.findByName(myProduct.getName());
+		//si existe error 
+		if(product.isPresent()) {
+			throw new Exception("El producto ya existe");
 		}
+		//si no existe lo crea 
+		return productRepository.save(myProduct);
+	}
 	
 	@Override
 	@Transactional
@@ -49,13 +59,14 @@ public class ProductServiceImpl implements ProductService{
 	}
 	@Override
 	@Transactional
-	public Product update(Long id, String name, BigInteger price, String description) throws Exception{
+	public Product update(Long id, String name, BigInteger price, String description, Integer cantidad) throws Exception{
 		try {
 			Product product=this.findProduct(id);
 			if(product!=null) {
 				product.setName(name);
 				product.setPrice(price);
 				product.setDescription(description);
+				product.setCantidad(cantidad);
 				productRepository.save(product);
 				return product;
 			}

@@ -12,7 +12,7 @@ public interface ProductService {
 
 	Product findProduct(Long id);
 
-	Product update(Long id, String name, BigInteger price, String description) throws Exception;
+	Product update(Long id, String name, BigInteger price, String description, Integer cantidad) throws Exception;
 
 	void delete(Long id) throws Exception;
 
@@ -20,7 +20,7 @@ public interface ProductService {
 
 	List<Product> listaSinCategorias(long id);
 
-	Product createProduct(Product myproduct);
+	Product createProduct(Product myproduct) throws Exception;
 
 
 }

@@ -35,7 +35,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/crear/producto")
-	public String createProduct(@Valid @ModelAttribute("product") Product userProduct, BindingResult result){
+	public String createProduct(@Valid @ModelAttribute("product") Product userProduct, BindingResult result) throws Exception{
 		if(result.hasErrors()) {
 			return "nuevoProducto.jsp";
 		}
@@ -65,7 +65,7 @@ public class ProductController {
     }
 	
 	@PutMapping("/{name}")
-    public String update(@Valid @ModelAttribute("product") Product myProduct, BindingResult result){
+    public String update(@Valid @ModelAttribute("product") Product myProduct, BindingResult result) throws Exception{
         if (result.hasErrors()) {
             return "edit.jsp";
         } else {
