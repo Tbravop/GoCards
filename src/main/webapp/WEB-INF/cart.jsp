@@ -12,15 +12,15 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
        		<meta http-equiv="X-UA-Compatible" content="IE=edge">			
 	    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">		
-			<link rel="stylesheet" href="/assets/css/style.css">
+			<link rel="stylesheet" href="/assets/css/cartstyle.css">
 			<link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 	
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css" />
 			<title>Carrito de compras</title>
 	</head>
 	<body>
-		 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #312783;">
+		 	<!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #312783;">
         <div class="container-fluid col-12">
          <a href="/">
 	      	<img src="/assets/img/logo.png" width="120" height="40">
@@ -56,18 +56,20 @@
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Bases</a></li>
                   <li><a class="dropdown-item" href="#">Productos Sellados</a></li>
-                  <li><a class="dropdown-item" href="#">Lotes</a></li>     
-                  <li><a class="dropdown-item" href="#">Vender</a></li>                                                                                     
+                  <li><a class="dropdown-item" href="#">Lotes</a></li>                                                                                      
                 </ul>
               </li>
                <li class="nav-item">
-                <a class="nav-link" href="/producto">Vender</a>
+                <a class="nav-link" href="/crear">Vender</a>
               </li>        
             </ul>
-			<a href="#" class="d-flex" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;">
-      		<i class="fas fa-user fa-2x p-1 text-white"></i>
-				<p class="text-white">Inicia sesión</p>
-		    </a>  
+            <div class="dropdown">
+      		<a href="#" class="fas fa-user fa-2x p-1 text-white d-block text-decoration-none link-dark dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"></a>
+		    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+			    <li><a class="dropdown-item" href="/login">Iniciar sesión</a></li>
+			    <li><a class="dropdown-item" href="/registration">Registrate</a></li>
+			</ul>
+		    </div>  
 			<a href="/carrito" class="d-flex" style="text-decoration: none;">
       		<i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
       		<p class="text-white">Carrito</p>
@@ -75,187 +77,29 @@
           </div>
          </div>
       </nav>
-      <!-- Modal login-->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <c:if test="${logoutMessage != null}">
-                  <c:out value="${logoutMessage}"></c:out>
-                  </c:if>
-                      <h5>Login</h5>
-                  <c:if test="${errorMessage != null}">
-                  <c:out value="${errorMessage}"></c:out>
-                  </c:if>
-                  <form method="POST" action="/login">
-                      <p>
-                          <label class="form-label" for="email">Correo</label>
-                          <input class="form-control" type="text" id="email" name="username"/>
-                      </p>
-                      <p>
-                          <label class="form-label" for="password">Contraseña</label>
-                          <input class="form-control" type="password" id="password" name="password"/>
-                      </p>
-                      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                      <input class="btn btn-primary" type="submit" value="Login!"/>
-                  </form>
-                  <a href="/registration">Registrate</a>
-              <c:if test="${User.getUser != null}">
-                  <form id="logoutForm" method="POST" action="/logout">
-                      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                      <input class="btn btn-danger" type="submit" value="Logout!" />
-                  </form>	
-              </c:if>
-            </div>
-          </div>
-        </div>
-      </div>		
 		<!-- TimeLiner -->
 		<div class="d-flex container justify-content-center" style="margin: 11vh">
-			<div class="container" margin-left 20px>
+			<div class="container" >
 			    <div class="platform-tour-wrapper py-3">
-			      <!-- Nav tabs -->
-				      <ul class="nav nav-tabs justify-content-around border-0 horizontal-tabs-steps">
-				        <li class="nav-item">
-				          <a class="nav-link active" data-toggle="tab"><span>1</span>
+			       	<!-- TimeLiner2 -->
+			       	<ul class='timeline justify-content-around border-0 horizontal'>
+					  <li class='active'>
+					  	<a class="nav-link active" data-toggle="tab">
 				          </a>
 				          <h4 class="text-center mt-1">Carro</h4>
-				        </li>
-				
-				        <li class="nav-item">
-				          <a class="nav-link" data-toggle="tab" ><span>2</span></a>
+					  </li>
+					  <li class='active'>
+					  <a class="nav-link" data-toggle="tab" ></a>
 				          <h4 class="text-center mt-1">Envio</h4>
-				        </li>
-				
-				        <li class="nav-item">
-				          <a class="nav-link" data-toggle="tab" ><span>3</span></a>
-				          <h4 class="text-center mt-1">Pago</h4>
-				        </li>
-			       	</ul>
+					  </li>
+					  <li class='active'>
+					  <a class="nav-link" data-toggle="tab" ></a>
+				          <h4 class="text-center mt-1">Pago</h4></li>
+					</ul>
 			        
 				</div>
 			</div>
 		</div>
-		<style>
-			<!-- CSS timeliner -->
-				.horizontal-tabs-steps {
-				  position: relative;
-				}
-				
-				.horizontal-tabs-steps .nav-item {
-				  z-index: 1;
-				  position: relative;
-				}
-				
-				.horizontal-tabs-steps .nav-item:after {
-				  content: "";
-				  border-top: 12px dotted #C4C4C4;
-				  position: absolute;
-				  z-index: 0;
-				  top: 10px;
-				  width: 390px;
-				  left: 0px;
-				  transition: border 1s ease-out;
-				  transition-delay: 0s, 0s, 0.1s;
-				}
-				
-				.horizontal-tabs-steps .nav-item:last-child:after {
-				  content: "";
-				  border-top: 0px dotted #C4C4C4;
-				}
-				
-				.horizontal-tabs-steps .nav-item.complete-step:after {
-				  content: "";
-				  border-top: 5px dotted #C4C4C4;
-				  position: absolute;
-				  z-index: 0;
-				  top: 12px;
-				  width: 265px;
-				  left: 0px;
-				  transition: border 1s ease-out;
-				  transition-delay: 0s, 0s, 0.1s
-				}
-				
-				.horizontal-tabs-steps .nav-link {
-				  background: #fff;
-				  border-radius: 50%;
-				  width: 50px;
-				  height: 50px;
-				  color: #131313;
-				  padding: 0;
-				  display: flex;
-				  justify-content: center;
-				  align-items: center;
-				  font-size: 12px;
-				  border: 2px solid #082A5C;
-				  z-index: 1;
-				  position: relative;
-				}
-				
-				
-				
-				.horizontal-tabs-steps .nav-link:hover .horizontal-tabs-steps .nav-link span {
-				  color: #4B98E0  !important;
-				}
-				
-				.horizontal-tabs-steps .nav-item h4 {
-				  font-size: 20px;
-				  color:#838383;
-				}
-				/*********** Responsive CSS Start***************/
-				
-				@media only screen and (max-width: 575px) {
-				  .vertical-tabs-steps .nav-link {
-				    width: 73px;
-				  }  
-				
-				  .vertical-tabs-steps .nav-link.checked-steps {
-				    padding: 10px 7px;
-				  }  
-				
-				  .vertical-tabs-steps .checked-steps:after {
-				    content: "\f00c";
-				    font-family: FontAwesome;
-				    color: #fff;
-				    position: absolute;
-				    right: 7px;
-				  }  
-				}
-
-				@media only screen and (min-width: 992px) and (max-width: 1199px) {
-				  .horizontal-tabs-steps .nav-item:after {
-				    content: "";
-				    width: 219px;
-				  } 
-				}
-				
-				@media only screen and (min-width: 768px) and (max-width: 991px) {
-				  .horizontal-tabs-steps .nav-item:after {
-				    content: "";
-				    width: 160px;
-				  } 
-				}
-				
-				@media only screen and (min-width: 421px) and (max-width: 767px) {
-				  .horizontal-tabs-steps .nav-item:after {
-				    content: "";
-				    width: 115px;
-				  } 
-				}
-				
-				@media only screen and (max-width: 420px) {
-				  .horizontal-tabs-steps .nav-item:after {
-				    content: "";
-				    width: 95px;
-				  } 
-				}
-		</style>
-		
-        
         		<!-- carrito -->
            		<div class="d-flex container justify-content-center" style="margin: 10vh">
 			    <div class="row">
