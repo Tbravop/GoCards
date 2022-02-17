@@ -1,5 +1,6 @@
 package com.coding.dojo.projecto.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -49,6 +50,9 @@ public class User {
 	private String phone;
 	
 	private int rating;
+	
+	@Column
+	private ArrayList<Product> favoritos;
 	
 	@Column(updatable=false)
 	private Date createdAt;
@@ -154,6 +158,13 @@ public class User {
 	}
 	public void setRating(int rating) {
 		this.rating = rating;
+	}
+	public ArrayList<Product> getFavoritos() {
+		return favoritos;
+	}
+
+	public void setFavoritos(ArrayList<Product> favoritos) {
+		this.favoritos = favoritos;
 	}
 	public BankAccount getAccount() {
 		return account;
