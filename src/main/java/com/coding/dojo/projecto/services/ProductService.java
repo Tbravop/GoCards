@@ -22,5 +22,4 @@ public interface ProductService {
 
 	Product createProduct(Product myproduct) throws Exception;
 
-	Product findByName(String name);
 }

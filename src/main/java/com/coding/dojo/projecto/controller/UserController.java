@@ -94,17 +94,5 @@ public class UserController {
         return "index.jsp";
     }
     
-    @GetMapping("/anadirfavoritos/{id}")
-    public String anadirFav (@RequestParam(value = "product", required = false) String productName, @PathVariable("id") Long id, Principal principal) {
-    	Product product = productService.findByName(productName);
-    	User u = userService.findByEmail(principal.getName());
-    	ArrayList<Product> favoritos = u.getFavoritos();
-    	if (!favoritos.contains(productName)) {
-        	favoritos.add(product);
-        	u.setFavoritos(favoritos);
-    	}
-    return "redirect:/cart";
-    }
-    
     
 }
