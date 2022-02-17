@@ -35,7 +35,6 @@
 								<c:if test="${logoutMessage != null}">
 									<c:out value="${logoutMessage}"></c:out>
 								</c:if>
-							<h5>Login</h5>
 							<c:if test="${errorMessage != null}">
 								<c:out value="${errorMessage}"></c:out>
 							</c:if>

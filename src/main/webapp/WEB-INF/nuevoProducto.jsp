@@ -83,11 +83,17 @@
       		</a>            
           </div>
          </div>
-      </nav>	 
-<section style="margin-top:100px">
-            <form:form  class="mb-3" action="/crear/producto" method="POST" modelAttribute="product">
+      </nav>
+      <div class="d-flex justify-content-center" style="margin-top:100px">
+		<section class="row">
+		<div class="card-body">
+		<div class="card">
+			<img src="/assets/img/03.png" class="card-img-top"alt="...">
+			<h1 class="card-title text-white" style="margin-left: 5px; padding-top: 35px;font-size: 50px;margin-top:-170px;margin-bottom:90px;">Crea un producto</h1>
+            <div class="card-body">
+            <form:form action="/crear/producto" method="POST" modelAttribute="product">
                 <p>
-                    <form:label class="form-label" path="name">Nombre del Producto: </form:label>
+                    <form:label  class="form-label" path="name">Nombre del Producto: </form:label>
                     <form:errors path="name"/>
                     <form:input  class="form-control" path="name"/>
                 </p>
@@ -102,19 +108,22 @@
                     <form:input  class="form-control" path="description"/>
                 </p>
                 <p>
-                    <form:label class="form-label" path="image">Imagen del Producto: </form:label>
+                    <form:label for="formFileSm" class="form-label" path="image">Imagen del Producto: </form:label>
                     <form:errors path="image"/>
-                    <form:input  class="form-control" path="image"/>
+                    <form:input  class="form-control form-control-sm" id="formFileSm" type="file" path="image"/>
                 </p>
                 <p>
                     <form:label class="form-label" path="cantidad">Cantidad: </form:label>
                     <form:errors path="cantidad"/>
                     <form:input  class="form-control" path="cantidad"/>
                 </p>                              
-                <input class="btn btn-primary" type="submit" value="crear"/>
-            </form:form>
-        </section>    
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        
-</body>
+				<input class="btn btn-primary" type="submit" value="crear"/>
+			</form:form>
+			</div>
+		</div>
+		</div>
+		</section>
+	</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	</body>
 </html>
