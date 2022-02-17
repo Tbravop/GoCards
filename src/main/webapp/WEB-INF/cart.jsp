@@ -141,7 +141,7 @@
 			                                <td>
 			                                    <div class="price-wrap"> <var class="price">$1.000</var></div>
 			                                </td>
-			                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-secondary" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-danger" data-abc="true"> Eliminar</a> </td>
+			                                <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="/anadirfavoritos/1" class="btn btn-secondary" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-danger" data-abc="true"> Eliminar</a> </td>
 			                            </tr>
 			                            <tr>
 			                                <td>
