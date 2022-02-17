@@ -13,6 +13,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -93,6 +94,27 @@ public class UserController {
         System.out.println(username);
         return "index.jsp";
     }
+<<<<<<< HEAD
     
     
+=======
+//    
+//    @GetMapping("/anadirfavoritos/{id}")
+//    public String anadirFav (@RequestParam(value = "product", required = false) String productName, @PathVariable("id") Long id, Principal principal) {
+//    	Product product = productService.findByName(productName);
+//    	User u = userService.findByEmail(principal.getName());
+//    	ArrayList<Product> favoritos = u.getFavoritos();
+//    	if (!favoritos.contains(productName)) {
+//        	favoritos.add(product);
+//        	u.setFavoritos(favoritos);
+//    	}
+//    return "redirect:/cart";
+//    }
+//    
+    @DeleteMapping("/eliminarproducto/{id}")
+    public String deleteProdCart (@PathVariable("id") Long id) throws Exception {
+    	productService.delete(id);
+    	return "redirect:/cart";
+    }
+>>>>>>> cc9091c17adbe5231d46449f006bf44f02ddaef5
 }
