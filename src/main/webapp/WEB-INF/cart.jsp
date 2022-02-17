@@ -196,7 +196,7 @@
 			                        <dt>Total:</dt>
 			                        <dd class="text-right text-dark b ml-3"><strong>$11.500</strong></dd>
 			                    </dl>
-			                    <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main mt-2" style="background-color: #4B98E0 !important" data-abc="true"> Comprar </a> <a href="/" class="btn btn-out btn-success btn-square btn-main mt-2"style="background-color: #082A5C !important"  data-abc="true">Continuar comprando</a>
+			                    <hr> <a href="/envio" class="btn btn-out btn-primary btn-square btn-main mt-2" style="background-color: #4B98E0 !important" data-abc="true"> Comprar </a> <a href="/" class="btn btn-out btn-success btn-square btn-main mt-2"style="background-color: #082A5C !important"  data-abc="true">Continuar comprando</a>
 			                </div>
 			            </div>
 			        </aside>
