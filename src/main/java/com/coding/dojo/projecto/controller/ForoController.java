@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.coding.dojo.projecto.model.Article;
+import com.coding.dojo.projecto.model.Comment;
 import com.coding.dojo.projecto.services.ArticleService;
 import com.coding.dojo.projecto.services.CommentService;
 import com.coding.dojo.projecto.services.UserService;
@@ -35,11 +36,11 @@ public class ForoController {
 		model.addAttribute("article", articleService.article());
 		return "foro.jsp";
 	}
-	@GetMapping("/foro/new")
+	@GetMapping("/post/new")
 	public String addArticle(@ModelAttribute("articulo") Article article) {
 		return "article.jsp";
 	}
-	@PostMapping("/foro/new")
+	@PostMapping("/post/new")
 	public String addArticle(@Valid @ModelAttribute("articulo") Article article, BindingResult result, RedirectAttributes errors) {
 		if(result.hasErrors()) {
 			errors.addFlashAttribute("errors" , result.getAllErrors());
@@ -50,10 +51,26 @@ public class ForoController {
 			return "redirect:/foro/" + article.getId();
 		}
 	}
-	@GetMapping("/foro/{id}")
-	public String showArticle(@PathVariable("id")Long artId, @ModelAttribute("articulo") Article article, Model model) {
+	@GetMapping("/post/{id}")
+	public String showArticle(@PathVariable("id")Long artId, @ModelAttribute("articulo") Article article, Model model, @ModelAttribute("comentario")Comment comment) {
 		Article art = articleService.findArticle(artId);
 		model.addAttribute("article", art);
+		model.addAttribute("comment", art.getComment());
 		return "article.jsp";
-	}	
+	}
+	@GetMapping("/comentario/post")
+	public String comentario(@ModelAttribute("comentario") Comment comment) {		
+		return "comentario.jsp";		
+	}
+	@PostMapping("/comentario/post/{id}")
+	public String comentario(@PathVariable("id")Long artId, @ModelAttribute("comentario") Comment comment,BindingResult result, RedirectAttributes errors) {
+		if(result.hasErrors()) {
+			errors.addFlashAttribute("errors", result.getAllErrors());
+			return "comentario.jsp";
+		}
+		else {
+			commentService.create(comment);
+			return "redirect:/post/" + comment.getId();
+		}
+	}
 }
