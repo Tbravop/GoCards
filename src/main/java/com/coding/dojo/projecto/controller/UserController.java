@@ -56,15 +56,15 @@ public class UserController {
         }
         	userService.createUser(user);
             return"redirect:/login";
-		}
-	
-	@RequestMapping("/login")
-	public String loginPage() {
-		return"login.jsp";
 	}
 	
 	@GetMapping("/login")
-    public String login(@RequestParam(value="error", required= false)String error, @RequestParam(value="logout", required=false)String logout,Model model) {
+	public String loginPage(){
+		return "login.jsp";
+	}
+	
+	@RequestMapping("/login")
+    public String login(@RequestParam(value="error", required= false)String error, @RequestParam(value="logout", required=false)String logout, @RequestParam(value = "username")String email, @RequestParam(value="password")String password, Model model) {
         if(error != null) {
             model.addAttribute("errorMessage", "Error o Contraseña Erroneo, Intente de nuevo.");
         }
@@ -88,6 +88,7 @@ public class UserController {
         // 1
         String username = principal.getName();
         model.addAttribute("currentUser", userService.findByEmail(username));
+        System.out.println(username);
         return "index.jsp";
     }
 	

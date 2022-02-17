@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.coding.dojo.projecto.model.Category;
 import com.coding.dojo.projecto.model.Product;
+import com.coding.dojo.projecto.model.User;
 import com.coding.dojo.projecto.repository.ProductRepository;
 import com.coding.dojo.projecto.services.CategoryService;
 import com.coding.dojo.projecto.services.ProductService;
@@ -26,8 +27,7 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
 	@Lazy
 	private CategoryService categoryService;
-	@Autowired
-	private UserService userService;
+
 	
 	@Override
 	public List<Product> allProduct(){

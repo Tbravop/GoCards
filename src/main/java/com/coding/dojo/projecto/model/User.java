@@ -73,10 +73,13 @@ public class User {
     		joinColumns = @JoinColumn(name="user_id"),
     		inverseJoinColumns = @JoinColumn(name="comuna_id"))
 	private List<Comuna> comuna;
+	
 	@OneToMany(mappedBy="user", fetch = FetchType.LAZY)
     private List<Product> product;
+	
 	@OneToMany(mappedBy="user", fetch = FetchType.LAZY)
     private List<Article> article;
+	
 	@OneToMany(mappedBy="user", fetch = FetchType.LAZY)
     private List<Comment> comment;
 	

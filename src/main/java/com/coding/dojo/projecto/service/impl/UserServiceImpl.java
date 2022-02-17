@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.coding.dojo.projecto.model.User;
 import com.coding.dojo.projecto.repository.RoleRepository;
 import com.coding.dojo.projecto.repository.UserRepository;
+import com.coding.dojo.projecto.services.ProductService;
 import com.coding.dojo.projecto.services.UserService;
 
 @Service
@@ -23,6 +24,8 @@ public class UserServiceImpl implements UserService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 	@Autowired
 	private RoleRepository roleRepository;
+	@Autowired
+	private ProductService productService;
 	
 	@Override
 	public List<User> allUser(){
@@ -58,4 +61,6 @@ public class UserServiceImpl implements UserService {
 	public User findByName(String name) {
 		return userRepository.findByName(name);	
 	}
+	
+	
 }
