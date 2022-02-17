@@ -94,10 +94,6 @@ public class UserController {
         System.out.println(username);
         return "index.jsp";
     }
-<<<<<<< HEAD
-    
-    
-=======
 //    
 //    @GetMapping("/anadirfavoritos/{id}")
 //    public String anadirFav (@RequestParam(value = "product", required = false) String productName, @PathVariable("id") Long id, Principal principal) {
@@ -116,5 +112,4 @@ public class UserController {
     	productService.delete(id);
     	return "redirect:/cart";
     }
->>>>>>> cc9091c17adbe5231d46449f006bf44f02ddaef5
 }
