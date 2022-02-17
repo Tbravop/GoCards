@@ -20,7 +20,7 @@
 	</head>
 	<body>
 	 	<!-- NavBar -->
-    	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #312783;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #312783;">
         <div class="container-fluid col-12">
          <a href="/">
 	      	<img src="/assets/img/logo.png" width="120" height="40">
@@ -66,8 +66,16 @@
             <div class="dropdown">
       		<a href="#" class="fas fa-user fa-2x p-1 text-white d-block text-decoration-none link-dark dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"></a>
 		    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-			    <li><a class="dropdown-item" href="/login">Iniciar sesión</a></li>
-			    <li><a class="dropdown-item" href="/registration">Registrate</a></li>
+		    	<c:if test="${username.equals(null)}"><li><a class="dropdown-item" href="/login">Iniciar sesión</a></li> 
+		    		<li><a class="dropdown-item" href="/registration">Registrate</a></li></c:if>
+		    	<c:if test="${!username.equals(null)}"> <form id="logoutForm" method="POST" action="/logout">
+				        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+				        <input type="submit" value="Logout!" />
+				    	</form>
+			    </c:if>
+		    	
+<!-- 			    <li><a class="dropdown-item" href="/login">Iniciar sesión</a></li> -->
+<!-- 			    <li><a class="dropdown-item" href="/registration">Registrate</a></li> -->
 			</ul>
 		    </div>  
 			<a href="/carrito" class="d-flex" style="text-decoration: none;">
