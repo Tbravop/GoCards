@@ -1,6 +1,7 @@
 package com.coding.dojo.projecto.controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.coding.dojo.projecto.model.Product;
 import com.coding.dojo.projecto.model.User;
 import com.coding.dojo.projecto.services.ProductService;
 import com.coding.dojo.projecto.services.RoleService;
@@ -77,8 +79,10 @@ public class UserController {
     public String home(Principal principal, Model model) {
         // 1
     	if(principal != null) {
+    		List<Product> p = productService.allProduct();
 	        String username = principal.getName();
 	        model.addAttribute("currentUser", userService.findByEmail(username));
+	        model.addAttribute("products", p);
 	        System.out.println(username);
     	}
         return "index.jsp";
