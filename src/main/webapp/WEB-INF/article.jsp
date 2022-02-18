@@ -91,7 +91,7 @@
 				<label for="formFileMultiple" class="form-label">Subir imágenes</label>
 				<input class="form-control" type="file" id="formFileMultiple" multiple />
 				</p>
-				 <input class="btn btn-primary" type="submit" value="Crear"/>
+				 <a class="post" href="/foro"><input class="btn btn-primary" type="submit" value="Crear"/></a>
 			</form:form>
 			<c:forEach items="${comentarios}" var="comentario">
 				<a href="/post/${comment.id}"></a><c:out value="${comment.text}"/>
