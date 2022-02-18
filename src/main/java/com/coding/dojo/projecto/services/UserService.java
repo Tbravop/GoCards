@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.coding.dojo.projecto.model.Product;
 import com.coding.dojo.projecto.model.User;
 
 @Service
@@ -19,6 +18,8 @@ public interface UserService {
 	void createUser(User user);
 
 	User findByName(String name);
+
+	User getLoggedInUser();
 
 	
 }

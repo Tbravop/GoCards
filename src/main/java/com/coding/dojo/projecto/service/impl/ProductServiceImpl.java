@@ -27,6 +27,10 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
 	@Lazy
 	private CategoryService categoryService;
+	
+	@Autowired
+	@Lazy
+	private UserService userService;
 
 	
 	@Override
@@ -34,16 +38,30 @@ public class ProductServiceImpl implements ProductService{
 		return (List<Product>) productRepository.findAll();
 	}
 	
+//	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//    String userName = (String)auth.getPrincipal();
+//    AppUser user = this.userRepo.findByUserName(userName);
+//    if(user != null) {
+//        return user;
+//    }
+    
 	@Override
     public Product createProduct(Product myProduct) throws Exception {
 		//buscar product por name
-		Optional<Product> product = productRepository.findByName(myProduct.getName());
-		//si existe error 
-		if(product.isPresent()) {
-			throw new Exception("El producto ya existe");
+		User user = userService.getLoggedInUser();
+		if(user != null) {
+			Optional<Product> product = productRepository.findByNameAndUser(myProduct.getName(), user);
+			//si existe error 
+			if(product.isPresent()) {
+				throw new Exception("El producto ya existe");
+			}
+			myProduct.setUser(user);
+			//si no existe lo crea 
+			return productRepository.save(myProduct);
 		}
-		//si no existe lo crea 
-		return productRepository.save(myProduct);
+		else {
+			throw new Exception("el usuario no esta logeado");
+		}
 	}
 	
 	@Override

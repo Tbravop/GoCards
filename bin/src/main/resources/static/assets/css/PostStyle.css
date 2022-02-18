@@ -1,0 +1,17 @@
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 500px; 
+  margin: 100px auto;  
+  counter-reset: step;
+}
+
+body {
+	background-image:url("/assets/img/02.png");
+	font-family: 'Montserrat', sans-serif;
+}
+header{
+	margin-top:75px;
+	color:white;
+}

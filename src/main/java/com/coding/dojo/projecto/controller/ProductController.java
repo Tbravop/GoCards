@@ -18,9 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.coding.dojo.projecto.model.Product;
-import com.coding.dojo.projecto.model.User;
-import com.coding.dojo.projecto.repository.ProductRepository;
-import com.coding.dojo.projecto.repository.UserRepository;
 import com.coding.dojo.projecto.services.CategoryService;
 import com.coding.dojo.projecto.services.ProductService;
 import com.coding.dojo.projecto.services.UserService;
@@ -28,10 +25,6 @@ import com.coding.dojo.projecto.services.UserService;
 @Controller
 public class ProductController {
 
-	@Autowired
-	private ProductRepository productRepository;
-	@Autowired
-	private UserRepository userRepository;
 	@Autowired
 	@Lazy
 	private ProductService productService;
@@ -49,20 +42,8 @@ public class ProductController {
 	
 	@PostMapping("/crear/producto")
 	public String createProduct(@Valid @ModelAttribute("product") Product userProduct, BindingResult result,Principal principal, Model model) throws Exception{
-		String username = principal.getName();
-		model.addAttribute("list", userService.findByEmail(username));
-		User u = userService.findByEmail(username);
-		if(u.getProduct().contains(userProduct)) {
-			return "nuevoProducto.jsp";
-		}
-		else {
-			productService.createProduct(userProduct);
-			u.getProduct().add(userProduct);
-			userProduct.setUser(u);
-			productRepository.save(userProduct);
-			userRepository.save(u);
-			return "anadirCategoria.jsp";
-		}
+		productService.createProduct(userProduct);
+		return "anadirCategoria.jsp";
 	}
 	
 	@PostMapping("/añadirCategorias/{idP}")

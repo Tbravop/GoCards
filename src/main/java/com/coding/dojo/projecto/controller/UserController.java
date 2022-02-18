@@ -1,15 +1,12 @@
 package com.coding.dojo.projecto.controller;
 
 import java.security.Principal;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,10 +16,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.coding.dojo.projecto.model.Product;
 import com.coding.dojo.projecto.model.User;
 import com.coding.dojo.projecto.services.ProductService;
 import com.coding.dojo.projecto.services.RoleService;
@@ -61,13 +56,13 @@ public class UserController {
             return"redirect:/login";
 	}
 	
-	@GetMapping("/login")
+	@GetMapping("/goLogin")
 	public String loginPage(){
 		return "login.jsp";
 	}
 	
-	@RequestMapping("/login")
-    public String login(@RequestParam(value="error", required= false)String error, @RequestParam(value="logout", required=false)String logout, @RequestParam(value = "username")String email, @RequestParam(value="password")String password, Model model) {
+	@GetMapping("/login")
+    public String login(@RequestParam(value="error", required= false)String error, @RequestParam(value="logout", required=false)String logout, Model model) {
         if(error != null) {
             model.addAttribute("errorMessage", "Error o Contraseña Erroneo, Intente de nuevo.");
         }
@@ -75,38 +70,20 @@ public class UserController {
             model.addAttribute("logout", "Se cerro Su session de forma Exitosa!");
             return"redirect:/";
         }
-            return"redirect:/login";
-       
+            return"redirect:/";
     }
-	
-	@GetMapping("/")
-	public String index(Principal principal, Model model) {
-		List<Product> product = productService.allProduct();
-		model.addAttribute("producto", product);
-		return "index.jsp";
-	}
 	
     @RequestMapping(value = {"/", "/home"})
     public String home(Principal principal, Model model) {
         // 1
-        String username = principal.getName();
-        model.addAttribute("currentUser", userService.findByEmail(username));
-        System.out.println(username);
+    	if(principal != null) {
+	        String username = principal.getName();
+	        model.addAttribute("currentUser", userService.findByEmail(username));
+	        System.out.println(username);
+    	}
         return "index.jsp";
     }
-//    
-//    @GetMapping("/anadirfavoritos/{id}")
-//    public String anadirFav (@RequestParam(value = "product", required = false) String productName, @PathVariable("id") Long id, Principal principal) {
-//    	Product product = productService.findByName(productName);
-//    	User u = userService.findByEmail(principal.getName());
-//    	ArrayList<Product> favoritos = u.getFavoritos();
-//    	if (!favoritos.contains(productName)) {
-//        	favoritos.add(product);
-//        	u.setFavoritos(favoritos);
-//    	}
-//    return "redirect:/cart";
-//    }
-//    
+    
     @DeleteMapping("/eliminarproducto/{id}")
     public String deleteProdCart (@PathVariable("id") Long id) throws Exception {
     	productService.delete(id);

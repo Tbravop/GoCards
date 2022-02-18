@@ -6,13 +6,14 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.coding.dojo.projecto.model.User;
 import com.coding.dojo.projecto.repository.RoleRepository;
 import com.coding.dojo.projecto.repository.UserRepository;
-import com.coding.dojo.projecto.services.ProductService;
 import com.coding.dojo.projecto.services.UserService;
 
 @Service
@@ -24,12 +25,25 @@ public class UserServiceImpl implements UserService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 	@Autowired
 	private RoleRepository roleRepository;
-	@Autowired
-	private ProductService productService;
 	
 	@Override
 	public List<User> allUser(){
 		return (List<User>) userRepository.findAll();
+	}
+	
+	@Override
+	public User getLoggedInUser() {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(auth.getPrincipal() instanceof org.springframework.security.core.userdetails.User) {
+		    org.springframework.security.core.userdetails.User userName = (org.springframework.security.core.userdetails.User)auth.getPrincipal();
+		    if(userName!=null) {
+			    User user = this.userRepository.findByEmail(userName.getUsername());
+			    if(user != null) {
+			        return user;
+			    }
+		    }
+		}
+	    return null;
 	}
 	
 	@Override

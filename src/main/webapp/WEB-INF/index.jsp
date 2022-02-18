@@ -66,9 +66,9 @@
             <div class="dropdown">
       		<a href="#" class="fas fa-user fa-2x p-1 text-white d-block text-decoration-none link-dark dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"></a>
 		    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-		    	<c:if test="${username.equals(null)}"><li><a class="dropdown-item" href="/login">Iniciar sesión</a></li> 
+		    	<c:if test="${currentUser == null}"><li><a class="dropdown-item" href="/goLogin">Iniciar sesión</a></li> 
 		    		<li><a class="dropdown-item" href="/registration">Registrate</a></li></c:if>
-		    	<c:if test="${!username.equals(null)}"> <form id="logoutForm" method="POST" action="/logout">
+		    	<c:if test="${currentUser != null}"> <form id="logoutForm" method="POST" action="/logout">
 				        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 				        <input type="submit" value="Logout!" />
 				    	</form>
