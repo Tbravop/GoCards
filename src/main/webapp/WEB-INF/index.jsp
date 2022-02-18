@@ -41,15 +41,12 @@
 			        <input class="form-control me-2" style="width: 300px;" type="search" placeholder="Buscar una carta" aria-label="Search">
 			        <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
 		      	</form>	      	
-              </li>              
-              <li class="nav-item">
-                <a class="nav-link" href="/foro">Ir a Comunidad</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   MarketPlace
                 </a>
-                <ul class="dropdown-menu" style="background-color: white;" aria-labelledby="navbarDropdown">
+                <ul class="dropdown-menu bg-white" style="background-color: white;" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">Lo más Vendido</a></li>
                   <li><a class="dropdown-item" href="#">Ofertas Destacadas</a></li>
                   <li><a class="dropdown-item" href="#">Lo nuevo</a></li>                  
@@ -58,9 +55,14 @@
                   <li><a class="dropdown-item" href="#">Productos Sellados</a></li>
                   <li><a class="dropdown-item" href="#">Lotes</a></li>                                                                                      
                 </ul>
+              </li>                            
+              <li class="nav-item">
+               <c:if test="${currentUser == null}"><a class="nav-link disabled" href="/foro">Ir a Comunidad</a></c:if>
+               <c:if test="${currentUser != null}"><a class="nav-link active" href="/foro">Ir a Comunidad</a></c:if>  
               </li>
                <li class="nav-item">
-                <a class="nav-link" href="/crear">Vender</a>
+               <c:if test="${currentUser == null}"><a class="nav-link disabled" href="/crear">Vender</a></c:if>
+               <c:if test="${currentUser != null}"><a class="nav-link active" href="/crear">Vender</a></c:if>               
               </li>        
             </ul>
             <div class="dropdown">
@@ -68,14 +70,13 @@
 		    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
 		    	<c:if test="${currentUser == null}"><li><a class="dropdown-item" href="/goLogin">Iniciar sesión</a></li> 
 		    		<li><a class="dropdown-item" href="/registration">Registrate</a></li></c:if>
-		    	<c:if test="${currentUser != null}"> <form id="logoutForm" method="POST" action="/logout">
-				        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-				        <input type="submit" value="Logout!" style="border:none; background: none;"/>
-				    	</form>
+		    	<c:if test="${currentUser != null}">
+			    	<form class="dropdown-item" id="logoutForm" method="POST" action="/logout">
+					        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					        <input type="submit" value="Cerrar sesión" style="border:none; background: none;"/>
+					</form>
+					<a class="dropdown-item" href="/sells">Ventas</a>
 			    </c:if>
-		    	
-<!-- 			    <li><a class="dropdown-item" href="/login">Iniciar sesión</a></li> -->
-<!-- 			    <li><a class="dropdown-item" href="/registration">Registrate</a></li> -->
 			</ul>
 		    </div>  
 			<a href="/carrito" class="d-flex" style="text-decoration: none;">
@@ -114,37 +115,22 @@
       <h1 class="text-center mt-1 py-3 text-white" style="background-color: #312783;">Nuestros Productos</h1>
 <div class="row d-flex justify-content-center bg-white" >
 	<c:forEach items="${products}" var="prod">
+
 	<div class="col-md-6 col-xl-4 p-3" style="max-width: 18rem;">
+
+	<div class="col-6 col-xl-4 p-3" style="max-width: 18rem;border-radius: 5px;">
+
 			<div class="card">
 		  <img class="card-img-top" src="/assets/img/unknown.jpg">
 		  <div class="card-body">
 		    <h3 class="card-title"><c:out value="${prod.name}"/></h3>
 		    <p class="card-text">Envío gratis</p>
-		  </div>
-		  <ul class="list-group list-group-flush">
-		    <li class="list-group-item">An item</li>
-		    <li class="list-group-item">A second item</li>
-		    <li class="list-group-item">A third item</li>
-		  </ul>
-		  <div class="card-body">
-		    <a href="#" class="card-link">Card link</a>
-		    <a href="#" class="card-link">Another link</a>
+		    <h2 class="" style="font-weight:700;font-size: 15px;">CLP <c:out value="${prod.price}"/></h2>
 		  </div>
 		</div>
 	</div>	
 		
-<!-- 		<div class="col-lg-3 col-md-6 mb-4"> -->
-<!-- 		  <div class="card h-100"> -->
-<!-- 		    <img class="card-img-top" src="/assets/img/unknown.jpg"> -->
-<!-- 		    <div class="card-body"> -->
-<%-- 		      <p class="card-text"><c:out value="${prod.name}"/></p> --%>
-<%-- 		      <p class="card-text">$<c:out value="${prod.price}"/></p> --%>
-<!-- 		    </div> -->
-<!-- 		    <div class="card-footer"> -->
-<!-- 		      <a href="productohome.html" class="btn btn-success">Ver producto</a> -->
-<!-- 		    </div> -->
-<!-- 		  </div> -->
-<!-- 		</div> -->
+
 	</c:forEach>
 </div>
 
@@ -163,13 +149,13 @@
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Sobre nosotros</a></li>          
         </ul>
       </div>
-      <div class="col-8 offset-1">
+      <div class="col-6 offset-1">
         <form>
           <h5>Suscribete para recibir todas las novedades</h5>
           <p>Mensualmente te llegaran mensajes con lo mas destacado.</p>
           <div class="d-flex w-100 gap-2">
             <label for="newsletter1" class="visually-hidden">Email address</label>
-            <input id="newsletter1" type="text" class="form-control" placeholder="Escribe tu Email aqui">
+            <input id="newsletter1" type="text" class="form-control" placeholder="Escribe tu Email">
             <button class="btn btn-primary" type="button">Suscribete</button>
           </div>
         </form>
