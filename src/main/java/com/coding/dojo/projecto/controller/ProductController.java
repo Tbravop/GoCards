@@ -42,7 +42,16 @@ public class ProductController {
 	
 	@PostMapping("/crear/producto")
 	public String createProduct(@Valid @ModelAttribute("product") Product userProduct, BindingResult result,Principal principal, Model model) throws Exception{
+		if(result.hasErrors()) {
+			return "nuevoProducto.jsp";
+		}
+		try {
 		productService.createProduct(userProduct);
+		}
+		catch(Exception e){
+			model.addAttribute("error", e.getMessage());
+			return "nuevoProducto.jsp";
+		}
 		Long id = userProduct.getId();
 		return "redirect:/addCategory/"+id;
 	}

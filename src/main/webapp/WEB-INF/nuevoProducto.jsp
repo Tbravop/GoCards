@@ -90,6 +90,9 @@
 		<div class="card">
 			<img src="/assets/img/03.png" class="card-img-top"alt="...">
 			<h1 class="card-title text-white" style="margin-left: 5px; padding-top: 35px;font-size: 50px;margin-top:-170px;margin-bottom:90px;">Crea un producto</h1>
+         	
+         	<p><form:errors path="product.*"/><c:out value="${error}"/></p>
+         	
             <div class="card-body">
             <form:form action="/crear/producto" method="POST" modelAttribute="product">
                 <p>
