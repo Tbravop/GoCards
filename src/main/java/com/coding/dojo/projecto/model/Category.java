@@ -19,8 +19,7 @@ public class Category {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
-	private String name;
-	private String cardType;
+	private String category;
 	@ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
         name = "categories_products", 
@@ -38,18 +37,15 @@ public class Category {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	
+	public String getCategory() {
+		return category;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
-	public String getCardType() {
-		return cardType;
-	}
-	public void setCardType(String cardType) {
-		this.cardType = cardType;
-	}
+
 	public List<Product> getProduct() {
 		return product;
 	}
