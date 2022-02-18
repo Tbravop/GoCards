@@ -70,7 +70,7 @@
 		    		<li><a class="dropdown-item" href="/registration">Registrate</a></li></c:if>
 		    	<c:if test="${currentUser != null}"> <form id="logoutForm" method="POST" action="/logout">
 				        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-				        <input type="submit" value="Logout!" />
+				        <input type="submit" value="Logout!" style="border:none; background: none;"/>
 				    	</form>
 			    </c:if>
 		    	
