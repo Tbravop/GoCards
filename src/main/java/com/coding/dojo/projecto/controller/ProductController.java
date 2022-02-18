@@ -49,7 +49,7 @@ public class ProductController {
 	public String addC(@PathVariable("id") long id, Model model) {
 		model.addAttribute("lista", productService.listaSinCategorias(id));
 		model.addAttribute("category", categoryService.findCategory(id));
-		return "categ.jsp";
+		return "añadirCategoria.jsp";
 	}
 	
 	@PostMapping("/añadirCategorias/{idP}")
