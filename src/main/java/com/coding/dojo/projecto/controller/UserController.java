@@ -77,12 +77,11 @@ public class UserController {
 	
     @RequestMapping(value = {"/", "/home"})
     public String home(Principal principal, Model model) {
-        // 1
+    	List<Product> p = productService.allProduct();
+    	model.addAttribute("products", p);
     	if(principal != null) {
-    		List<Product> p = productService.allProduct();
 	        String username = principal.getName();
 	        model.addAttribute("currentUser", userService.findByEmail(username));
-	        model.addAttribute("products", p);
 	        System.out.println(username);
     	}
         return "index.jsp";
