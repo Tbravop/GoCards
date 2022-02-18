@@ -111,20 +111,40 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<div class="row text-center">
+      <h1 class="text-center mt-1 py-3 text-white" style="background-color: #312783;">Nuestros Productos</h1>
+<div class="row d-flex justify-content-center bg-white" >
 	<c:forEach items="${products}" var="prod">
-		<div class="col-lg-3 col-md-6 mb-4">
-		  <div class="card h-100">
-		    <img class="card-img-top" src="https://images-ext-1.discordapp.net/external/90zEi3EeMB4MiS_vcJVAw0ev1nd2OaGnWuPKJe6vneE/https/m.media-amazon.com/images/I/51prO3rFM5L._AC_.jpg?width=336&height=493" alt="">
-		    <div class="card-body">
-		      <p class="card-text"><c:out value="${prod.name}"/></p>
-		      <p class="card-text">$<c:out value="${prod.price}"/></p>
-		    </div>
-		    <div class="card-footer">
-		      <a href="productohome.html" class="btn btn-success">Ver producto</a>
-		    </div>
+	<div class="col-md-6 col-xl-4 p-3" style="max-width: 25rem;">
+			<div class="card">
+		  <img class="card-img-top" src="/assets/img/unknown.jpg">
+		  <div class="card-body">
+		    <h3 class="card-title"><c:out value="${prod.name}"/></h3>
+		    <p class="card-text">Envío gratis</p>
+		  </div>
+		  <ul class="list-group list-group-flush">
+		    <li class="list-group-item">An item</li>
+		    <li class="list-group-item">A second item</li>
+		    <li class="list-group-item">A third item</li>
+		  </ul>
+		  <div class="card-body">
+		    <a href="#" class="card-link">Card link</a>
+		    <a href="#" class="card-link">Another link</a>
 		  </div>
 		</div>
+	</div>	
+		
+<!-- 		<div class="col-lg-3 col-md-6 mb-4"> -->
+<!-- 		  <div class="card h-100"> -->
+<!-- 		    <img class="card-img-top" src="/assets/img/unknown.jpg"> -->
+<!-- 		    <div class="card-body"> -->
+<%-- 		      <p class="card-text"><c:out value="${prod.name}"/></p> --%>
+<%-- 		      <p class="card-text">$<c:out value="${prod.price}"/></p> --%>
+<!-- 		    </div> -->
+<!-- 		    <div class="card-footer"> -->
+<!-- 		      <a href="productohome.html" class="btn btn-success">Ver producto</a> -->
+<!-- 		    </div> -->
+<!-- 		  </div> -->
+<!-- 		</div> -->
 	</c:forEach>
 </div>
 
