@@ -19,6 +19,9 @@ import com.coding.dojo.projecto.services.CategoryService;
 import com.coding.dojo.projecto.services.ProductService;
 import com.coding.dojo.projecto.services.UserService;
 
+import ExceptionHandler.CustomizeErrorCode;
+import ExceptionHandler.CustomizeException;
+
 @Service
 public class ProductServiceImpl implements ProductService{
 
@@ -53,14 +56,14 @@ public class ProductServiceImpl implements ProductService{
 			Optional<Product> product = productRepository.findByNameAndUser(myProduct.getName(), user);
 			//si existe error 
 			if(product.isPresent()) {
-				throw new Exception("El producto ya existe");
+				throw new CustomizeException(CustomizeErrorCode.FILE_EXIST);
 			}
 			myProduct.setUser(user);
 			//si no existe lo crea 
 			return productRepository.save(myProduct);
 		}
 		else {
-			throw new Exception("el usuario no esta logeado");
+			throw new CustomizeException(CustomizeErrorCode.USER_NOT_LOGGED);
 		}
 	}
 	

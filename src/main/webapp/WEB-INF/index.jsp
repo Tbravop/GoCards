@@ -114,7 +114,7 @@
       <h1 class="text-center mt-1 py-3 text-white" style="background-color: #312783;">Nuestros Productos</h1>
 <div class="row d-flex justify-content-center bg-white" >
 	<c:forEach items="${products}" var="prod">
-	<div class="col-md-6 col-xl-4 p-3" style="max-width: 25rem;">
+	<div class="col-md-6 col-xl-4 p-3" style="max-width: 18rem;">
 			<div class="card">
 		  <img class="card-img-top" src="/assets/img/unknown.jpg">
 		  <div class="card-body">
