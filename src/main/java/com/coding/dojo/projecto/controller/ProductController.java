@@ -42,8 +42,24 @@ public class ProductController {
 	
 	@PostMapping("/crear/producto")
 	public String createProduct(@Valid @ModelAttribute("product") Product userProduct, BindingResult result,Principal principal, Model model) throws Exception{
+		if(result.hasErrors()) {
+			return "nuevoProducto.jsp";
+		}
+		try {
 		productService.createProduct(userProduct);
-		return "anadirCategoria.jsp";
+		}
+		catch(Exception e){
+			model.addAttribute("error", e.getMessage());
+			return "nuevoProducto.jsp";
+		}
+		Long id = userProduct.getId();
+		return "redirect:/addCategory/"+id;
+	}
+	@GetMapping("/addCategory/{id}")
+	public String addC(@PathVariable("id") long id, Model model) {
+		model.addAttribute("lista", categoryService.listaSinProductos(id));
+		model.addAttribute("product", productService.findProduct(id));
+		return "añadirCategoria.jsp";
 	}
 	
 	@PostMapping("/añadirCategorias/{idP}")

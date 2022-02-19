@@ -60,7 +60,7 @@ public class ProductServiceImpl implements ProductService{
 			return productRepository.save(myProduct);
 		}
 		else {
-			throw new Exception("el usuario no esta logeado");
+			throw new Exception("El usuario no esta logeado");
 		}
 	}
 	
