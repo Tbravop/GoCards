@@ -1,6 +1,9 @@
 package com.coding.dojo.projecto.controller;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -34,6 +37,7 @@ public class ForoController {
 	@RequestMapping("/foro")
 	public String dashboard(Model model) {
 		model.addAttribute("article", articleService.article());
+		System.out.println(articleService.article());
 		return "foro.jsp";
 	}
 	@GetMapping("/post/new")
@@ -48,7 +52,7 @@ public class ForoController {
 		}
 		else {
 			articleService.create(article);
-			return "redirect:/foro/" + article.getId();
+			return "redirect:/foro/";
 		}
 	}
 	@GetMapping("/post/{id}")
@@ -56,21 +60,38 @@ public class ForoController {
 		Article art = articleService.findArticle(artId);
 		model.addAttribute("article", art);
 		model.addAttribute("comment", art.getComment());
-		return "article.jsp";
+		List<Comment> comentarios =  art.getComment();
+		if(comentarios.contains(comment)){
+			return "foro.jsp";
+		}
+		else {
+			comentarios.add(comment);
+			article.setComment(comentarios);
+			return "foro.jsp";
+		}		
 	}
-	@GetMapping("/comentario/post")
+	@GetMapping("/post/comentario")
 	public String comentario(@ModelAttribute("comentario") Comment comment) {		
-		return "comentario.jsp";		
+		return "foro.jsp";		
 	}
-	@PostMapping("/comentario/post/{id}")
-	public String comentario(@PathVariable("id")Long artId, @ModelAttribute("comentario") Comment comment,BindingResult result, RedirectAttributes errors) {
+	@PostMapping("/post/{id}/comentario")
+	public String comentario(@PathVariable("id")Long artId, @ModelAttribute("comentario") Comment comment, BindingResult result, RedirectAttributes errors, Model model) {
+		Article art = articleService.findArticle(artId);
 		if(result.hasErrors()) {
 			errors.addFlashAttribute("errors", result.getAllErrors());
-			return "comentario.jsp";
+			return "foro.jsp";
 		}
 		else {
 			commentService.create(comment);
-			return "redirect:/post/" + comment.getId();
+			List<Comment> comentarios =  art.getComment();
+			if(comentarios.contains(comment)){
+				return "foro.jsp";
+			}
+			else {
+				comentarios.add(comment);
+				art.setComment(comentarios);
+				return "redirect:/foro";
+			}			
 		}
 	}
 }
