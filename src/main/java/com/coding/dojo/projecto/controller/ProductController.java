@@ -3,6 +3,7 @@ package com.coding.dojo.projecto.controller;
 import java.security.Principal;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,31 +77,33 @@ public class ProductController {
 		if(u.getProduct().size() == 1) {
 			return "redirect:/datosBank";
 		}else {
-		return "redirect:/product/"+id;
+		return "redirect:/producto/"+id;
 		}
 	}
 	
 	@GetMapping("/datosBank")
-	public String datoB(Model model) {
-		User u = userService.getLoggedInUser();
-		model.addAttribute("user", u);
+	public String datoB(@ModelAttribute("bank") BankAccount account, HttpSession session, Principal principal) {
+		String u = principal.getName();
+		User user = userService.findByEmail(u);
+		session.setAttribute("idU", user.getId());
 		return "datBank.jsp";
 	}
 	
-	@PutMapping("/addDatos")
+	@PostMapping("/addDatos")
 	public String addD(@Valid @ModelAttribute("bank")BankAccount account, BindingResult result) throws Exception {
 	 if (result.hasErrors()) {
             return "index.jsp";
         } 
         else {
             accountService.create(account);
-            return "redirect:/language";
+            return "redirect:/";
         }
 	}
 	
 	@GetMapping("/producto/{id}")
 	public String mostrarP(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("product", productService.findProduct(id));
+		Product p = productService.findProduct(id);
+		model.addAttribute("product", p);
 		return "producto.jsp";
 	}
 	

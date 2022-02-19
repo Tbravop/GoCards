@@ -11,6 +11,7 @@
 	</head>
 	<body>
 		<form:form class="mb-3" action="/addDatos" method="POST" modelAttribute="bank">
+			<form:input type="hidden" method="post" path="user" value="${idU}"/>
 		    <p>
 		        <form:label class="form-label" path="rut">Rut</form:label>
 		        <form:errors path="rut"/>

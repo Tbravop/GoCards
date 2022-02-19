@@ -1,6 +1,5 @@
 package com.coding.dojo.projecto.model;
 
-import java.math.BigInteger;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -25,8 +24,8 @@ public class BankAccount {
 	private long id;
 	@Size(min=7)
 	private String rut;
-	@Size(min=7)
-	private BigInteger numeroDeCuenta;
+	@Size(min=7, max=13)
+	private String numeroDeCuenta;
 	@OneToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user_id")
     private User user;
@@ -51,12 +50,14 @@ public class BankAccount {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public BigInteger getNumeroDeCuenta() {
+	public String getNumeroDeCuenta() {
 		return numeroDeCuenta;
 	}
-	public void setNumeroDeCuenta(BigInteger numeroDeCuenta) {
+
+	public void setNumeroDeCuenta(String numeroDeCuenta) {
 		this.numeroDeCuenta = numeroDeCuenta;
 	}
+
 	public User getUser() {
 		return user;
 	}

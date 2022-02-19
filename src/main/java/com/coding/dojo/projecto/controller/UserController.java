@@ -55,7 +55,7 @@ public class UserController {
             return"loginRegister.jsp";
         }
         	userService.createUser(user);
-            return"redirect:/login";
+            return"redirect:/goLogin";
 	}
 	
 	@GetMapping("/goLogin")
@@ -67,6 +67,7 @@ public class UserController {
     public String login(@RequestParam(value="error", required= false)String error, @RequestParam(value="logout", required=false)String logout, Model model) {
         if(error != null) {
             model.addAttribute("errorMessage", "Error o Contraseña Erroneo, Intente de nuevo.");
+    		return "login.jsp";
         }
         if(logout != null) {
             model.addAttribute("logout", "Se cerro Su session de forma Exitosa!");
