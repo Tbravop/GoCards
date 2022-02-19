@@ -38,8 +38,8 @@
               </li>
               <li class="nav-item">
 		 		<form class="d-flex d-lg-none pt-2">
-			        <input class="form-control me-2" style="width: 300px;" type="search" placeholder="Buscar una carta" aria-label="Search">
-			        <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
+			        <input id="search" class="form-control me-2" style="width: 300px;" type="search" placeholder="Buscar una carta" aria-label="Search">
+			        <button onclick="boton()" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
 		      	</form>	      	
               </li>
               <li class="nav-item dropdown">
@@ -116,8 +116,6 @@
 <div class="row d-flex justify-content-center bg-white" >
 	<c:forEach items="${products}" var="prod">
 
-	<div class="col-md-6 col-xl-4 p-3" style="max-width: 18rem;">
-
 	<div class="col-6 col-xl-4 p-3" style="max-width: 18rem;border-radius: 5px;">
 
 			<div class="card">
@@ -176,5 +174,11 @@
  </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	<script src="/assets/js/api.js" type="module"></script>
+	<script type="text/javascript">
+		function boton(){
+			let search = document.getElementById("search").value;
+			window.location = "/search/"+search;
+		}
+	</script>
 	</body>
 </html>

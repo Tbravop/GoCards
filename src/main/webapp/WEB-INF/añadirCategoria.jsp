@@ -21,7 +21,7 @@
 			</section>
 			<div class="col-6">
 		       	<h4>Add Category :</h4>
-		       	<form action="/añadirCategorias/<c:out value="${product.id}"/>" method="POST">
+		       	<form action="/anadirCategorias/<c:out value="${product.id}"/>" method="POST">
 		        	<select style="width: 200px;" class="custom-select" id="inputGroupSelect01" name="idC">
 		            	<option selected>Choose...</option>
 		               	<c:forEach items="${lista}" var="category">

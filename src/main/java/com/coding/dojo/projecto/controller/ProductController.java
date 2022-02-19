@@ -1,6 +1,7 @@
 package com.coding.dojo.projecto.controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -17,7 +18,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.coding.dojo.projecto.model.BankAccount;
 import com.coding.dojo.projecto.model.Product;
+import com.coding.dojo.projecto.model.User;
+import com.coding.dojo.projecto.services.BankAccountService;
 import com.coding.dojo.projecto.services.CategoryService;
 import com.coding.dojo.projecto.services.ProductService;
 import com.coding.dojo.projecto.services.UserService;
@@ -34,6 +38,9 @@ public class ProductController {
 	@Autowired
 	@Lazy
 	private UserService userService;
+	@Autowired
+	@Lazy
+	private BankAccountService accountService;
 	
 	@GetMapping("/crear")
 	public String newProd(@ModelAttribute("product") Product product) {
@@ -62,10 +69,33 @@ public class ProductController {
 		return "añadirCategoria.jsp";
 	}
 	
-	@PostMapping("/añadirCategorias/{idP}")
+	@PostMapping("/anadirCategorias/{idP}")
 	public String addP(@PathVariable("idP") Long id, @RequestParam("idC") Long idC) {
 		productService.addC(id, idC);
+		User u = userService.getLoggedInUser();
+		if(u.getProduct().size() == 1) {
+			return "redirect:/datosBank";
+		}else {
 		return "redirect:/product/"+id;
+		}
+	}
+	
+	@GetMapping("/datosBank")
+	public String datoB(Model model) {
+		User u = userService.getLoggedInUser();
+		model.addAttribute("user", u);
+		return "datBank.jsp";
+	}
+	
+	@PutMapping("/addDatos")
+	public String addD(@Valid @ModelAttribute("bank")BankAccount account, BindingResult result) throws Exception {
+	 if (result.hasErrors()) {
+            return "index.jsp";
+        } 
+        else {
+            accountService.create(account);
+            return "redirect:/language";
+        }
 	}
 	
 	@GetMapping("/producto/{id}")
@@ -75,13 +105,13 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/edit/{id}")
-    public String editP(@PathVariable("id") Long id, Model model, @Valid @ModelAttribute("product") Product lang) {
+    public String editP(@PathVariable("id") Long id, Model model, @Valid @ModelAttribute("product") Product prod) {
 		Product product = productService.findProduct(id);
         model.addAttribute("prod", product);
         return "edit.jsp";
     }
 	
-	@PutMapping("/{name}")
+	@PutMapping("/update/{id}")
     public String update(@Valid @ModelAttribute("product") Product myProduct, BindingResult result) throws Exception{
         if (result.hasErrors()) {
             return "edit.jsp";
@@ -90,4 +120,12 @@ public class ProductController {
             return "redirect:/";
         }
     }
+	
+	@GetMapping("/buscar/{product}")
+	public String search(Model model, @PathVariable("product")String name) {
+		List<Product> p = productService.searchProduct(name);
+		model.addAttribute("list", p);
+		model.addAttribute("prod", name);
+		return "search.jsp";
+	}
 }

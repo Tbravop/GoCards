@@ -6,4 +6,5 @@ public interface BankAccountService {
 
 	BankAccount findBank(Long id);
 
+	public BankAccount create(BankAccount b) throws Exception;
 }

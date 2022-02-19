@@ -37,13 +37,6 @@ public class ProductServiceImpl implements ProductService{
 	public List<Product> allProduct(){
 		return (List<Product>) productRepository.findAll();
 	}
-	
-//	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//    String userName = (String)auth.getPrincipal();
-//    AppUser user = this.userRepo.findByUserName(userName);
-//    if(user != null) {
-//        return user;
-//    }
     
 	@Override
     public Product createProduct(Product myProduct) throws Exception {
@@ -132,5 +125,9 @@ public class ProductServiceImpl implements ProductService{
 			}
 		}
 		return allProduct();
+	}
+	@Override
+	public List<Product> searchProduct(String name){
+		return (List<Product>) productRepository.findByNameContaining(name);
 	}
 }

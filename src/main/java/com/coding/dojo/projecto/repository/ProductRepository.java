@@ -18,4 +18,6 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 	Optional<Product> findByName(String name);
 	
 	Optional<Product> findByNameAndUser(String name, User user);
+	
+	List<Product>findByNameContaining(String name);
 }

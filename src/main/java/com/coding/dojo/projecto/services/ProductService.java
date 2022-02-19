@@ -22,4 +22,6 @@ public interface ProductService {
 
 	Product createProduct(Product myproduct) throws Exception;
 
+	List<Product> searchProduct(String product);
+
 }
