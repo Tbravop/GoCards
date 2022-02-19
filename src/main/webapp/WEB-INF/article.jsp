@@ -93,9 +93,6 @@
 				</p>
 				 <a class="post" href="/foro"><input class="btn btn-primary" type="submit" value="Crear"/></a>
 			</form:form>
-			<c:forEach items="${comentarios}" var="comentario">
-				<a href="/post/${comment.id}"></a><c:out value="${comment.text}"/>
-			</c:forEach>
 		</header>
 	</body>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

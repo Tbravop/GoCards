@@ -30,6 +30,8 @@ public class Article {
 	private String title;
 	@NotBlank
 	private String body;
+	private String imagen;
+	
 	@Column(updatable=false)
 	private Date createdAt;
 	private Date updatedAt;
@@ -83,6 +85,13 @@ public class Article {
 	}
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
+	}
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 	public User getUser() {
 		return user;

@@ -80,10 +80,30 @@
 					<h1>Comunidad Go Cards</h1>					
 			</header>	
 					<a class="post" href="/post/new"><input class="btn btn-primary" type="submit" value="Crear post"/></a>
-					<c:forEach items="${articulos}" var="articulo">
-						<a href="/foro/${foro.id}"><c:out value ="${article.title}"/></a>
-						<c:out value="${article.body}"/>
-					</c:forEach>			
+					<table>
+						<thead>
+							<tr>
+								<th>Titulo</th>
+								<th>Cuerpo</th>
+								<th>Imagen</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${article}" var="article">
+							<tr>
+								<td><c:out value ="${article.title}"/></td>
+								<td><c:out value="${article.body}"/></td>
+								<td><c:out value="${article.imagen}"/></td>
+							</tr>
+							<a class="post" href="/post/${article.id}"><input class="btn btn-primary" type="submit" value="Comentar"/></a>	
+							<c:forEach items="${comentarios}" var="comentario">
+								<a href="/post/${comment.id}"></a><c:out value="${comment.text}"/>
+							</c:forEach>
+							</c:forEach>
+						</tbody>					
+					</table>	
+				
+				
 			
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>					
 	</body>
