@@ -112,9 +112,61 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<!--  -->
 <div id="" class="d-flex justify-content-center mt-4" style="background-color: #312783;border-radius: 9px;">
       <h1 class="text-center mt-1 py-2 text-white">Lo más vendido</h1>
 </div>
+<!--  -->
+<section class="d-flex justify-content-center bg-white mb-5 pb-4" style="border-radius: 0px 0px 25px 25px" >
+<div class="row col-12 justify-content-center">
+	<c:forEach items="${products}" var="prod">
+	<div class="col-6 col-xl-4 mt-5" style="max-width: 18rem;">
+			<div class="card shadow-lg bg-body rounded">
+		  <img class="card-img-top" src="/assets/img/unknown.jpg">
+		  <div class="card-body">
+		    <h3 class="card-title"><c:out value="${prod.name}"/></h3>
+		    <p class="card-text">Envío gratis</p>
+		    <h2 class="" style="font-weight:700;font-size: 15px;">CLP <c:out value="${prod.price}"/></h2>
+		  </div>
+		</div>
+	</div>	
+	</c:forEach>
+	<div class="d-flex justify-content-center">
+	<button type="button" class="btn mt-5 text-white py-3 px-5" style="background-color: #4B98E0;font-weight:600;width:500px;">Ver más</button>	
+	</div>
+	<button type="button" class="btn mt-5 text-white d-lg-none" style="background-color: #4B98E0;width:225px;font-weight:600;">Ver más</button>
+</div>
+</section>
+<!--  -->
+<div id="" class="d-flex justify-content-center mt-4" style="background-color: #312783;border-radius: 9px;">
+      <h1 class="text-center mt-1 py-2 text-white">Ofertas Destacadas</h1>
+</div>
+<!--  -->
+<section class="d-flex justify-content-center bg-white mb-5 pb-4" style="border-radius: 0px 0px 25px 25px" >
+<div class="row col-12 justify-content-center">
+	<c:forEach items="${products}" var="prod">
+	<div class="col-6 col-xl-4 mt-5" style="max-width: 18rem;">
+			<div class="card shadow-lg bg-body rounded">
+		  <img class="card-img-top" src="/assets/img/unknown.jpg">
+		  <div class="card-body">
+		    <h3 class="card-title"><c:out value="${prod.name}"/></h3>
+		    <p class="card-text">Envío gratis</p>
+		    <h2 class="" style="font-weight:700;font-size: 15px;">CLP <c:out value="${prod.price}"/></h2>
+		  </div>
+		</div>
+	</div>	
+	</c:forEach>
+	<div class="d-flex justify-content-center">
+	<button type="button" class="btn mt-5 text-white py-3 px-5" style="background-color: #4B98E0;font-weight:600;width:500px;">Ver más</button>	
+	</div>
+	<button type="button" class="btn mt-5 text-white d-lg-none" style="background-color: #4B98E0;width:225px;font-weight:600;">Ver más</button>
+</div>
+</section>
+<!--  -->
+<div id="" class="d-flex justify-content-center mt-4" style="background-color: #312783;border-radius: 9px;">
+      <h1 class="text-center mt-1 py-2 text-white">Lo nuevo</h1>
+</div>
+<!--  -->
 <section class="d-flex justify-content-center bg-white mb-5 pb-4" style="border-radius: 0px 0px 25px 25px" >
 <div class="row col-12 justify-content-center">
 	<c:forEach items="${products}" var="prod">
