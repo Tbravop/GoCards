@@ -110,74 +110,12 @@
 			</div>
 		</div>
 	<!-- Form-Row -->
-		<form>
-			<div class="d-flex container justify-content-center">
-				<div class="card col-9 p-3">
-					<div class = "table-responsive">
-						<div class="form-row d-inline">									
-							<div class="col-5 d-inline-block me-2">
-								<label for="inputName">Nombre:</label>
-								<input type="text" class="form-control" placeholder="Nombre">
-							</div>
-							<div class="col-5 d-inline-block">
-								<label for="inputLastName">Apellido:</label>
-								<input type="text" class="form-control" placeholder="Apellido">
-							</div>
-							<div class="form-group col-md-5 d-inline-block">
-								<label for="inputEmail4">Email:</label>
-								<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-							</div>
-						</div>
-						<div class="form-group col-md-5 d-inline-block">
-							<label for="inputCelular">Número:</label>
-							<input type="text" class="form-control" id="inputAddress2" placeholder="+569...">
-						</div>
-						<div class="form-row">
-							<div class="form-group col-md-4">
-								<label for="inputRegion">Región:</label>
-								<select id="inputRegion" class="form-control">
-									<option selected>Selecciona tu Región:</option>
-									<option>Tarapacá</option>
-									<option>Antofagasta</option>
-									<option>Atacama</option>
-									<option>Coquimbo</option>
-									<option>Valparaíso</option>
-									<option>O'Higgins</option>
-									<option>Maule</option>
-									<option>Biobío</option>
-									<option>La Araucanía</option>
-									<option>Los Lagos</option>
-									<option>Aysén</option>
-									<option>Magallanes</option>
-									<option>Santiago</option>
-									<option>Los Ríos</option>
-									<option>Arica y Parinacota</option>
-									<option>Ñuble</option>
-								</select>
-							</div>
-						<div class="form-group col-md-6 d-inline-block">
-							<label for="inputAddress">Dirección:</label>
-							<input type="text" class="form-control" id="inputAddress" placeholder="...">
-						</div>
-							<div class="form-group col-md-4 d-inline-block">
-								<label for="inputCity">Ciudad:</label>
-								<input type="text" class="form-control" id="inputCity" placeholder="...">
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="gridCheck">
-								<label class="form-check-label" for="gridCheck">
-								Quiero recibir correos de las nuevas Ofertas
-								</label>
-							</div>
-						</div>
-						<a href="/pagar" class="btn btn-out btn-primary btn-square btn-main mt-2" style="background-color: #4B98E0 !important" data-abc="true">Pagar</a>
-					</div>
-				</div>
-			</div>
-		</form>
-		
+		<div class="d-flex container justify-content-center">
+			<div class="card col-9 p-3">
+				<img src="https://www.sgcli.com/wp-content/uploads/2014/11/instalar-webpay-plus.png" alt="WebPay" width=80%>
+				<p>Su pedido puede tardar aproximadamente 3 días en ser aceptado por el vendedor, de no ser respondido en el tiempo se le reembolsará el dinero durante todo este proceso, recibirá correos, y puede seguir el proceso en el cuál se encuentra su compra.</p>
+			</div>	
+		</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>	
 	</body>
 </html>

@@ -219,7 +219,7 @@
             <div class="alinear container col-10">
             <div class="row">
                 <div class="container col-md-5 text-start pb-1"> 
-      			<p>2022 GoCards, Inc. Todos los derechos reservados.</p>
+      			<p>© 2022 GoCards, Inc. Todos los derechos reservados.</p>
                 </div>
                 <div class="container col-md-5 text-end">
                     <a href="https://twitter.com"><i class="fab fa-twitter-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"></i></a>
