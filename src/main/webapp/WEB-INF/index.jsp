@@ -149,7 +149,7 @@
 			<div class="card shadow-lg bg-body rounded">
 		  <img class="card-img-top" src="/assets/img/unknown.jpg">
 		  <div class="card-body">
-		    <h3 class="card-title"><c:out value="${prod.name}"/></h3>
+		    <h3 class="card-title"><a href="/producto/<c:out value="${prod.id}"/>"><c:out value="${prod.name}"/></a></h3>
 		    <p class="card-text">Envío gratis</p>
 		    <h2 class="" style="font-weight:700;font-size: 15px;">CLP <c:out value="${prod.price}"/></h2>
 		  </div>
@@ -174,7 +174,7 @@
 			<div class="card shadow-lg bg-body rounded">
 		  <img class="card-img-top" src="/assets/img/unknown.jpg">
 		  <div class="card-body">
-		    <h3 class="card-title"><c:out value="${prod.name}"/></h3>
+		    <h3 class="card-title"><a href="/producto/<c:out value="${prod.id}"/>"><c:out value="${prod.name}"/></a></h3>
 		    <p class="card-text">Envío gratis</p>
 		    <h2 class="" style="font-weight:700;font-size: 15px;">CLP <c:out value="${prod.price}"/></h2>
 		  </div>
