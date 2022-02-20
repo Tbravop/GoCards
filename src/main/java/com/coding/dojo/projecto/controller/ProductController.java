@@ -93,7 +93,7 @@ public class ProductController {
 	@PostMapping("/addDatos")
 	public String addD(@Valid @ModelAttribute("bank")BankAccount account, BindingResult result) throws Exception {
 	 if (result.hasErrors()) {
-            return "index.jsp";
+            return "datBank.jsp";
         } 
         else {
             accountService.create(account);
