@@ -128,4 +128,9 @@ public class ProductServiceImpl implements ProductService{
 	public List<Product> searchProduct(String name){
 		return (List<Product>) productRepository.findByNameContaining(name);
 	}
+	
+	@Override
+	public List<Product> findRandom(){
+		return productRepository.findRandom();
+	}
 }
