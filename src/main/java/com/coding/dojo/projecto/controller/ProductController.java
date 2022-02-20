@@ -146,4 +146,11 @@ public class ProductController {
 		model.addAttribute("prod", name);
 		return "search.jsp";
 	}
+	
+	@GetMapping("/misProductos")
+	public String misProductos(Model model) {		
+		User u = userService.getLoggedInUser();
+		model.addAttribute("product", u.getProduct());
+		return "misProduct.jsp";
+	}
 }

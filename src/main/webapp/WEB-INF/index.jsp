@@ -76,6 +76,7 @@
 					        <input type="submit" value="Cerrar sesión" style="border:none; background: none;"/>
 					</form>
 					<a class="dropdown-item" href="/sells">Ventas</a>
+					<a class="dropdown-item" href="/misProductos">Mis Productos</a>
 			    </c:if>
 			</ul>
 		    </div>  
