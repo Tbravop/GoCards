@@ -37,7 +37,6 @@ public class Product {
 	@Size(min=4)
 	private String description;
 	private String image;
-	@NotBlank
 	@Min(1)
 	private Integer cantidad;
 	@Column(updatable=false)
