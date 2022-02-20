@@ -80,7 +80,7 @@ public class ProductServiceImpl implements ProductService{
 				return product;
 			}
 			else {
-				throw new Exception();
+				throw new Exception("El campo no puede esta vacio");
 			}
 		}
 		catch(Exception e) {

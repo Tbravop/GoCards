@@ -31,12 +31,14 @@ public class Product {
 	@Column(updatable=false)
 	@Size(min=4)
 	private String name;
-	@Min(3)
+	@Min(300)
 	private BigInteger price;
 	@Column(updatable=false)
 	@Size(min=4)
 	private String description;
 	private String image;
+	@NotBlank
+	@Min(1)
 	private Integer cantidad;
 	@Column(updatable=false)
 	private Date createdAt;
