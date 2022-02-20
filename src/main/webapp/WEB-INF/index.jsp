@@ -76,6 +76,7 @@
 					        <input type="submit" value="Cerrar sesión" style="border:none; background: none;"/>
 					</form>
 					<a class="dropdown-item" href="/sells">Ventas</a>
+					<a class="dropdown-item" href="/misProductos">Mis Productos</a>
 			    </c:if>
 			</ul>
 		    </div>  
@@ -169,7 +170,7 @@
 <!--  -->
 <section class="d-flex justify-content-center bg-white mb-5 pb-4" style="border-radius: 0px 0px 25px 25px" >
 <div class="row col-12 justify-content-center">
-	<c:forEach items="${products}" var="prod">
+	<c:forEach items="${newest}" var="prod">
 	<div class="col-6 col-xl-4 mt-5" style="max-width: 18rem;">
 			<div class="card shadow-lg bg-body rounded">
 		  <img class="card-img-top" src="/assets/img/unknown.jpg">
@@ -219,7 +220,7 @@
             <div class="alinear container col-10">
             <div class="row">
                 <div class="container col-md-5 text-start pb-1"> 
-      			<p>2022 GoCards, Inc. Todos los derechos reservados.</p>
+      			<p>© 2022 GoCards, Inc. Todos los derechos reservados.</p>
                 </div>
                 <div class="container col-md-5 text-end">
                     <a href="https://twitter.com"><i class="fab fa-twitter-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"></i></a>

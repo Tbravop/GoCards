@@ -123,16 +123,20 @@ public class ProductController {
     }
 	
 	@PutMapping("/update/{id}")
-    public String update(@Valid @ModelAttribute("product") Product myProduct, BindingResult result) throws Exception{
+    public String update(@Valid @ModelAttribute("product") Product myProduct, BindingResult result, Model model) throws Exception{
 		Long id = myProduct.getId();
 		BigInteger price = myProduct.getPrice();
 		int cantidad = myProduct.getCantidad();
         if (result.hasErrors()) {
             return "edit.jsp";
-        } else {
+        } 
+        try {
         	productService.update(id, price, cantidad);
-            return "redirect:/producto/"+id;
+        }catch(Exception e){
+        	model.addAttribute("error", e.getMessage());
+            return "edit.jsp";
         }
+        return "redirect:/producto/"+id;
     }
 	
 	@GetMapping("/buscar/{product}")
@@ -141,5 +145,12 @@ public class ProductController {
 		model.addAttribute("list", p);
 		model.addAttribute("prod", name);
 		return "search.jsp";
+	}
+	
+	@GetMapping("/misProductos")
+	public String misProductos(Model model) {		
+		User u = userService.getLoggedInUser();
+		model.addAttribute("product", u.getProduct());
+		return "misProduct.jsp";
 	}
 }

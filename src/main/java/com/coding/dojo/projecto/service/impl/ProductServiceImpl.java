@@ -80,7 +80,7 @@ public class ProductServiceImpl implements ProductService{
 				return product;
 			}
 			else {
-				throw new Exception();
+				throw new Exception("El campo no puede esta vacio");
 			}
 		}
 		catch(Exception e) {
@@ -127,5 +127,14 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public List<Product> searchProduct(String name){
 		return (List<Product>) productRepository.findByNameContaining(name);
+	}
+	
+	@Override
+	public List<Product> findRandom(){
+		return productRepository.findRandom();
+	}
+	@Override
+	public List<Product> newest(){
+		return productRepository.newest();
 	}
 }

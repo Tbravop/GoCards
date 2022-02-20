@@ -78,8 +78,10 @@ public class UserController {
 	
     @RequestMapping(value = {"/", "/home"})
     public String home(Principal principal, Model model) {
-    	List<Product> p = productService.allProduct();
-    	model.addAttribute("products", p);
+    	List<Product> random = productService.findRandom();
+    	List<Product> newest = productService.newest();
+    	model.addAttribute("products", random);
+    	model.addAttribute("newest", newest);
     	if(principal != null) {
 	        String username = principal.getName();
 	        model.addAttribute("currentUser", userService.findByEmail(username));
