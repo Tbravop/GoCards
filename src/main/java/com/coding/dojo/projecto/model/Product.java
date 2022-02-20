@@ -29,12 +29,12 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	@Column(updatable=false)
-	@Size(min=4)
+	@Size(min=4,  message = "El nombre debe tener al menos 4 caracteres")
 	private String name;
 	@Min(300)
 	private BigInteger price;
 	@Column(updatable=false)
-	@Size(min=4)
+	@Size(min=4,  message = "Debe agregar una descripcion")
 	private String description;
 	private String image;
 	@Min(1)
