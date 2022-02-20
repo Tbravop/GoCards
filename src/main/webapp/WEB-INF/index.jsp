@@ -170,7 +170,7 @@
 <!--  -->
 <section class="d-flex justify-content-center bg-white mb-5 pb-4" style="border-radius: 0px 0px 25px 25px" >
 <div class="row col-12 justify-content-center">
-	<c:forEach items="${products}" var="prod">
+	<c:forEach items="${newest}" var="prod">
 	<div class="col-6 col-xl-4 mt-5" style="max-width: 18rem;">
 			<div class="card shadow-lg bg-body rounded">
 		  <img class="card-img-top" src="/assets/img/unknown.jpg">

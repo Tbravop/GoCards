@@ -133,4 +133,8 @@ public class ProductServiceImpl implements ProductService{
 	public List<Product> findRandom(){
 		return productRepository.findRandom();
 	}
+	@Override
+	public List<Product> newest(){
+		return productRepository.newest();
+	}
 }
