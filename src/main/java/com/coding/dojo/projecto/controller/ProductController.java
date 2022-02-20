@@ -1,5 +1,6 @@
 package com.coding.dojo.projecto.controller;
 
+import java.math.BigInteger;
 import java.security.Principal;
 import java.util.List;
 
@@ -101,8 +102,10 @@ public class ProductController {
 	}
 	
 	@GetMapping("/producto/{id}")
-	public String mostrarP(@PathVariable("id") Long id, Model model) {
+	public String mostrarP(@PathVariable("id") Long id, Model model, Principal principal) {
 		Product p = productService.findProduct(id);
+		String u = principal.getName();
+		model.addAttribute("currentUser", userService.findByEmail(u));
 		model.addAttribute("product", p);
 		return "producto.jsp";
 	}
@@ -116,10 +119,13 @@ public class ProductController {
 	
 	@PutMapping("/update/{id}")
     public String update(@Valid @ModelAttribute("product") Product myProduct, BindingResult result) throws Exception{
+		Long id = myProduct.getId();
+		BigInteger price = myProduct.getPrice();
+		int cantidad = myProduct.getCantidad();
         if (result.hasErrors()) {
             return "edit.jsp";
         } else {
-        	productService.createProduct(myProduct);
+        	productService.update(id, price, cantidad);
             return "redirect:/";
         }
     }

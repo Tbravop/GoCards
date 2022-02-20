@@ -27,11 +27,11 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	@NotBlank
+	@Column(updatable=false)
 	private String name;
 	@Min(3)
 	private BigInteger price;
-	@NotBlank
+	@Column(updatable=false)
 	private String description;
 	private String image;
 	private Integer cantidad;

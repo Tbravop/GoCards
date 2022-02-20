@@ -12,7 +12,7 @@ public interface ProductService {
 
 	Product findProduct(Long id);
 
-	Product update(Long id, String name, BigInteger price, String description, Integer cantidad) throws Exception;
+	Product update(Long id, BigInteger price, Integer cantidad) throws Exception;
 
 	void delete(Long id) throws Exception;
 

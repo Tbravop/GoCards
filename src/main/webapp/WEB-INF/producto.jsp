@@ -33,12 +33,18 @@
 		                  		<li class="list-group-item">
 		                    		<p>Descripción:<c:out value="${product.description}"/></p>
 		                  		</li>
+		                  		<li class="list-group-item">
+		                    		<p>Cantidad disponible:<c:out value="${product.cantidad}"/></p>
+		                  		</li>
 		                  		<li class="list-group-item"><h6>
 		                    		Cantidad: <input type="number" id="cantidad" name="cantidad" autocomplete="off"
 		                    		min="1" max="5" value="1">
 		                  		</h6></li>
 		                	</ul>
 		                	<button type="submit"  class="btn btn-dark">Añadir al carrito </button>
+		                	<c:if test="${currenrUser.id.equals.product.user.id}">
+		                		<a class="btn btn-dark" href="/edit/<c:out value="${product.id}"/>">editar</a>
+		              		</c:if>
 		              	</form>
 		            </div>
 	          	</div>

@@ -70,13 +70,11 @@ public class ProductServiceImpl implements ProductService{
 	}
 	@Override
 	@Transactional
-	public Product update(Long id, String name, BigInteger price, String description, Integer cantidad) throws Exception{
+	public Product update(Long id, BigInteger price, Integer cantidad) throws Exception{
 		try {
 			Product product=this.findProduct(id);
 			if(product!=null) {
-				product.setName(name);
 				product.setPrice(price);
-				product.setDescription(description);
 				product.setCantidad(cantidad);
 				productRepository.save(product);
 				return product;

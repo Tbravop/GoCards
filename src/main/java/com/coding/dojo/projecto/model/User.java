@@ -44,6 +44,7 @@ public class User {
 	private String password;
 	
 	@Transient
+	@Size(min=8, message = "Confirme su contraseña")
 	private String passwordConfirm;
 	
 	@Size(min=9)
