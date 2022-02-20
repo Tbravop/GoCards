@@ -16,5 +16,8 @@ public class SellController {
 		return "envio.jsp";
 	}
 	
-	
+	@GetMapping("/pagar")
+	public String pagar() {
+		return "pagar.jsp";
+	}
 }

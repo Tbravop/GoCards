@@ -22,6 +22,9 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 	
 	List<Product>findByNameContaining(String name);
 	
-	@Query(value = "SELECT * FROM productos ORDER BY RAND()",  nativeQuery = true)
+	@Query(value = "SELECT * FROM productos ORDER BY RAND() LIMIT 4",  nativeQuery = true)
 	List<Product> findRandom();
+	
+	@Query(value = "SELECT * FROM productos ORDER BY created_at DESC LIMIT 4",  nativeQuery = true)
+	List<Product> newest();
 }

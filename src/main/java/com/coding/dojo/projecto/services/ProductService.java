@@ -24,5 +24,7 @@ public interface ProductService {
 
 	List<Product> searchProduct(String product);
 	
-	List<Product> findRandom ();
+	List<Product> findRandom();
+	
+	List<Product> newest();
 }
