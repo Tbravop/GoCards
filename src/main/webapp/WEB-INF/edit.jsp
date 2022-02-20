@@ -12,11 +12,11 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">		
-		<link rel="stylesheet" href="/assets/css/styleindex.css">
+		<link rel="stylesheet" href="/assets/css/style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-		<title>Insert title here</title>
+		<title>Edicion de producto</title>
 	</head>
 	<body>
 	 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #312783;">
@@ -88,8 +88,8 @@
 		<section class="row">
 		<div class="card-body">
 		<div class="card">
-			<img src="/assets/img/03.png" class="card-img-top"alt="...">
-			<h1 class="card-title text-white" style="margin-left: 5px; padding-top: 35px;font-size: 50px;margin-top:-170px;margin-bottom:90px;">Crea un producto</h1>
+			<img src="/assets/img/04.png" class="card-img-top"alt="...">
+			<h1 class="card-title text-white" style="margin-left: 5px; padding-top: 35px;font-size: 50px;margin-top:-170px;margin-bottom:90px;">Edicion</h1>
          	
          	<p><form:errors path="product.*"/><c:out value="${error}"/></p>
          	
