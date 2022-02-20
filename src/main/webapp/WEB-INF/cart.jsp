@@ -90,7 +90,7 @@
 			<div class="container" >
 			    <div class="platform-tour-wrapper py-3">
 			       	<!-- TimeLiner2 -->
-			       	<ul class='timeline justify-content-around border-0 horizontal'>
+			       	<ol class='timeline justify-content-around border-0 horizontal'>
 					  <li class='active'>
 					  	<a class="nav-link active" data-toggle="tab">
 				          </a>
@@ -103,7 +103,7 @@
 					  <li class='active'>
 					  <a class="nav-link" data-toggle="tab" ></a>
 				          <h4 class="text-center mt-1">Pago</h4></li>
-					</ul>
+					</ol>
 			        
 				</div>
 			</div>
