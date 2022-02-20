@@ -1,5 +1,6 @@
 package com.coding.dojo.projecto.model;
 
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 
@@ -9,7 +10,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.math.BigInteger;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -19,6 +19,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="productos")
@@ -28,10 +29,12 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	@Column(updatable=false)
+	@Size(min=4)
 	private String name;
 	@Min(3)
 	private BigInteger price;
 	@Column(updatable=false)
+	@Size(min=4)
 	private String description;
 	private String image;
 	private Integer cantidad;

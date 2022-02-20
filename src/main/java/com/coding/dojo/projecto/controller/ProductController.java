@@ -104,8 +104,13 @@ public class ProductController {
 	@GetMapping("/producto/{id}")
 	public String mostrarP(@PathVariable("id") Long id, Model model, Principal principal) {
 		Product p = productService.findProduct(id);
+		if(principal == null) {
+			model.addAttribute("product", p);
+			return "producto.jsp";
+		}
 		String u = principal.getName();
-		model.addAttribute("currentUser", userService.findByEmail(u));
+		User user = userService.findByEmail(u);
+		model.addAttribute("currentUser", user);
 		model.addAttribute("product", p);
 		return "producto.jsp";
 	}
@@ -126,7 +131,7 @@ public class ProductController {
             return "edit.jsp";
         } else {
         	productService.update(id, price, cantidad);
-            return "redirect:/";
+            return "redirect:/producto/"+id;
         }
     }
 	

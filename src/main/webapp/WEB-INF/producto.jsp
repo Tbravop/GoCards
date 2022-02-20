@@ -42,7 +42,7 @@
 		                  		</h6></li>
 		                	</ul>
 		                	<button type="submit"  class="btn btn-dark">Añadir al carrito </button>
-		                	<c:if test="${currenrUser.id.equals.product.user.id}">
+		                	<c:if test="${currentUser.id == product.user.id}">
 		                		<a class="btn btn-dark" href="/edit/<c:out value="${product.id}"/>">editar</a>
 		              		</c:if>
 		              	</form>
