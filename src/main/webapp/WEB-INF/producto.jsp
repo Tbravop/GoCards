@@ -122,52 +122,27 @@
 			</div>
 		</div>
 	</nav>
-	<div class="card mb-4">
-		<div class="card-body">
-			<div class="row">
-				<div class="col-lg-6">
-					<a href="#"> <img class="img-fluid rounded"
-						src="/assets/img/unknown.jpg" alt=""></a>
-				</div>
-				<div class="col-lg-6">
-					<form action="carrito.html" method="POST">
-						<h2 class="card-title">
-							<c:out value="${product.name}" />
+	<section class="d-flex justify-content-center bg-white mb-5 pb-4"
+		style="border-radius: 0px 0px 25px 25px">
+		<div class="row col-12 justify-content-center">
+			<div class="col-6 col-xl-4 mt-5" style="max-width: 18rem;">
+				<div class="card shadow-lg bg-body rounded">
+					<img class="card-img-top" src="/assets/img/unknown.jpg">
+					<div class="card-body">
+						<h3 class="card-title">
+							<a href="/producto/<c:out value="${prod.id}"/>"><c:out
+									value="${prod.name}" /></a>
+						</h3>
+						<p class="card-text">Envío gratis</p>
+						<h2 class="" style="font-weight: 700; font-size: 15px;">
+							CLP
+							<c:out value="${prod.price}" />
 						</h2>
-						<ul class="list-group">
-							<li class="list-group-item"><h5>
-									Precio:
-									<c:out value="${product.price}" />
-								</h5></li>
-							<li class="list-group-item">
-								<p>
-									Descripción:
-									<c:out value="${product.description}" />
-								</p>
-							</li>
-							<li class="list-group-item">
-								<p>
-									Cantidad disponible:
-									<c:out value="${product.cantidad}" />
-								</p>
-							</li>
-							<li class="list-group-item"><h6>
-									Cantidad: <input type="number" id="cantidad" name="cantidad"
-										autocomplete="off" min="1" max="5" value="1">
-								</h6></li>
-						</ul>
-						<button type="submit" class="btn btn-dark">Añadir al
-							carrito</button>
-						<c:if test="${currentUser.id == product.user.id}">
-							<a class="btn btn-dark"
-								style="background-color: #4B98E0; font-weight: 600;"
-								href="/edit/<c:out value="${product.id}"/>">editar</a>
-						</c:if>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 	<!-- Footer -->
 	<footer class="container-fluid col-12 text-white py-2"
 		style="background-color: #131313;">
@@ -193,6 +168,7 @@
 			</div>
 		</div>
 	</footer>
+	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

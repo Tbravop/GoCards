@@ -23,6 +23,7 @@
 	href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
 	integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
 	crossorigin="anonymous">
+<link  rel="icon"   href="assets/img/favicon.png" type="image/png" />
 <link rel="stylesheet" href="/assets/css/styleindex.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
