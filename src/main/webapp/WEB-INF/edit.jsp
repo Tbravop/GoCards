@@ -84,17 +84,15 @@
           </div>
          </div>
       </nav>
-      <div class="d-flex justify-content-center" style="margin-top:100px">
+      <div class="d-flex justify-content-center" style="margin-top:100px;">
 		<section class="row">
 		<div class="card-body">
 		<div class="card">
-			<img src="/assets/img/04.png" class="card-img-top" alt="...">
-			<h1 class="card-title text-white" style="margin-left: 5px; padding-top: 35px;font-size: 90px;margin-top:-200px;margin-bottom:40px;">Edicion</h1>
-         	
-            <div class="card-body">
+			<img src="/assets/img/04.png" class="card-img-top" alt="..." height=250 />
+			<div class="card-body">
             	<p><form:errors path="product.*"/><c:out value="${error}"/></p>
-	           <form:form class="py-3" action="/update/${prod.id}" method="POST" modelAttribute="product">
-	                       <p>Tienes la opcion de actualizar/editar el valor de este producto y su cantidad, para ajustarce a algo mas actual.</p>
+	           <form:form action="/update/${prod.id}" method="POST" modelAttribute="product">
+	                       <p>Tienes las opciones de actualizar/editar el valor de este producto y su cantidad, para ajustarce a algo mas actual.</p>
 	           
 			        <input type="hidden" name="_method" value="PUT">
 			             <p class="form-group">
