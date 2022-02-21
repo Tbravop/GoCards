@@ -43,7 +43,9 @@
 			        			<button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
 		      				</form>	      	
               			</li>              
-              			
+              			<li class="nav-item">
+                			<a class="nav-link" href="/foro">Ir a Comunidad</a>
+              			</li>
               			<li class="nav-item dropdown">
                 			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">MarketPlace</a>
                 			<ul class="dropdown-menu" style="background-color: white;" aria-labelledby="navbarDropdown">
@@ -77,41 +79,33 @@
 	      	<header class="d-flex container justify-content-center">
 					<h1>Comunidad Go Cards</h1>					
 			</header>	
-					<a class="post" href="/post/new"><input class="btn btn-primary" type="submit" value="Crear post"/></a>
-
+				<div class="container">
 					<table class="table table-striped table-hover table-bordered">
 						<thead>
 							<tr>
 								<th>Titulo</th>
 								<th>Cuerpo</th>
-								<th>Imagen</th>
+								<th>Imágen</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${article}" var="article">
+							<c:forEach items="${articles}" var="article">
 								<tr>
-								<td><a href="/post/${article.id}"><c:out value="${article.title}"/></a></td>
+									<td><a href="/post/${article.id}"><c:out value="${article.title}"/></a></td>
 									<td class=""><c:out value="${article.body}"/></td>
 									<td class=""><c:out value="${article.imagen}"/></td>
 								</tr>
-							
-							
-							<c:forEach items="${comentarios}" var="comentario">
-								<a href="/post/${comment.id}"></a><c:out value="${comment.text}"/>
-						
+											
 							</c:forEach>
-						
-							</c:forEach>
-								
 							</tbody>
 							</table>
-									
-					
-									
-				
-				
-				
-			
+							<a class="post" href="/post/${article.id}/editar"><input class="btn btn-primary" type="submit" value="Editar"/></a>		
+							<a class="post" href="/post/${article.id}/comentar"><input class="btn btn-primary" type="submit" value="Comentar"/></a>	
+							<c:forEach items="${comentarios}" var="comentario">
+								<a href="/post/${comment.id}"></a><c:out value="${comment.text}"/>
+						</c:forEach>
+						
+				</div>																
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>					
 	</body>
 </html>
