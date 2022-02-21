@@ -127,6 +127,25 @@
 		<section class="row">
 			<div class="card-body">
 				<div class="card">
+					<img src="/assets/img/04.png" class="card-img-top" alt="..." height=250 />
+					<div class="card-body">
+		            	<p><form:errors path="product.*"/><c:out value="${error}"/></p>
+			           <form:form action="/update/${prod.id}" method="POST" modelAttribute="product">
+			                       <p>Tienes las opciones de actualizar/editar el valor de este producto y su cantidad, para ajustarce a algo mas actual.</p>
+			           
+					        <input type="hidden" name="_method" value="PUT">
+					             <p class="form-group">
+					                <form:label class="form-label" path="price">Valor del producto :</form:label>
+					                <form:errors path="price"/>
+					                <form:input type="name" class="form-control"  path="price"/>
+					            </p>
+					              <p class="form-group">
+					                <form:label class="form-label" path="cantidad">Cantidad del producto :</form:label>
+					                 <form:errors path="cantidad"/>
+					                <form:input type="text" class="form-control" path="cantidad"/>
+					            </p>
+					           <input class="btn text-white" style="background-color:#4B98E0;font-weight:600;" type="submit" value="Guardar Cambios"/>
+					    </form:form>
 					<img src="/assets/img/04.png" class="card-img-top" alt="..."
 						height=250 />
 					<div class="card-body">
