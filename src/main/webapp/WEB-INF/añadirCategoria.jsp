@@ -106,17 +106,22 @@
 		</div>
 		</section>
 	</div>
-	<!-- Footer -->
-  <footer class="py-3 my-4 pt-5">
-    <ul class="nav justify-content-center border-bottom pb-3 fixed-bottom" style="background-color: #131313;">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Comunidad</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Vender</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Marketplace</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-    </ul>
-    <p class="text-center text-muted fixed-bottom">&copy; 2021 Company, Inc</p>
-  </footer>
+    <!-- Footer -->
+    <footer class="container-fluid col-12 text-white py-2" style="background-color: #131313;">
+        <div class="alinear container col-10">
+            <div class="row">
+                <div class="container col-md-5 text-start"> 
+                    <h4>GOCARDS &copy; 2021 Company, Inc</h4>
+                </div>                
+                <div class="container col-md-5 text-end">
+                    <a href="https://github.com"><i class="fab fa-github-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="GitHub"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin"></i></a>
+                    <a href="https://twitter.com"><i class="fab fa-twitter-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"></i></a>
+                    <a href="https://facebook.com"><i class="fab fa-facebook-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	</body>
 </html>

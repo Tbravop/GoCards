@@ -16,10 +16,11 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 	
-		<title>GoCards</title>
+		<title>GoCards - Datos de banco</title>
 	</head>
 	<body>
-	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #312783;">
+	<!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #312783;">
         <div class="container-fluid col-12">
          <a href="/">
 	      	<img src="/assets/img/logo.png" width="120" height="40">
@@ -56,11 +57,11 @@
                 </ul>
               </li>                            
               <li class="nav-item">
-               <c:if test="${currentUser == null}"><a class="nav-link disabled" href="/foro">Ir a Comunidad</a></c:if>
+               <c:if test="${currentUser == null}"><a class="nav-link active" href="/goLogin">Ir a Comunidad</a></c:if>
                <c:if test="${currentUser != null}"><a class="nav-link active" href="/foro">Ir a Comunidad</a></c:if>  
               </li>
                <li class="nav-item">
-               <c:if test="${currentUser == null}"><a class="nav-link disabled" href="/crear">Vender</a></c:if>
+               <c:if test="${currentUser == null}"><a class="nav-link active" href="/goLogin">Vender</a></c:if>
                <c:if test="${currentUser != null}"><a class="nav-link active" href="/crear">Vender</a></c:if>               
               </li>        
             </ul>
@@ -75,6 +76,7 @@
 					        <input type="submit" value="Cerrar sesión" style="border:none; background: none;"/>
 					</form>
 					<a class="dropdown-item" href="/sells">Ventas</a>
+					<a class="dropdown-item" href="/misProductos">Mis Productos</a>
 			    </c:if>
 			</ul>
 		    </div>  
@@ -84,7 +86,7 @@
       		</a>            
           </div>
          </div>
-      </nav>
+      </nav>	
       <div class="d-flex justify-content-center">
 		<section class="row">
 		<div class="card-body">
@@ -111,6 +113,22 @@
 		</div>
 		</section>
 	</div>
+    <!-- Footer -->
+    <footer class="container-fluid col-12 text-white py-2" style="background-color: #131313;">
+        <div class="alinear container col-10">
+            <div class="row">
+                <div class="container col-md-5 text-start"> 
+                    <h4>GOCARDS &copy; 2021 Company, Inc</h4>
+                </div>                
+                <div class="container col-md-5 text-end">
+                    <a href="https://github.com"><i class="fab fa-github-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="GitHub"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin"></i></a>
+                    <a href="https://twitter.com"><i class="fab fa-twitter-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"></i></a>
+                    <a href="https://facebook.com"><i class="fab fa-facebook-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>	
 	</body>
 </html>

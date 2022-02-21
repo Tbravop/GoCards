@@ -57,11 +57,11 @@
                 </ul>
               </li>                            
               <li class="nav-item">
-               <c:if test="${currentUser == null}"><a class="nav-link disabled" href="/foro">Ir a Comunidad</a></c:if>
+               <c:if test="${currentUser == null}"><a class="nav-link active" href="/goLogin">Ir a Comunidad</a></c:if>
                <c:if test="${currentUser != null}"><a class="nav-link active" href="/foro">Ir a Comunidad</a></c:if>  
               </li>
                <li class="nav-item">
-               <c:if test="${currentUser == null}"><a class="nav-link disabled" href="/crear">Vender</a></c:if>
+               <c:if test="${currentUser == null}"><a class="nav-link active" href="/goLogin">Vender</a></c:if>
                <c:if test="${currentUser != null}"><a class="nav-link active" href="/crear">Vender</a></c:if>               
               </li>        
             </ul>
@@ -168,7 +168,7 @@
       <h1 class="text-center mt-1 py-2 text-white">Lo nuevo</h1>
 </div>
 <!--  -->
-<section class="d-flex justify-content-center bg-white mb-5 pb-4" style="border-radius: 0px 0px 25px 25px" >
+<section class="d-flex justify-content-center bg-white pb-4" style="border-radius: 0px 0px 25px 25px" >
 <div class="row col-12 justify-content-center">
 	<c:forEach items="${newest}" var="prod">
 	<div class="col-6 col-xl-4 mt-5" style="max-width: 18rem;">
@@ -190,46 +190,22 @@
 </section>
 
 
-<!-- Footer -->
-<div class="container-fluid col-12" style="background-color: #131313;">
-  <footer class="container-fluid col-10 pt-5 pb-1 text-white">
-    <div class="row">
-      <div class="col-2 pb-5">
-        <h4>Secciones</h4>
-        <ul class="nav flex-column text-white">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Inicio</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Marketplace</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Comunidad</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Cuenta</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Sobre nosotros</a></li>          
-        </ul>
-      </div>
-      <div class="col-6 offset-1">
-        <form>
-          <h5>Suscribete para recibir todas las novedades</h5>
-          <p>Mensualmente te llegaran mensajes con lo mas destacado.</p>
-          <div class="d-flex w-100 gap-2">
-            <label for="newsletter1" class="visually-hidden">Email address</label>
-            <input id="newsletter1" type="text" class="form-control" placeholder="Escribe tu Email">
-            <button class="btn btn-primary" type="button">Suscribete</button>
-          </div>
-        </form>
-      </div>
-    </div>
-            <div class="alinear container col-10">
+    <!-- Footer -->
+    <footer class="container-fluid col-12 text-white py-2" style="background-color: #131313;">
+        <div class="alinear container col-10">
             <div class="row">
-                <div class="container col-md-5 text-start pb-1"> 
-      			<p>© 2022 GoCards, Inc. Todos los derechos reservados.</p>
-                </div>
+                <div class="container col-md-5 text-start"> 
+                    <h4>GOCARDS &copy; 2021 Company, Inc</h4>
+                </div>                
                 <div class="container col-md-5 text-end">
+                    <a href="https://github.com"><i class="fab fa-github-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="GitHub"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin"></i></a>
                     <a href="https://twitter.com"><i class="fab fa-twitter-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"></i></a>
                     <a href="https://facebook.com"><i class="fab fa-facebook-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"></i></a>
                 </div>
             </div>
         </div>
-  </footer>
- </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	<script src="/assets/js/api.js" type="module"></script>
 	<script type="text/javascript">
