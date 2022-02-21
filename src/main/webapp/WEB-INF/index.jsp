@@ -47,9 +47,9 @@
                   MarketPlace
                 </a>
                 <ul class="dropdown-menu bg-white" style="background-color: white;" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Lo más Vendido</a></li>
-                  <li><a class="dropdown-item" href="#">Ofertas Destacadas</a></li>
-                  <li><a class="dropdown-item" href="#">Lo nuevo</a></li>                  
+                  <li><a class="dropdown-item" href="#LoMasVendido">Lo más Vendido</a></li>
+                  <li><a class="dropdown-item" href="#OfertasDestacadas">Ofertas Destacadas</a></li>
+                  <li><a class="dropdown-item" href="#LoNuevo">Lo nuevo</a></li>                   
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Bases</a></li>
                   <li><a class="dropdown-item" href="#">Productos Sellados</a></li>
@@ -114,7 +114,7 @@
   </button>
 </div>
 <!--  -->
-<div id="" class="d-flex justify-content-center mt-4" style="background-color: #312783;border-radius: 9px;">
+<div id="LoMasVendido" class="d-flex justify-content-center mt-4" style="background-color: #312783;border-radius: 9px;">
       <h1 class="text-center mt-1 py-2 text-white">Lo más vendido</h1>
 </div>
 <!--  -->
@@ -139,7 +139,7 @@
 </div>
 </section>
 <!--  -->
-<div id="" class="d-flex justify-content-center mt-4" style="background-color: #312783;border-radius: 9px;">
+<div id="OfertasDestacadas" class="d-flex justify-content-center mt-4" style="background-color: #312783;border-radius: 9px;">
       <h1 class="text-center mt-1 py-2 text-white">Ofertas Destacadas</h1>
 </div>
 <!--  -->
@@ -164,7 +164,7 @@
 </div>
 </section>
 <!--  -->
-<div id="" class="d-flex justify-content-center mt-4" style="background-color: #312783;border-radius: 9px;">
+<div id="LoNuevo" class="d-flex justify-content-center mt-4" style="background-color: #312783;border-radius: 9px;">
       <h1 class="text-center mt-1 py-2 text-white">Lo nuevo</h1>
 </div>
 <!--  -->
