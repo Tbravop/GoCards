@@ -89,14 +89,13 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${articles}" var="article">
+					
 								<tr>
 									<td><a href="/post/${article.id}"><c:out value="${article.title}"/></a></td>
 									<td class=""><c:out value="${article.body}"/></td>
 									<td class=""><c:out value="${article.imagen}"/></td>
-								</tr>
-											
-							</c:forEach>
+								</tr>						
+					
 							</tbody>
 							</table>
 							<a class="post" href="/post/${article.id}/editar"><input class="btn btn-primary" type="submit" value="Editar"/></a>		

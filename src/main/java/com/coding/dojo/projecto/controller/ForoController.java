@@ -79,15 +79,7 @@ public class ForoController {
 		Article art = articleService.findArticle(artId);
 		model.addAttribute("article", art);
 		model.addAttribute("comment", art.getComment());
-		List<Comment> comentarios =  art.getComment();
-		if(comentarios.contains(comment)){
-			return "showPost.jsp";
-		}
-		else {
-			comentarios.add(comment);
-			article.setComment(comentarios);
-			return "showPost.jsp";
-		}		
+		return "showPost.jsp";		
 	}
 	@RequestMapping("/post/{id}/editar")
 	public String editar(@PathVariable("id")Long artId, Model model) {
@@ -96,20 +88,35 @@ public class ForoController {
 		return "editarPost.jsp";
 	}
 	@RequestMapping(value="/post/{id}/editar", method=RequestMethod.PUT)
-	public String actualizar(@Valid @ModelAttribute("article")Article article, BindingResult result) {
+	public String actualizar(@Valid @ModelAttribute("article")Article article, BindingResult result,@PathVariable("id")Long artId,@RequestParam("file")MultipartFile imagen) {
+		Article viejo = articleService.findArticle(artId);
 		if(result.hasErrors()) {
 			return "editarPost.jsp";
 		}
-		else {
+		if(!imagen.isEmpty()) {
+			Path directorioImagenes = Paths.get("src//main//resources//static//assets/img");
+			String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
+			try {
+				byte[] bytesImg = imagen.getBytes();
+				Path rutaCompleta = Paths.get(rutaAbsoluta + "//" + imagen.getOriginalFilename());
+				Files.write(rutaCompleta, bytesImg);
+				article.setImagen(imagen.getOriginalFilename());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}			
+		}
+		if(imagen.isEmpty()) {
+			article.setImagen(viejo.getImagen());
+		}
 			articleService.create(article);
 			return "redirect:/post/{id}";
-		}
+		
 	}
-	@GetMapping("/post/{id}/comentario")
+	@GetMapping("/post/{id}/comentar")
 	public String comentario(@ModelAttribute("comentario") Comment comment) {		
 		return "comentario.jsp";		
 	}
-	@PostMapping("/post/{id}/comentario")
+	@PostMapping("/post/{id}/comentar")
 	public String comentario(@PathVariable("id")Long artId, @ModelAttribute("comentario") Comment comment, BindingResult result, RedirectAttributes errors, Model model) {
 		Article art = articleService.findArticle(artId);
 		if(result.hasErrors()) {
