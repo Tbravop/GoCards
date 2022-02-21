@@ -94,7 +94,7 @@
 		            	<a href="#"> <img class="img-fluid rounded" src="/assets/img/unknown.jpg"  alt=""></a>
 		            </div>
 		            <div class="col-lg-6">
-		            	<form action="carrito.html" method="POST">
+		            	<form action="/addCart" method="POST">
 		                	<h2 class="card-title"><c:out value="${product.name}"/></h2>
 		                	<ul class="list-group">
 		                  		<li class="list-group-item"><h5>Precio:<c:out value="${product.price}"/></h5></li>

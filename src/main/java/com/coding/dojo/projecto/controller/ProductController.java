@@ -153,4 +153,9 @@ public class ProductController {
 		model.addAttribute("product", u.getProduct());
 		return "misProduct.jsp";
 	}
+	
+	@PostMapping("/addCart")
+	public String addCart() {
+		return "cart.jsp";
+	}
 }
