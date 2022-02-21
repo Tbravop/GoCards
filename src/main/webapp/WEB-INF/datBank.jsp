@@ -89,7 +89,7 @@
 		<section class="row">
 		<div class="card-body">
 		<div class="card">
-			<img src="/assets/img/datosdecuenta.png" class="card-img-top" alt="..." height=260>
+			<img src="/assets/img/datosdecuenta.png" class="card-img-top" alt="...">
             <div class="card-body">
             <p>Como es tu primera venta, necesitamos tus datos de cuenta en las cuales tus futuros clientes depositaran su dinero.</p>
 				<form:form class="mb-3" action="/addDatos" method="POST" modelAttribute="bank">

@@ -120,7 +120,7 @@
                     <form:errors path="cantidad"/>
                     <form:input  class="form-control" path="cantidad"/>
                 </p>                              
-				<input class="btn btn-primary" type="submit" value="crear"/>
+				<input class="btn btn-primary" style="background-color:#4B98E0;font-weight:600;" type="submit" value="crear"/>
 			</form:form>
 			</div>
 		</div>

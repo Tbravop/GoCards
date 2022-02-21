@@ -12,14 +12,14 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">		
-		<link rel="stylesheet" href="/assets/css/styleindex.css">
+		<link rel="stylesheet" href="/assets/css/style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 	
-		<title>GoCards</title>
+		<title>GoCards - añadiendo categoria</title>
 	</head>
 	<body>
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #312783;">
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #312783;">
         <div class="container-fluid col-12">
          <a href="/">
 	      	<img src="/assets/img/logo.png" width="120" height="40">
@@ -85,71 +85,38 @@
           </div>
          </div>
       </nav>	
-      <section class="mt-5 pb-5 bg-white">
-		<div class="container col-10 bg-white" style="padding-top: 125px;">
-		<h1>Tu producto <c:out value="${product.name}"/> esta apunto de ser creado</h1>
-		<p>Es necesario agregarle una categoria a tu producto para facilitar su buscqueda al comprador en el marketplace.</p>
-			<section>
-				<ul>
-					<c:forEach items="${product.categories}" var="lst">
-						<li><c:out value="${lst.name}"/></li>
-					</c:forEach>
-				</ul>
-			</section>
-			<div class="col-6">
-		       	<h4>Agrega una categoria: </h4>
-		       	<form action="/anadirCategorias/<c:out value="${product.id}"/>" method="POST">
-		        	<select style="width: 200px;" class="custom-select" id="inputGroupSelect01" name="idC">
-		            	<option selected>Selecciona...</option>
-		               	<c:forEach items="${lista}" var="category">
-		           			<option Value="<c:out value="${category.id}"/>"><c:out value="${category.category}"/></option>
-		               	</c:forEach>
-		        	</select>
-		       		<input class="btn btn-primary" type="submit" value="Add"/>
-		        </form>
-	       </div>
-	      </div>
-	</section>
+      <div class="d-flex justify-content-center mt-5">
+		<section class="row">
+		<div class="card-body">
+		<div class="card">
+			<img src="/assets/img/categoria.png" class="card-img-top" alt="...">
+            <div class="card-body">
+               <h4>Agrega una categoria: </h4>
+               <form action="/anadirCategorias/<c:out value="${product.id}"/>" method="POST">
+                <select style="width: 200px;" class="custom-select" id="inputGroupSelect01" name="idC">
+                    <option selected>Selecciona...</option>
+                       <c:forEach items="${lista}" var="category">
+                           <option Value="<c:out value="${category.id}"/>"><c:out value="${category.category}"/></option>
+                       </c:forEach>
+                </select>
+                   <input class="btn btn-primary" style="background-color:#4B98E0;font-weight:600;" type="submit" value="Agregar"/>
+            </form>
+			</div>
+		</div>
+		</div>
+		</section>
+	</div>
 	<!-- Footer -->
-<div class="container-fluid col-12" style="background-color: #131313;">
-  <footer class="container-fluid col-10 pt-5 pb-1 text-white">
-    <div class="row">
-      <div class="col-2 pb-5">
-        <h4>Secciones</h4>
-        <ul class="nav flex-column text-white">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Inicio</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Marketplace</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Comunidad</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Cuenta</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Sobre nosotros</a></li>          
-        </ul>
-      </div>
-      <div class="col-6 offset-1">
-        <form>
-          <h5>Suscribete para recibir todas las novedades</h5>
-          <p>Mensualmente te llegaran mensajes con lo mas destacado.</p>
-          <div class="d-flex w-100 gap-2">
-            <label for="newsletter1" class="visually-hidden">Email address</label>
-            <input id="newsletter1" type="text" class="form-control" placeholder="Escribe tu Email">
-            <button class="btn btn-primary" type="button">Suscribete</button>
-          </div>
-        </form>
-      </div>
-    </div>
-            <div class="alinear container col-10">
-            <div class="row">
-                <div class="container col-md-5 text-start pb-1"> 
-      			<p>2022 GoCards, Inc. Todos los derechos reservados.</p>
-                </div>
-                <div class="container col-md-5 text-end">
-                    <a href="https://twitter.com"><i class="fab fa-twitter-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"></i></a>
-                    <a href="https://facebook.com"><i class="fab fa-facebook-square fa-2x p-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"></i></a>
-                </div>
-            </div>
-        </div>
+  <footer class="py-3 my-4 pt-5">
+    <ul class="nav justify-content-center border-bottom pb-3 fixed-bottom" style="background-color: #131313;">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Comunidad</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Vender</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Marketplace</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted fixed-bottom">&copy; 2021 Company, Inc</p>
   </footer>
- </div>
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	</body>
 </html>
