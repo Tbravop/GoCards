@@ -87,10 +87,9 @@
       </nav>
       <div class="d-flex justify-content-center">
 		<section class="row">
-		<div class="card-body" style="max-width: 18rem;">
+		<div class="card-body">
 		<div class="card">
-			<img src="/assets/img/03.png" class="card-img-top" style="height: 9rem;" alt="..." >
-			<h1 class="card-title text-white" style="margin-left: 5px; padding-top: 35px;font-size: 50px;margin-top:-170px;margin-bottom:25px;">Datos de cuenta</h1>        	
+			<img src="/assets/img/datosdecuenta.png" class="card-img-top" alt="..." >
             <div class="card-body">
             <p>Como es tu primera venta, necesitamos tus datos de cuenta en las cuales tus futuros clientes depositaran su dinero.</p>
 				<form:form class="mb-3" action="/addDatos" method="POST" modelAttribute="bank">
