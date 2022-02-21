@@ -20,121 +20,120 @@ import com.coding.dojo.projecto.services.ProductService;
 import com.coding.dojo.projecto.services.UserService;
 
 @Service
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
 
 	@Autowired
 	private ProductRepository productRepository;
 	@Autowired
 	@Lazy
 	private CategoryService categoryService;
-	
+
 	@Autowired
 	@Lazy
 	private UserService userService;
 
-	
 	@Override
-	public List<Product> allProduct(){
+	public List<Product> allProduct() {
 		return (List<Product>) productRepository.findAll();
 	}
-    
+
 	@Override
-    public Product createProduct(Product myProduct) throws Exception {
-		//buscar product por name
+	public Product createProduct(Product myProduct) throws Exception {
+		// buscar product por name
 		User user = userService.getLoggedInUser();
-		if(user != null) {
+		if (user != null) {
 			Optional<Product> product = productRepository.findByNameAndUser(myProduct.getName(), user);
-			//si existe error 
-			if(product.isPresent()) {
+			// si existe error
+			if (product.isPresent()) {
 				throw new Exception("El producto ya existe");
 			}
 			myProduct.setUser(user);
-			//si no existe lo crea 
+			// si no existe lo crea
 			return productRepository.save(myProduct);
-		}
-		else {
+		} else {
 			throw new Exception("El usuario no esta logeado");
 		}
 	}
-	
+
 	@Override
 	@Transactional
 	public Product findProduct(Long id) {
 		Optional<Product> optionalProduct = productRepository.findById(id);
-		if(optionalProduct.isPresent()) {
+		if (optionalProduct.isPresent()) {
 			return optionalProduct.get();
-		}
-		else {
+		} else {
 			return null;
 		}
 	}
+
 	@Override
 	@Transactional
-	public Product update(Long id, BigInteger price, Integer cantidad) throws Exception{
+	public Product update(Long id, BigInteger price, Integer cantidad) throws Exception {
 		try {
-			Product product=this.findProduct(id);
-			if(product!=null) {
+			Product product = this.findProduct(id);
+			if (product != null) {
 				product.setPrice(price);
 				product.setCantidad(cantidad);
 				productRepository.save(product);
 				return product;
-			}
-			else {
+			} else {
 				throw new Exception("El campo no puede esta vacio");
 			}
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 			throw e;
 		}
 	}
+
 	@Override
 	@Transactional
 	public void delete(Long id) throws Exception {
 		try {
-			Product product=this.findProduct(id);
-			if(product != null) { 
+			Product product = this.findProduct(id);
+			if (product != null) {
 				productRepository.delete(product);
-			}
-			else {
+			} else {
 				throw new Exception("ya ha sido eliminado");
 			}
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			throw e;
 		}
 	}
+
 	@Override
 	@Transactional
-	public Product addC (long idP, long idC) {
+	public Product addC(long idP, long idC) {
 		Product product = findProduct(idP);
 		Category category = categoryService.findCategory(idC);
 		product.getCategories().add(category);
 		return productRepository.save(product);
 	}
+
 	@Override
-	public List<Product> listaSinCategorias(long id){
-		List<Long> ids = new ArrayList<Long>(); 
+	public List<Product> listaSinCategorias(long id) {
+		List<Long> ids = new ArrayList<Long>();
 		Category c = categoryService.findCategory(id);
-		if(!c.getProduct().isEmpty()) {
-			for(Product p: c.getProduct()) {
+		if (!c.getProduct().isEmpty()) {
+			for (Product p : c.getProduct()) {
 				ids.add(c.getId());
 				return (List<Product>) productRepository.findByIdNotIn(ids);
 			}
 		}
 		return allProduct();
 	}
+
 	@Override
-	public List<Product> searchProduct(String name){
+	public List<Product> searchProduct(String name) {
 		return (List<Product>) productRepository.findByNameContaining(name);
 	}
-	
+
 	@Override
-	public List<Product> findRandom(){
+	public List<Product> findRandom() {
 		return productRepository.findRandom();
 	}
+
 	@Override
-	public List<Product> newest(){
+	public List<Product> newest() {
 		return productRepository.newest();
 	}
 }
