@@ -105,7 +105,7 @@
 			                 <form:errors path="cantidad"/>
 			                <form:input type="text" class="form-control" path="cantidad"/>
 			            </p>
-			           <input class="btn text-white" style="background-color:  #4B98E0;font-weight:600;" type="submit" value="Guardar Cambios"/>
+			           <input class="btn text-white" style="background-color:#4B98E0;font-weight:600;" type="submit" value="Guardar Cambios"/>
 			    </form:form>
 			</div>
 		</div>

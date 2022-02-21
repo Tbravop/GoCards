@@ -89,7 +89,7 @@
 		<section class="row">
 		<div class="card-body">
 		<div class="card">
-			<img src="/assets/img/datosdecuenta.png" class="card-img-top" alt="..." >
+			<img src="/assets/img/datosdecuenta.png" class="card-img-top" alt="..." height=260>
             <div class="card-body">
             <p>Como es tu primera venta, necesitamos tus datos de cuenta en las cuales tus futuros clientes depositaran su dinero.</p>
 				<form:form class="mb-3" action="/addDatos" method="POST" modelAttribute="bank">
@@ -104,7 +104,7 @@
 				        <form:errors path="numeroDeCuenta"/>
 				        <form:input class="form-control" path="numeroDeCuenta"/>
 				    </p>
-				    <input class="btn btn-primary" type="submit" value="create"/>
+				    <input class="btn btn-primary" style="background-color:#4B98E0;font-weight:600;" type="submit" value="create"/>
 				</form:form>
 			</div>
 		</div>

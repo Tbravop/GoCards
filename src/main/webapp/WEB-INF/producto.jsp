@@ -43,7 +43,7 @@
 		                	</ul>
 		                	<button type="submit"  class="btn btn-dark">Añadir al carrito </button>
 		                	<c:if test="${currentUser.id == product.user.id}">
-		                		<a class="btn btn-dark" href="/edit/<c:out value="${product.id}"/>">editar</a>
+		                		<a class="btn btn-dark" style="background-color:#4B98E0;font-weight:600;" href="/edit/<c:out value="${product.id}"/>">editar</a>
 		              		</c:if>
 		              	</form>
 		            </div>
