@@ -1,6 +1,7 @@
 package com.coding.dojo.projecto.controller;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -77,7 +78,7 @@ public class UserController {
     }
 	
     @RequestMapping(value = {"/", "/home"})
-    public String home(Principal principal, Model model) {
+    public String home(Principal principal, Model model, HttpSession session) {
     	List<Product> random = productService.findRandom();
     	List<Product> newest = productService.newest();
     	model.addAttribute("products", random);
@@ -86,6 +87,11 @@ public class UserController {
 	        String username = principal.getName();
 	        model.addAttribute("currentUser", userService.findByEmail(username));
 	        System.out.println(username);
+    	}else {
+    		if(session.getAttribute("carrito") == null) {
+    		List<Product> lp = new ArrayList<Product>();
+    		session.setAttribute("carrito", lp);
+    		}
     	}
         return "index.jsp";
     }

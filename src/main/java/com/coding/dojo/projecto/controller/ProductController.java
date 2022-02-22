@@ -2,7 +2,10 @@ package com.coding.dojo.projecto.controller;
 
 import java.math.BigInteger;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -22,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.coding.dojo.projecto.model.BankAccount;
 import com.coding.dojo.projecto.model.Product;
+import com.coding.dojo.projecto.model.Sell;
 import com.coding.dojo.projecto.model.User;
 import com.coding.dojo.projecto.services.BankAccountService;
 import com.coding.dojo.projecto.services.CategoryService;
@@ -43,6 +47,8 @@ public class ProductController {
 	@Autowired
 	@Lazy
 	private BankAccountService accountService;
+	
+	List<Sell> sell = new ArrayList<Sell>();
 	
 	@GetMapping("/crear")
 	public String newProd(@ModelAttribute("product") Product product) {
@@ -154,8 +160,36 @@ public class ProductController {
 		return "misProduct.jsp";
 	}
 	
+//	@PostMapping("/addCart")
+//	public String addCart(@RequestParam Long id,  @RequestParam Integer cantidad) {
+//		List<Product> lp = new ArrayList<Product>();
+//		Product p = new Product();
+//		Optional<Product> op = Optional.of(productService.findProduct(id));
+//		if(op.isPresent()) {
+//			
+//		}
+//	}
+	
 	@PostMapping("/addCart")
-	public String addCart() {
+	public String addCart(@RequestParam Long id,  @RequestParam Integer cantidad, HttpSession session, Model model) {
+		List<Product> lp = new ArrayList<Product>(); 
+		Product p = productService.findProduct(id);
+		model.addAttribute("cantidad", cantidad);
+		double suma = 0;
+		User u = userService.getLoggedInUser();
+		System.out.println(u);
+		if(u == null) {
+			lp = (List<Product>) session.getAttribute("carrito");
+			lp.add(p);
+			session.setAttribute("carrito", lp);
+		}
+		if(u != null) {
+			lp = u.getProduct();
+			lp.add(p);
+			u.setProduct(lp);
+			model.addAttribute("carrito", lp);
+		}
+		
 		return "cart.jsp";
 	}
 }

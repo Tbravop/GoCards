@@ -1,5 +1,6 @@
 package com.coding.dojo.projecto.model;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -22,6 +23,10 @@ public class Sell {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	private String numero;
+	private Integer cantidad;
+	private BigInteger price;
+	private BigInteger total;
+	
 	@Column(updatable=false)
 	private Date createdAt;
 	private Date updatedAt;
@@ -32,6 +37,20 @@ public class Sell {
 	public Sell() {
 	}
 	
+	public Sell(long id, String numero, Integer cantidad, BigInteger price, BigInteger total, Date createdAt,
+			Date updatedAt, Cart cart) {
+		super();
+		this.id = id;
+		this.numero = numero;
+		this.cantidad = cantidad;
+		this.price = price;
+		this.total = total;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+		this.cart = cart;
+	}
+
+
 	@PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
@@ -76,6 +95,39 @@ public class Sell {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+
+	public Integer getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(Integer cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	public BigInteger getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigInteger price) {
+		this.price = price;
+	}
+
+	public BigInteger getTotal() {
+		return total;
+	}
+
+	public void setTotal(BigInteger total) {
+		this.total = total;
+	}
+
+	@Override
+	public String toString() {
+		return "Sell [id=" + id + ", numero=" + numero + ", cantidad=" + cantidad + ", price=" + price + ", total="
+				+ total + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + ", cart=" + cart + "]";
+	}
+
+	
+	
 	
 	
 	
