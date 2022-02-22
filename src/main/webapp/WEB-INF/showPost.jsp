@@ -3,8 +3,9 @@
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 	<%@ page isErrorPage="true" %> 
+	
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>	
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -17,6 +18,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+		
 		<title>Comunidad Go Cards</title>
 	</head>
 	<body>
@@ -57,10 +59,7 @@
 				                <li><a class="dropdown-item" href="#">Productos Sellados</a></li>
 				                <li><a class="dropdown-item" href="#">Lotes</a></li>                                                                                      
 			                </ul>
-              			</li>
-               			<li class="nav-item">
-                			<a class="nav-link" href="/crear">Vender</a>
-              			</li>        
+              			</li>		    
             		</ul>
            			<div class="dropdown">
       					<a href="#" class="fas fa-user fa-2x p-1 text-white d-block text-decoration-none link-dark dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"></a>
@@ -68,11 +67,7 @@
 			    			<li><a class="dropdown-item" href="/login">Iniciar sesión</a></li>
 			    			<li><a class="dropdown-item" href="/registration">Registrate</a></li>
 						</ul>
-		    		</div>  
-						<a href="/carrito" class="d-flex" style="text-decoration: none;">
-				      		<i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
-				      		<p class="text-white">Carrito</p>
-      					</a>            
+		    		</div>        
           			</div>
          		</div>
       		</nav>
@@ -91,7 +86,7 @@
 						<tbody>
 					
 								<tr>
-									<td><a href="/post/${article.id}"><c:out value="${article.title}"/></a></td>
+									<td><c:out value="${article.title}"/></td>
 									<td class=""><c:out value="${article.body}"/></td>
 									<td class=""><c:out value="${article.imagen}"/></td>
 								</tr>						
@@ -104,7 +99,27 @@
 								<a href="/post/${comment.id}"></a><c:out value="${comment.text}"/>
 						</c:forEach>
 						
-				</div>																
+				</div>
+				<section class="container my-5 py-5" action="/post/${article.id}">
+							  <div class="card-deck" >
+							    <div class="card">
+							        <img src="/assets/img/<c:out value="${article.imagen}"/>"/>
+							      <div class="card-block">
+							        <h4 class="card-title"> <c:out value="${article.title}"/></h4>
+							        <p class="card-text"><c:out value="${article.body}"/></p>
+							         <div class="form-floating">
+								  <textarea class="form-control" placeholder="Comenta aquí" id="floatingTextarea"></textarea>
+								  <label for="floatingTextarea">Comenta aquí</label>
+								  <button class="btn btn-primary type=submit" >Enviar</button>
+								</div>
+							        <a class="post" href="/post/${article.id}/editar"><input class="btn btn-primary" type="submit" value="Editar"/></a>		
+									<a class="post" href="/post/${article.id}/comentar"><input class="btn btn-primary" type="submit" value="Comentar"/></a>	
+							      </div>
+							    </div>
+				</div>
+				</section>	
+			
+																
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>					
 	</body>
 </html>

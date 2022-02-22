@@ -80,7 +80,6 @@
 	    	<form:form class="mb-3" action="/post/${article.id}/editar" method="POST" modelAttribute="article" enctype="multipart/form-data">
 	    	<input type="hidden" name="_method" value="PUT">
 	    		<p>
-	      		<p>
 				<form:label path="title">Titulo:</form:label>
 				<form:input class="form-control" path="title"/>
 				</p>

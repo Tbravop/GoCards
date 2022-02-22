@@ -78,8 +78,8 @@
 							    <div class="card">
 							      <img class="card-img-top img-fluid" src="/assets/img/Yugioh.png" alt="personajes principales">
 							      <div class="card-block">
-							        <h4 class="card-title"> próximos lanzamientos</h4>
-							        <p class="card-text">La pandemia de COVID-19 apenas ha afectado al lanzamiento de nuevos productos de Yu-Gi-Oh!, y aquí te damos un adelanto de los lazamientos especiales.</p>
+							        <h4 class="card-title"> Próximos lanzamientos</h4>
+							        <p class="card-text">La pandemia de COVID-19 apenas ha afectado al lanzamiento de nuevos productos de Yu-Gi-Oh!, y aquí te damos un adelanto de los lazamientos especiales...</p>
 							        <a class="post " href="/post/1"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
 							      </div>
 							    </div>
@@ -87,7 +87,7 @@
 							      <img class="card-img-top img-fluid" src="/assets/img/ejemploGocard.jpg" alt="articulos de merchandising">
 							      <div class="card-block">
 							        <h4 class="card-title">¿Cómo jugar a Yu-Gi-Oh!?</h4>
-							        <p class="card-text">Yu-Gi-Oh! es un juego de cartas para dos jugadores en el que existen las siguientes reglas para su formato tradicional:</p>
+							        <p class="card-text">Yu-Gi-Oh! es un juego de cartas para dos jugadores en el que existen las siguientes reglas para su formato tradicional...</p>
 							       <a class="post" href="/post/2"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
 							      </div>
 							    </div>
@@ -95,7 +95,7 @@
 							        <img class="card-img-top img-fluid" src="/assets/img/lacartaPoderosa.png" alt="foto de la carta mas cara de YuGiOh">
 							      <div class="card-block">
 							        <h4 class="card-title">¿Cuál es la carta mas poderosa?</h4>
-							        <p class="card-text">Esta es una carta legendaria que ofrece una victoria contundente una vez que logras invocarlo...</p>
+							        <p class="card-text">Exodia no puede ser negado bajo ninguna circunstancia.No importa la cantidad de monstruos que posea el oponente, ni la cantidad de puntos de vida que queden en batalla...</p>
 							        <a class="post" href="/post/3"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
 							      </div>
 							    </div>
@@ -105,7 +105,7 @@
 							      <img class="card-img-top img-fluid" src="/assets/img/duelLink.jpg" alt="personajes principales">
 							      <div class="card-block">
 							        <h4 class="card-title">Master Duel es actualmente uno de los más jugados</h4>
-							        <p class="card-text">El juego gratuito de cartas de Konami logróas reglas oficiales de Yu-Gi-Oh! indican que los jugadores pueden ser penalizados si sus prendas “están sucias o huelen mal”. más de 260.000 jugadores simultáneos y es el quinto juego más jugado en la tienda de Valve.</p>
+							        <p class="card-text">El juego gratuito de cartas de Konami estableció reglas oficiales, indican que los jugadores pueden ser penalizados si sus prendas “están sucias o huelen mal”...</p>
 							        <a class="post" href="/post/4"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
 							      </div>
 							    </div>
@@ -113,7 +113,7 @@
 							      <img class="card-img-top img-fluid" src="/assets/img/sorpresa2.gif" alt="articulos de merchandising">
 							      <div class="card-block">
 							        <h4 class="card-title">Sujeto fue expulsado de un torneo de Yu-Gi-Oh! </h4>
-							        <p class="card-text">Las reglas oficiales de Yu-Gi-Oh! indican que los jugadores pueden ser penalizados si sus prendas “están sucias o huelen mal”.</p>
+							        <p class="card-text">La higiene personal es oficialmente parte del meta del juego de cartas. Los hechos sucedieron en un evento de Analog Sports, uno de los organizadores más importantes de torneos de Yu-Gi-Oh! en Japón...</p>
 							       <a class="post" href="/post/5"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
 							      </div>
 							    </div>
@@ -121,7 +121,7 @@
 							      <img class="card-img-top img-fluid" src="/assets/img/torneo.png" alt="foto de la carta mas cara de YuGiOh">
 							      <div class="card-block">
 							        <h4 class="card-title">Chile será sede South America World Championship Qualifier</h4>
-							        <p class="card-text">"Es un orgullo que Chile haya sido seleccionado por Konami para ser el escenario que coronará al mejor jugador del cono en su edición 2019”, comentó Rodrigo Fauré, encargado de juego organizado de Devir Chile.</p>
+							        <p class="card-text">"Es un orgullo que Chile haya sido seleccionado por Konami para ser el escenario que coronará al mejor jugador del como en su edición 2019”, comentó Rodrigo Fauré...</p>
 							        <a class="post" href="/post/6"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
 							      </div>
 							    </div>
@@ -130,8 +130,8 @@
 							    <div class="card">
 							      <img class="card-img-top img-fluid" src="/assets/img/lapida.png" alt="personajes principales">
 							      <div class="card-block">
-							        <h4 class="card-title"> regalaron una lápida con forma de carta de Yu-Gi-Oh! a su hijo fallecido</h4>
-							        <p class="card-text">Una buena forma de honrar los gustos de quien se les adelantó en el camino</p>
+							        <h4 class="card-title"> Regalaron una lápida con forma de carta de Yu-Gi-Oh! a su hijo fallecido</h4>
+							        <p class="card-text">Una buena forma de honrar los gustos de quien se les adelantó en el camino, este es un caso en el que unos padres hicieron todo lo posible por darle un último gusto a su hijo...</p>
 							        <a class="post" href="/post/7"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
 							      </div>
 							    </div>
@@ -139,7 +139,7 @@
 							      <img class="card-img-top img-fluid" src="/assets/img/CartasVarias.jpg" alt="articulos de merchandising">
 							      <div class="card-block">
 							        <h4 class="card-title">¿Cómo saber que tan rara es tu carta?</h4>
-							        <p class="card-text">Exploremos todos los terminos que hacen una carta rara</p>
+							        <p class="card-text">Es un término usado en Yu-Gi-Oh! para referirse a todas y cada una de las distintas ediciones de todas las cartas del juego oficial.A una carta se le atribuye una cierta rareza según que características posea. Exploremos todos los terminos que hacen una carta rara...</p>
 							       <a class="post" href="/post/8"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
 							      </div>
 							    </div>
@@ -147,8 +147,8 @@
 							       <img class="card-img-top img-fluid" src="/assets/img/cartaCara.png" alt="foto de la carta mas cara de YuGiOh">
 							      <div class="card-block">
 							        <h4 class="card-title">Una carta de 13,4 millones de dólares</h4>
-							        <p class="card-text">Se trata de un movimiento muy inusual, que marcaría un récord en el mundo de las cartas coleccionables.</p>
-							        <a class="post" href="/post/9"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
+							        <p class="card-text">Se trata de un movimiento muy inusual, que marcaría un récord en el mundo de las cartas coleccionables. Esta pieza, Blue-Eyes White Dragon, se había valorado y tasado en varios miles de dólares. Se realizaron más de 2000 ofertas en 24 horas por la subasta de la carta...</p>
+							      	 <a class="post" href="/post/9"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
 							      </div>
 							    </div>
 							  </div>
@@ -179,12 +179,6 @@
 									</div>
 								</footer>
 
-       
-					
-									
-				
-				
-			
     		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
    			<script src="js/bootstrap.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>					

@@ -32,34 +32,31 @@
             		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
               			<li class="nav-item px-5 d-none d-lg-block">
 		 					<form class="d-flex">
-			        			<input class="form-control me-2" style="width: 500px;" type="search" placeholder="Buscar una carta" aria-label="Search">
+			        			<input class="form-control me-2" style="width: 500px;" type="search" placeholder="Buscar un post" aria-label="Search">
 			        			<button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
 		      				</form>	      	
               			</li>
               			<li class="nav-item">
 		 					<form class="d-flex d-lg-none pt-2">
-						        <input class="form-control me-2" style="width: 300px;" type="search" placeholder="Buscar una carta" aria-label="Search">
+						        <input class="form-control me-2" style="width: 300px;" type="search" placeholder="Buscar un post" aria-label="Search">
 						        <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
 		      				</form>	      	
-              			</li>              
-              			<li class="nav-item">
-                			<a class="nav-link" href="/foro">Ir a Comunidad</a>
-              			</li>
+              			</li> 
               			<li class="nav-item dropdown">
                 			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">MarketPlace</a>
                 			<ul class="dropdown-menu" style="background-color: white;" aria-labelledby="navbarDropdown">
-				            	<li><a class="dropdown-item" href="#">Lo más Vendido</a></li>
+			                  	<li><a class="dropdown-item" href="#">Lo más Vendido</a></li>
 				                <li><a class="dropdown-item" href="#">Ofertas Destacadas</a></li>
 				                <li><a class="dropdown-item" href="#">Lo nuevo</a></li>                  
 				                <li><hr class="dropdown-divider"></li>
 				                <li><a class="dropdown-item" href="#">Bases</a></li>
 				                <li><a class="dropdown-item" href="#">Productos Sellados</a></li>
 				                <li><a class="dropdown-item" href="#">Lotes</a></li>                                                                                      
-                			</ul>
-              			</li>
-               			<li class="nav-item">
-                			<a class="nav-link" href="/crear">Vender</a>
-              			</li>        
+			                </ul>
+              			</li>             
+              			<li class="nav-item">
+                			<a class="nav-link" href="/foro">Ir a Comunidad</a>
+              			</li>               			        
             		</ul>
             		<div class="dropdown">
       					<a href="#" class="fas fa-user fa-2x p-1 text-white d-block text-decoration-none link-dark dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"></a>
@@ -67,11 +64,7 @@
 						    <li><a class="dropdown-item" href="/login">Iniciar sesión</a></li>
 						    <li><a class="dropdown-item" href="/registration">Registrate</a></li>
 						</ul>
-		    		</div>  
-					<a href="/carrito" class="d-flex" style="text-decoration: none;">
-      					<i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
-      					<p class="text-white">Carrito</p>
-      				</a>            
+		    		</div>          
        			</div>
          	</div>
       	</nav>
