@@ -16,7 +16,6 @@
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <meta charset="UTF-8">
-<meta name="author" content="José Fredes,Tomás Bravo">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="stylesheet"
@@ -29,7 +28,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
 	rel="stylesheet">
-<title>GoCards - producto en ventas</title>
+<title>Creando producto</title>
 </head>
 <body>
 	<!-- NavBar -->
@@ -123,57 +122,55 @@
 			</div>
 		</div>
 	</nav>
-	<section class="d-flex justify-content-center bg-white my-5 py-5"
-		style="border-radius: 25px">
-    <div class="card-body d-flex justify-content-center">
-        <div class="row">
-                            <h2 class="card-title">
-                        <c:out value="${product.name}" />
-                    </h2>
-                    <p>Vendedor: <c:out value="${product.user.name}"/></p>
-            <div class="col-6 d-flex justify-content-center">
-                <a href="#"> <img class="img-fluid rounded"
-                    src="/assets/img/unknown.jpg" alt=""></a>
-            </div>
-            <div class="col-6">
-                <form action="carrito.html" method="POST">
-                    <ul class="list-group text-decoration-none">
-                        <li class="list-group-item"><h5>
-                                Valor:
-                                CLP <c:out value="${product.price}" />
-                            </h5></li>
-                        <li class="list-group-item">
-                            <p>
-                                Descripción:
-                                <c:out value="${product.description}" />
-                            </p>
-                        </li>
-                        <li class="list-group-item">
-                            <p>
-                                Cantidad disponible:
-                                <c:out value="${product.cantidad}" />
-                            </p>
-                        </li>
-                        <li class="list-group-item"><h6>
-                                Cantidad: <input type="number" id="cantidad" name="cantidad"
-                                    autocomplete="off" min="1" max="5" value="1">
-                            </h6></li>
-                    </ul>
-                    <button type="submit" class="btn btn-dark" style="background-color: #4B98E0; font-weight: 600;">Añadir al
-                        carrito</button>
-                    <c:if test="${currentUser.id == product.user.id}">
-                        <a class="btn btn-dark"
-                            style="background-color: #4B98E0; font-weight: 600;"
-                            href="/edit/<c:out value="${product.id}"/>">editar</a>
-                    </c:if>
-                </form>
-            </div>
-        </div>
-    </div>
-	</section>
-
+	<div class="card mb-4">
+		<div class="card-body">
+			<div class="row">
+				<div class="col-lg-6">
+					<a href="#"> <img class="img-fluid rounded"
+						src="/assets/img/unknown.jpg" alt=""></a>
+				</div>
+				<div class="col-lg-6">
+					<form action="/addCart" method="POST">
+					<input type="hidden" value="${product.id}" name="id"/>
+						<h2 class="card-title">
+							<c:out value="${product.name}" />
+						</h2>
+						<ul class="list-group">
+							<li class="list-group-item"><h5>
+									Precio:
+									<c:out value="${product.price}" />
+								</h5></li>
+							<li class="list-group-item">
+								<p>
+									Descripción:
+									<c:out value="${product.description}" />
+								</p>
+							</li>
+							<li class="list-group-item">
+								<p>
+									Cantidad disponible:
+									<c:out value="${product.cantidad}" />
+								</p>
+							</li>
+							<li class="list-group-item"><h6>
+									Cantidad: <input type="number" id="cantidad" name="cantidad"
+										autocomplete="off" min="1" max="5" value="1">
+								</h6></li>
+						</ul>
+						<button type="submit" class="btn btn-dark">Añadir al
+							carrito</button>
+						<c:if test="${currentUser.id == product.user.id}">
+							<a class="btn btn-dark"
+								style="background-color: #4B98E0; font-weight: 600;"
+								href="/edit/<c:out value="${product.id}"/>">editar</a>
+						</c:if>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Footer -->
-	<footer class="container-fluid col-12 text-white  py-4"
+	<footer class="container-fluid col-12 text-white py-2"
 		style="background-color: #131313;">
 		<div class="alinear container col-10">
 			<div class="row">
@@ -197,9 +194,5 @@
 			</div>
 		</div>
 	</footer>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"></script>
 </body>
 </html>
