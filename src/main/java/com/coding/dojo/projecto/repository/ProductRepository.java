@@ -27,4 +27,7 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 	
 	@Query(value = "SELECT * FROM productos ORDER BY created_at DESC LIMIT 4",  nativeQuery = true)
 	List<Product> newest();
+	
+	@Query(value = "SELECT * FROM go_cards.productos WHERE discount_Active=1 ORDER BY RAND() LIMIT 4", nativeQuery = true)
+	List<Product> productosDesc();
 }

@@ -140,6 +140,7 @@ public class ProductController {
         	productService.update(id, price, cantidad);
         	myProduct.setDiscount(discount);
         	myProduct.setDiscountActive(true);
+        	myProduct.setDiscountPrice(myProduct.calcularDescuento());
         	productService.createProduct(myProduct);
         }catch(Exception e){
         	model.addAttribute("error", e.getMessage());

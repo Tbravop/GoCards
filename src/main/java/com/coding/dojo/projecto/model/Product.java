@@ -1,5 +1,6 @@
 package com.coding.dojo.projecto.model;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
@@ -43,6 +44,7 @@ public class Product {
 	private boolean discountActive;
 	@Max(99)
 	private double discount;
+	private BigInteger discountPrice;
 	@Column(updatable=false)
 	private Date createdAt;
 	private Date updatedAt;
@@ -158,6 +160,17 @@ public class Product {
 	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
+	public BigInteger getDiscountPrice() {
+		return discountPrice;
+	}
 
-
+	public void setDiscountPrice(BigInteger discountPrice) {
+		this.discountPrice = discountPrice;
+	}
+	public BigInteger calcularDescuento() {
+		BigInteger descuento = BigDecimal.valueOf(this.discount).toBigIntegerExact();
+		BigInteger precio = this.price;
+		BigInteger porcentaje1 = precio.divide(BigInteger.valueOf(100));
+		return BigInteger.valueOf(100).subtract(descuento).multiply(porcentaje1);
+	}
 }

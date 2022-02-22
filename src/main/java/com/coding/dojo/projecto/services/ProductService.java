@@ -27,4 +27,6 @@ public interface ProductService {
 	List<Product> findRandom();
 	
 	List<Product> newest();
+	
+	List<Product> productoDesc();
 }

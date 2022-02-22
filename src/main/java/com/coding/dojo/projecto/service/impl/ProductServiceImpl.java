@@ -136,4 +136,9 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> newest() {
 		return productRepository.newest();
 	}
+	
+	@Override
+	public List<Product> productoDesc(){
+		return productRepository.productosDesc();
+	}
 }

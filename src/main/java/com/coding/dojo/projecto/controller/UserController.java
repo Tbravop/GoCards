@@ -81,8 +81,10 @@ public class UserController {
     public String home(Principal principal, Model model, HttpSession session) {
     	List<Product> random = productService.findRandom();
     	List<Product> newest = productService.newest();
+    	List<Product> productoDesc = productService.productoDesc();
     	model.addAttribute("products", random);
     	model.addAttribute("newest", newest);
+    	model.addAttribute("productoDesc", productoDesc);
     	if(principal != null) {
 	        String username = principal.getName();
 	        model.addAttribute("currentUser", userService.findByEmail(username));
