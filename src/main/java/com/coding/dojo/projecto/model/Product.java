@@ -17,6 +17,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -39,6 +40,9 @@ public class Product {
 	private String image;
 	@Min(1)
 	private Integer cantidad;
+	private boolean discountActive;
+	@Max(99)
+	private double discount;
 	@Column(updatable=false)
 	private Date createdAt;
 	private Date updatedAt;
@@ -139,5 +143,21 @@ public class Product {
 	public void setPrice(BigInteger price) {
 		this.price = price;
 	}
+	public boolean isDiscountActive() {
+		return discountActive;
+	}
+
+	public double getDiscount() {
+		return discount;
+	}
+
+	public void setDiscountActive(boolean discountActive) {
+		this.discountActive = discountActive;
+	}
+
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
+
 
 }

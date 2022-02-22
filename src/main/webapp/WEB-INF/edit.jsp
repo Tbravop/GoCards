@@ -150,6 +150,14 @@
 								<form:errors path="cantidad" />
 								<form:input type="text" class="form-control" path="cantidad" />
 							</p>
+							<p class="form-group">
+								<form:label class="form-label" path="discount">Descuento :</form:label>
+								<form:errors path="discount" />
+								<input type="radio" id="20" value="20" name="desc" />
+								<label for="20">20%</label>
+								<input type="radio" id="40" value="40" name="desc" />
+								<label for="40">40%</label>
+							</p>
 							<input class="btn text-white"
 								style="background-color: #4B98E0; font-weight: 600;"
 								type="submit" value="Guardar Cambios" />

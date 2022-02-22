@@ -129,7 +129,7 @@ public class ProductController {
     }
 	
 	@PutMapping("/update/{id}")
-    public String update(@Valid @ModelAttribute("product") Product myProduct, BindingResult result, Model model) throws Exception{
+    public String update(@Valid @ModelAttribute("product") Product myProduct, BindingResult result, Model model, @RequestParam("desc")double discount )throws Exception{
 		Long id = myProduct.getId();
 		BigInteger price = myProduct.getPrice();
 		int cantidad = myProduct.getCantidad();
@@ -138,6 +138,9 @@ public class ProductController {
         } 
         try {
         	productService.update(id, price, cantidad);
+        	myProduct.setDiscount(discount);
+        	myProduct.setDiscountActive(true);
+        	productService.createProduct(myProduct);
         }catch(Exception e){
         	model.addAttribute("error", e.getMessage());
             return "edit.jsp";
