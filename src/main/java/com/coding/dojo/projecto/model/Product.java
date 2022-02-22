@@ -15,12 +15,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -53,18 +53,15 @@ public class Product {
 	private User user;
 	@ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-        name = "product_cart", 
-        joinColumns = @JoinColumn(name = "product_id"), 
-        inverseJoinColumns = @JoinColumn(name = "cart_id")
-    )
-    private List<Cart> cart;
-	@ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
         name = "categories_products", 
         joinColumns = @JoinColumn(name = "product_id"), 
         inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     private List<Category> categories;
+	
+	@OneToMany(mappedBy="product", fetch = FetchType.LAZY)
+    private List<ProductCart> productCart;
+	
 	
 	public Product() {
 	}
@@ -110,12 +107,15 @@ public class Product {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public List<Cart> getCart() {
-		return cart;
+
+	public List<ProductCart> getProductCart() {
+		return productCart;
 	}
-	public void setCart(List<Cart> cart) {
-		this.cart = cart;
+
+	public void setProductCart(List<ProductCart> productCart) {
+		this.productCart = productCart;
 	}
+
 	public List<Category> getCategories() {
 		return categories;
 	}

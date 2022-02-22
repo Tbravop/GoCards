@@ -3,9 +3,7 @@ package com.coding.dojo.projecto.controller;
 import java.math.BigInteger;
 import java.security.Principal;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -25,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.coding.dojo.projecto.model.BankAccount;
 import com.coding.dojo.projecto.model.Product;
+import com.coding.dojo.projecto.model.ProductCart;
 import com.coding.dojo.projecto.model.Sell;
 import com.coding.dojo.projecto.model.User;
 import com.coding.dojo.projecto.services.BankAccountService;
@@ -176,23 +175,39 @@ public class ProductController {
 	
 	@PostMapping("/addCart")
 	public String addCart(@RequestParam Long id,  @RequestParam Integer cantidad, HttpSession session, Model model) {
-		List<Product> lp = new ArrayList<Product>(); 
+		List<ProductCart> lp = new ArrayList<ProductCart>(); 
 		Product p = productService.findProduct(id);
 		model.addAttribute("cantidad", cantidad);
 		double suma = 0;
 		User u = userService.getLoggedInUser();
 		System.out.println(u);
-		if(u == null) {
-			lp = (List<Product>) session.getAttribute("carrito");
-			lp.add(p);
+//		if(u == null) {
+			if(session.getAttribute("carrito") != null) {
+				lp = (List<ProductCart>) session.getAttribute("carrito");
+			}
+			if(session.getAttribute("total_carrito") !=null) {
+				suma = (double)session.getAttribute("total_carrito");
+			}
+			ProductCart pc = new ProductCart();
+			pc.setProduct(p);
+			pc.setCantidad(cantidad);
+			pc.setPrecioTotal(p.getPrice().doubleValue()*cantidad);
+			lp.add(pc);
 			session.setAttribute("carrito", lp);
-		}
-		if(u != null) {
-			lp = u.getProduct();
-			lp.add(p);
-			u.setProduct(lp);
-			model.addAttribute("carrito", lp);
-		}
+			session.setAttribute("total_carrito", suma + pc.getPrecioTotal());
+//		}
+//		if(u != null) {
+//			ProductCart pc = new ProductCart();
+//			pc.setCantidad(cantidad);
+//			pc.setPrecioTotal(p.getPrice().doubleValue()*cantidad);
+//			if(u.getCart()!=null && u.getCart().getProductCart()!=null) {
+//				lp = u.getCart().getProductCart();
+//				pc.setCart(u.getCart());
+//			}
+//			pc.setProduct(p);
+//			lp.add(pc);
+//			model.addAttribute("carrito", lp);
+//		}
 		
 		return "cart.jsp";
 	}

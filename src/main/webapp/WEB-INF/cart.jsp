@@ -145,35 +145,35 @@
 		<div class="card mb-4">
 			<div class="card-body">
 				<div class="row">
-					<c:forEach items="${carrito}" var="cart">
-						<div class="col-lg-9">
-							<table class="table">
-								<thead>
-									<tr>
-										<th scope="col">Producto</th>
-										<th scope="col">Precio</th>
-										<th scope="col">Cantidad</th>
-										<th scope="col">Total</th>
-										<th scope="col">Acción</th>
-									</tr>
-								</thead>
+					<div class="col-lg-9">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Producto</th>
+									<th scope="col">Precio</th>
+									<th scope="col">Cantidad</th>
+									<th scope="col">Total</th>
+									<th scope="col">Acción</th>
+								</tr>
+							</thead>
+							<c:forEach items="${carrito}" var="cart">
 								<tbody>
 									<tr>
-										<td><c:out value="${cart.name}"/></td>
-										<td><c:out value="${cart.price}"/></td>
-										<td><c:out value="${cantidad}"/></td>
-										<td>total</td>
+										<td><c:out value="${cart.product.name}"/></td>
+										<td><c:out value="${cart.product.price}"/></td>
+										<td><c:out value="${cart.cantidad}"/></td>
+										<td><c:out value="${cart.precioTotal}"/></td>
 										<td><a href="#" class="btn btn-danger">Quitar</a></td>
 									</tr>
 								</tbody>
-							</table>
-						</div>
-					</c:forEach>
+							</c:forEach>
+						</table>
+					</div>
 					<div class="col-lg-3">
 						<h2 class="card-title">SUBTOTAL</h2>
 	
 						<ul class="list-group">
-							<li class="list-group-item"><h5>Total: $ 10</h5></li>
+							<li class="list-group-item"><h5>Total: $ <c:out value="${total_carrito}"/></h5></li>
 							<a href="resumenorden.html" class="btn btn-dark">Ver Orden</a>
 						</ul>
 					</div>

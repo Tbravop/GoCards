@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.coding.dojo.projecto.model.Product;
+import com.coding.dojo.projecto.model.ProductCart;
 import com.coding.dojo.projecto.model.User;
 import com.coding.dojo.projecto.services.ProductService;
 import com.coding.dojo.projecto.services.RoleService;
@@ -91,7 +92,7 @@ public class UserController {
 	        System.out.println(username);
     	}else {
     		if(session.getAttribute("carrito") == null) {
-    		List<Product> lp = new ArrayList<Product>();
+    		List<ProductCart> lp = new ArrayList<ProductCart>();
     		session.setAttribute("carrito", lp);
     		}
     	}

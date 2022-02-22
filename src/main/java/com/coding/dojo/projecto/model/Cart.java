@@ -9,8 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -26,13 +25,8 @@ public class Cart {
     private User user;
 	@OneToOne(mappedBy="cart", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Sell sell;
-	@ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-        name = "product_cart", 
-        joinColumns = @JoinColumn(name = "cart_id"), 
-        inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private List<Product> product;
+	@OneToMany(mappedBy="cart", fetch = FetchType.LAZY)
+    private List<ProductCart> productCart;
 	
 	public Cart() {
 	}
@@ -55,12 +49,15 @@ public class Cart {
 	public void setSell(Sell sell) {
 		this.sell = sell;
 	}
-	public List<Product> getProduct() {
-		return product;
+
+	public List<ProductCart> getProductCart() {
+		return productCart;
 	}
-	public void setProduct(List<Product> product) {
-		this.product = product;
+
+	public void setProductCart(List<ProductCart> productCart) {
+		this.productCart = productCart;
 	}
 	
+
 	
 }
