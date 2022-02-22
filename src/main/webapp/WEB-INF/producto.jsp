@@ -16,6 +16,7 @@
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <meta charset="UTF-8">
+<meta name="author" content="José Fredes,Tomás Bravo">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="stylesheet"
@@ -28,7 +29,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
 	rel="stylesheet">
-<title>Creando producto</title>
+<title>GoCards - producto en ventas</title>
 </head>
 <body>
 	<!-- NavBar -->
@@ -122,29 +123,57 @@
 			</div>
 		</div>
 	</nav>
-	<section class="d-flex justify-content-center bg-white mb-5 pb-4"
-		style="border-radius: 0px 0px 25px 25px">
-		<div class="row col-12 justify-content-center">
-			<div class="col-6 col-xl-4 mt-5" style="max-width: 18rem;">
-				<div class="card shadow-lg bg-body rounded">
-					<img class="card-img-top" src="/assets/img/unknown.jpg">
-					<div class="card-body">
-						<h3 class="card-title">
-							<a href="/producto/<c:out value="${prod.id}"/>"><c:out
-									value="${prod.name}" /></a>
-						</h3>
-						<p class="card-text">Envío gratis</p>
-						<h2 class="" style="font-weight: 700; font-size: 15px;">
-							CLP
-							<c:out value="${prod.price}" />
-						</h2>
-					</div>
-				</div>
-			</div>
-		</div>
+	<section class="d-flex justify-content-center bg-white my-5 py-5"
+		style="border-radius: 25px">
+    <div class="card-body d-flex justify-content-center">
+        <div class="row">
+                            <h2 class="card-title">
+                        <c:out value="${product.name}" />
+                    </h2>
+                    <p>Vendedor: <c:out value="${product.user.name}"/></p>
+            <div class="col-6 d-flex justify-content-center">
+                <a href="#"> <img class="img-fluid rounded"
+                    src="/assets/img/unknown.jpg" alt=""></a>
+            </div>
+            <div class="col-6">
+                <form action="carrito.html" method="POST">
+                    <ul class="list-group text-decoration-none">
+                        <li class="list-group-item"><h5>
+                                Valor:
+                                CLP <c:out value="${product.price}" />
+                            </h5></li>
+                        <li class="list-group-item">
+                            <p>
+                                Descripción:
+                                <c:out value="${product.description}" />
+                            </p>
+                        </li>
+                        <li class="list-group-item">
+                            <p>
+                                Cantidad disponible:
+                                <c:out value="${product.cantidad}" />
+                            </p>
+                        </li>
+                        <li class="list-group-item"><h6>
+                                Cantidad: <input type="number" id="cantidad" name="cantidad"
+                                    autocomplete="off" min="1" max="5" value="1">
+                            </h6></li>
+                    </ul>
+                    <button type="submit" class="btn btn-dark" style="background-color: #4B98E0; font-weight: 600;">Añadir al
+                        carrito</button>
+                    <c:if test="${currentUser.id == product.user.id}">
+                        <a class="btn btn-dark"
+                            style="background-color: #4B98E0; font-weight: 600;"
+                            href="/edit/<c:out value="${product.id}"/>">editar</a>
+                    </c:if>
+                </form>
+            </div>
+        </div>
+    </div>
 	</section>
+
 	<!-- Footer -->
-	<footer class="container-fluid col-12 text-white py-2"
+	<footer class="container-fluid col-12 text-white  py-4"
 		style="background-color: #131313;">
 		<div class="alinear container col-10">
 			<div class="row">
@@ -168,7 +197,6 @@
 			</div>
 		</div>
 	</footer>
-	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
