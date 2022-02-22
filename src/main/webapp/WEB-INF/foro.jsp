@@ -33,13 +33,13 @@
             		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
               			<li class="nav-item px-5 d-none d-lg-block">
 		 					<form class="d-flex">
-			        			<input class="form-control me-2" style="width: 500px;" type="search" placeholder="Buscar una carta" aria-label="Search">
+			        			<input class="form-control me-2" style="width: 500px;" type="search" placeholder="Buscar un post" aria-label="Search">
 			        			<button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
 		      				</form>	      	
              			</li>
               			<li class="nav-item">
 		 					<form class="d-flex d-lg-none pt-2">
-			        			<input class="form-control me-2" style="width: 300px;" type="search" placeholder="Buscar una carta" aria-label="Search">
+			        			<input class="form-control me-2" style="width: 300px;" type="search" placeholder="Buscar un post" aria-label="Search">
 			        			<button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
 		      				</form>	      	
               			</li>              
@@ -57,7 +57,7 @@
 			                </ul>
               			</li>
                			<li class="nav-item">
-                			<a class="nav-link" href="/crear">Vender</a>
+                			<a class="nav-link" href="/post/new">Crear post</a>
               			</li>        
             		</ul>
            			<div class="dropdown">
@@ -66,52 +66,127 @@
 			    			<li><a class="dropdown-item" href="/login">Iniciar sesión</a></li>
 			    			<li><a class="dropdown-item" href="/registration">Registrate</a></li>
 						</ul>
-		    		</div>  
-						<a href="/carrito" class="d-flex" style="text-decoration: none;">
-				      		<i class="fas fa-shopping-cart fa-2x p-1 text-white"></i>
-				      		<p class="text-white">Carrito</p>
-      					</a>            
+		    		</div>              
           			</div>
          		</div>
       		</nav>
 	      	<header class="d-flex container justify-content-center">
-					<h1>Comunidad Go Cards</h1>					
-			</header>	
-					<a class="post" href="/post/new"><input class="btn btn-primary" type="submit" value="Crear post"/></a>
+					<h1 class="display-1">Comunidad Go Cards</h1>				
+			</header>						
+							<section class="container my-5 py-5">
+							  <div class="card-deck">
+							    <div class="card">
+							      <img class="card-img-top img-fluid" src="/assets/img/Yugioh.png" alt="personajes principales">
+							      <div class="card-block">
+							        <h4 class="card-title"> próximos lanzamientos</h4>
+							        <p class="card-text">La pandemia de COVID-19 apenas ha afectado al lanzamiento de nuevos productos de Yu-Gi-Oh!, y aquí te damos un adelanto de los lazamientos especiales.</p>
+							        <a class="post " href="/post/1"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
+							      </div>
+							    </div>
+							    <div class="card">
+							      <img class="card-img-top img-fluid" src="/assets/img/ejemploGocard.jpg" alt="articulos de merchandising">
+							      <div class="card-block">
+							        <h4 class="card-title">¿Cómo jugar a Yu-Gi-Oh!?</h4>
+							        <p class="card-text">Yu-Gi-Oh! es un juego de cartas para dos jugadores en el que existen las siguientes reglas para su formato tradicional:</p>
+							       <a class="post" href="/post/2"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
+							      </div>
+							    </div>
+							    <div class="card">
+							        <img class="card-img-top img-fluid" src="/assets/img/lacartaPoderosa.png" alt="foto de la carta mas cara de YuGiOh">
+							      <div class="card-block">
+							        <h4 class="card-title">¿Cuál es la carta mas poderosa?</h4>
+							        <p class="card-text">Esta es una carta legendaria que ofrece una victoria contundente una vez que logras invocarlo...</p>
+							        <a class="post" href="/post/3"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
+							      </div>
+							    </div>
+							  </div>
+							  <div class="card-deck" style="margin-top:30px">
+							    <div class="card">
+							      <img class="card-img-top img-fluid" src="/assets/img/duelLink.jpg" alt="personajes principales">
+							      <div class="card-block">
+							        <h4 class="card-title">Master Duel es actualmente uno de los más jugados</h4>
+							        <p class="card-text">El juego gratuito de cartas de Konami logróas reglas oficiales de Yu-Gi-Oh! indican que los jugadores pueden ser penalizados si sus prendas “están sucias o huelen mal”. más de 260.000 jugadores simultáneos y es el quinto juego más jugado en la tienda de Valve.</p>
+							        <a class="post" href="/post/4"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
+							      </div>
+							    </div>
+							    <div class="card">
+							      <img class="card-img-top img-fluid" src="/assets/img/sorpresa2.gif" alt="articulos de merchandising">
+							      <div class="card-block">
+							        <h4 class="card-title">Sujeto fue expulsado de un torneo de Yu-Gi-Oh! </h4>
+							        <p class="card-text">Las reglas oficiales de Yu-Gi-Oh! indican que los jugadores pueden ser penalizados si sus prendas “están sucias o huelen mal”.</p>
+							       <a class="post" href="/post/5"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
+							      </div>
+							    </div>
+							    <div class="card">
+							      <img class="card-img-top img-fluid" src="/assets/img/torneo.png" alt="foto de la carta mas cara de YuGiOh">
+							      <div class="card-block">
+							        <h4 class="card-title">Chile será sede South America World Championship Qualifier</h4>
+							        <p class="card-text">"Es un orgullo que Chile haya sido seleccionado por Konami para ser el escenario que coronará al mejor jugador del cono en su edición 2019”, comentó Rodrigo Fauré, encargado de juego organizado de Devir Chile.</p>
+							        <a class="post" href="/post/6"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
+							      </div>
+							    </div>
+							  </div>
+							  <div class="card-deck" style="margin-top:30px">
+							    <div class="card">
+							      <img class="card-img-top img-fluid" src="/assets/img/lapida.png" alt="personajes principales">
+							      <div class="card-block">
+							        <h4 class="card-title"> regalaron una lápida con forma de carta de Yu-Gi-Oh! a su hijo fallecido</h4>
+							        <p class="card-text">Una buena forma de honrar los gustos de quien se les adelantó en el camino</p>
+							        <a class="post" href="/post/7"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
+							      </div>
+							    </div>
+							    <div class="card">
+							      <img class="card-img-top img-fluid" src="/assets/img/CartasVarias.jpg" alt="articulos de merchandising">
+							      <div class="card-block">
+							        <h4 class="card-title">¿Cómo saber que tan rara es tu carta?</h4>
+							        <p class="card-text">Exploremos todos los terminos que hacen una carta rara</p>
+							       <a class="post" href="/post/8"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
+							      </div>
+							    </div>
+							    <div class="card">
+							       <img class="card-img-top img-fluid" src="/assets/img/cartaCara.png" alt="foto de la carta mas cara de YuGiOh">
+							      <div class="card-block">
+							        <h4 class="card-title">Una carta de 13,4 millones de dólares</h4>
+							        <p class="card-text">Se trata de un movimiento muy inusual, que marcaría un récord en el mundo de las cartas coleccionables.</p>
+							        <a class="post" href="/post/9"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
+							      </div>
+							    </div>
+							  </div>
+							  </section>
+							  <!-- Footer -->
+								<footer class="container-fluid col-12 text-white py-2"
+									style="background-color: #131313;">
+									<div class="alinear container col-10">
+										<div class="row">
+											<div class="container col-md-5 text-start">
+												<h4>GOCARDS &copy; 2021 Company, Inc</h4>
+											</div>
+											<div class="container col-md-5 text-end">
+												<a href="https://github.com"><i
+													class="fab fa-github-square fa-2x p-1 text-white"
+													data-bs-toggle="tooltip" data-bs-placement="top" title="GitHub"></i></a>
+												<a href="https://www.linkedin.com"><i
+													class="fab fa-linkedin fa-2x p-1 text-white"
+													data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin"></i></a>
+												<a href="https://twitter.com"><i
+													class="fab fa-twitter-square fa-2x p-1 text-white"
+													data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"></i></a>
+												<a href="https://facebook.com"><i
+													class="fab fa-facebook-square fa-2x p-1 text-white"
+													data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"></i></a>
+											</div>
+										</div>
+									</div>
+								</footer>
 
-					<table class="table table-striped table-hover table-bordered">
-						<thead>
-							<tr>
-								<th>Titulo</th>
-								<th>Cuerpo</th>
-								<th>Imagen</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach items="${article}" var="article">
-								<tr>
-								<td><a href="/post/${article.id}"><c:out value="${article.title}"/></a></td>
-									<td class=""><c:out value="${article.body}"/></td>
-									<td class=""><c:out value="${article.imagen}"/></td>
-								</tr>
-							
-							
-							<c:forEach items="${comentarios}" var="comentario">
-								<a href="/post/${comment.id}"></a><c:out value="${comment.text}"/>
-						
-							</c:forEach>
-						
-							</c:forEach>
-								
-							</tbody>
-							</table>
-									
+       
 					
 									
 				
 				
-				
 			
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>					
+    		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+   			<script src="js/bootstrap.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>					
 	</body>
 </html>
