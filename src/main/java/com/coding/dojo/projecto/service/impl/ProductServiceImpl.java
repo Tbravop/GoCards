@@ -124,6 +124,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<Product> searchProduct(String name) {
+		
 		return (List<Product>) productRepository.findByNameContaining(name);
 	}
 

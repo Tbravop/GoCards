@@ -51,16 +51,16 @@
 				id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item px-5 d-none d-lg-block">
-						<form class="d-flex" action="/buscar/{product}">
-							<input class="form-control me-2" style="width: 500px;"
+						<div class="d-flex">
+							<input id="search" class="form-control me-2" style="width: 500px;"
 								type="search" placeholder="Buscar una carta" aria-label="Search">
-							<button class="btn btn-outline-info" type="submit">
+							<button onclick="boton()" class="btn btn-outline-info" type="submit">
 								<i class="fas fa-search"></i>
 							</button>
-						</form>
+						</div>
 					</li>
 					<li class="nav-item">
-						<form class="d-flex d-lg-none pt-2">
+						<div class="d-flex d-lg-none pt-2" >
 							<input id="search" class="form-control me-2"
 								style="width: 300px;" type="search"
 								placeholder="Buscar una carta" aria-label="Search">
@@ -68,7 +68,7 @@
 								class="btn btn-outline-success my-2 my-sm-0" type="submit">
 								<i class="fas fa-search"></i>
 							</button>
-						</form>
+						</div>
 					</li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle active" href="#"
@@ -309,7 +309,7 @@
 	<script type="text/javascript">
 		function boton() {
 			let search = document.getElementById("search").value;
-			window.location = "/search/" + search;
+			window.location = "/buscar/"+search;
 		}
 	</script>
 </body>
