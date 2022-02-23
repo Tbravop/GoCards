@@ -122,19 +122,21 @@
 			</div>
 		</div>
 	</nav>
-	<div class="card mb-4">
-		<div class="card-body">
-			<div class="row">
-				<div class="col-lg-6">
-					<a href="#"> <img class="img-fluid rounded"
-						src="/assets/img/unknown.jpg" alt=""></a>
-				</div>
-				<div class="col-lg-6">
+	<section class="d-flex justify-content-center bg-white my-5 py-5"
+		style="border-radius: 25px">
+    <div class="card-body d-flex justify-content-center">
+        <div class="row">
+                            <h2 class="card-title">
+                        <c:out value="${product.name}" />
+                    </h2>
+                    <p>Vendedor: <c:out value="${product.user.name}"/></p>
+            <div class="col-6 d-flex justify-content-center">
+                <a href="#"> <img class="img-fluid rounded"
+                    src="/assets/img/unknown.jpg" alt=""></a>
+            </div>
+				<div class="col-6">
 					<form action="/addCart" method="POST">
 					<input type="hidden" value="${product.id}" name="id"/>
-						<h2 class="card-title">
-							<c:out value="${product.name}" />
-						</h2>
 						<ul class="list-group">
 							<li class="list-group-item"><h5>
 									Precio:
@@ -154,7 +156,7 @@
 							</li>
 							<li class="list-group-item"><h6>
 									Cantidad: <input type="number" id="cantidad" name="cantidad"
-										autocomplete="off" min="1" max="5" value="1">
+										autocomplete="off" min="1" max="<c:out value="${product.cantidad}"/>" value="1">
 								</h6></li>
 						</ul>
 						<button type="submit" class="btn btn-dark">Añadir al
@@ -168,14 +170,14 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 	<!-- Footer -->
-	<footer class="container-fluid col-12 text-white py-2"
+	<footer class="container-fluid col-12 text-white py-5 mt-5"
 		style="background-color: #131313;">
-		<div class="alinear container col-10">
+		<div class="container col-10">
 			<div class="row">
-				<div class="container col-md-5 text-start">
-					<h4>GOCARDS &copy; 2021 Company, Inc</h4>
+				<div class="container col-md-5 text-start my-1">
+					<img src="/assets/img/logo.png" width="180" height="70">
 				</div>
 				<div class="container col-md-5 text-end">
 					<a href="https://github.com"><i
@@ -190,6 +192,7 @@
 					<a href="https://facebook.com"><i
 						class="fab fa-facebook-square fa-2x p-1 text-white"
 						data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"></i></a>
+					<h4>&copy; 2021 GoCards, Inc</h4>
 				</div>
 			</div>
 		</div>
