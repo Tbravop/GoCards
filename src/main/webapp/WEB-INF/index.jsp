@@ -51,7 +51,7 @@
 				id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item px-5 d-none d-lg-block">
-						<form class="d-flex">
+						<form class="d-flex" action="/buscar/{product}">
 							<input class="form-control me-2" style="width: 500px;"
 								type="search" placeholder="Buscar una carta" aria-label="Search">
 							<button class="btn btn-outline-info" type="submit">
