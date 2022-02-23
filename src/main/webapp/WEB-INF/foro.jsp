@@ -94,7 +94,7 @@
 							    <div class="card">
 							        <img class="card-img-top img-fluid" src="/assets/img/lacartaPoderosa.png" alt="foto de la carta mas cara de YuGiOh">
 							      <div class="card-block">
-							        <h4 class="card-title">¿Cuál es la carta mas poderosa?</h4>
+							        <h4 class="card-title">¿Cuál es la carta más poderosa?</h4>
 							        <p class="card-text">Exodia no puede ser negado bajo ninguna circunstancia.No importa la cantidad de monstruos que posea el oponente, ni la cantidad de puntos de vida que queden en batalla...</p>
 							        <a class="post" href="/post/3"><input class="btn btn-primary d-flex container justify-content-center" type="submit" value="ver más"/></a>
 							      </div>
