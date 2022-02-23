@@ -124,9 +124,10 @@
 			</div>
 		</div>
 	</nav>
-		<div id="LoNuevo" class="d-flex justify-content-center mt-4"
+	<div id="LoNuevo" class="d-flex justify-content-center mt-4"
 		style="background-color: #312783; border-radius: 9px;">
-		<h1 class="text-center mt-1 py-2 text-white">Tus productos en venta</h1>
+		<h1 class="text-center mt-1 py-2 text-white">Tus productos en
+			venta</h1>
 	</div>
 	<section class="d-flex justify-content-center bg-white pb-4 mb-5"
 		style="border-radius: 0px 0px 25px 25px">
