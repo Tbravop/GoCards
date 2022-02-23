@@ -49,16 +49,16 @@
 				id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item px-5 d-none d-lg-block">
-						<form class="d-flex">
-							<input class="form-control me-2" style="width: 500px;"
+						<div class="d-flex">
+							<input id="search" class="form-control me-2" style="width: 500px;"
 								type="search" placeholder="Buscar una carta" aria-label="Search">
-							<button class="btn btn-outline-info" type="submit">
+							<button onclick="boton()" class="btn btn-outline-info" type="submit">
 								<i class="fas fa-search"></i>
 							</button>
-						</form>
+						</div>
 					</li>
 					<li class="nav-item">
-						<form class="d-flex d-lg-none pt-2">
+						<div class="d-flex d-lg-none pt-2" >
 							<input id="search" class="form-control me-2"
 								style="width: 300px;" type="search"
 								placeholder="Buscar una carta" aria-label="Search">
@@ -66,7 +66,7 @@
 								class="btn btn-outline-success my-2 my-sm-0" type="submit">
 								<i class="fas fa-search"></i>
 							</button>
-						</form>
+						</div>
 					</li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle active" href="#"
@@ -74,9 +74,11 @@
 						aria-expanded="false"> MarketPlace </a>
 						<ul class="dropdown-menu bg-white"
 							style="background-color: white;" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">Lo más Vendido</a></li>
-							<li><a class="dropdown-item" href="#">Ofertas Destacadas</a></li>
-							<li><a class="dropdown-item" href="#">Lo nuevo</a></li>
+							<li><a class="dropdown-item" href="#LoMasVendido">Lo más
+									Vendido</a></li>
+							<li><a class="dropdown-item" href="#OfertasDestacadas">Ofertas
+									Destacadas</a></li>
+							<li><a class="dropdown-item" href="#LoNuevo">Lo nuevo</a></li>
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="#">Bases</a></li>
 							<li><a class="dropdown-item" href="#">Productos Sellados</a></li>
@@ -123,7 +125,7 @@
 			</div>
 		</div>
 	</nav>
-	<div class="d-flex justify-content-center">
+	<div class="d-flex justify-content-center my-5">
 		<section class="row">
 			<div class="card-body">
 				<div class="card">
@@ -156,12 +158,12 @@
 		</section>
 	</div>
 	<!-- Footer -->
-	<footer class="container-fluid col-12 text-white py-2"
+	<footer class="container-fluid col-12 text-white py-5"
 		style="background-color: #131313;">
-		<div class="alinear container col-10">
+		<div class="container col-10">
 			<div class="row">
-				<div class="container col-md-5 text-start">
-					<h4>GOCARDS &copy; 2021 Company, Inc</h4>
+				<div class="container col-md-5 text-start my-1">
+					<img src="/assets/img/logo.png" width="180" height="70">
 				</div>
 				<div class="container col-md-5 text-end">
 					<a href="https://github.com"><i
@@ -176,6 +178,7 @@
 					<a href="https://facebook.com"><i
 						class="fab fa-facebook-square fa-2x p-1 text-white"
 						data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"></i></a>
+					<h4>&copy; 2021 GoCards, Inc</h4>
 				</div>
 			</div>
 		</div>

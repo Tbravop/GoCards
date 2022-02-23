@@ -32,7 +32,7 @@
 </head>
 <body>
 	<!-- NavBar -->
-	<nav class="navbar navbar-expand-lg navbar-dark"
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top"
 		style="background-color: #312783;">
 		<div class="container-fluid col-12">
 			<a href="/"> <img src="/assets/img/logo.png" width="120"
@@ -48,16 +48,18 @@
 				id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item px-5 d-none d-lg-block">
-						<form class="d-flex">
-							<input class="form-control me-2" style="width: 500px;"
-								type="search" placeholder="Buscar una carta" aria-label="Search">
-							<button class="btn btn-outline-info" type="submit">
+						<div class="d-flex">
+							<input id="search" class="form-control me-2"
+								style="width: 500px;" type="search"
+								placeholder="Buscar una carta" aria-label="Search">
+							<button onclick="boton()" class="btn btn-outline-info"
+								type="submit">
 								<i class="fas fa-search"></i>
 							</button>
-						</form>
+						</div>
 					</li>
 					<li class="nav-item">
-						<form class="d-flex d-lg-none pt-2">
+						<div class="d-flex d-lg-none pt-2">
 							<input id="search" class="form-control me-2"
 								style="width: 300px;" type="search"
 								placeholder="Buscar una carta" aria-label="Search">
@@ -65,7 +67,7 @@
 								class="btn btn-outline-success my-2 my-sm-0" type="submit">
 								<i class="fas fa-search"></i>
 							</button>
-						</form>
+						</div>
 					</li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle active" href="#"
@@ -73,9 +75,11 @@
 						aria-expanded="false"> MarketPlace </a>
 						<ul class="dropdown-menu bg-white"
 							style="background-color: white;" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">Lo más Vendido</a></li>
-							<li><a class="dropdown-item" href="#">Ofertas Destacadas</a></li>
-							<li><a class="dropdown-item" href="#">Lo nuevo</a></li>
+							<li><a class="dropdown-item" href="#LoMasVendido">Lo más
+									Vendido</a></li>
+							<li><a class="dropdown-item" href="#OfertasDestacadas">Ofertas
+									Destacadas</a></li>
+							<li><a class="dropdown-item" href="#LoNuevo">Lo nuevo</a></li>
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="#">Bases</a></li>
 							<li><a class="dropdown-item" href="#">Productos Sellados</a></li>
@@ -124,19 +128,22 @@
 	</nav>
 	<section class="d-flex justify-content-center bg-white my-5 py-5"
 		style="border-radius: 25px">
-    <div class="card-body d-flex justify-content-center">
-        <div class="row">
-                            <h2 class="card-title">
-                        <c:out value="${product.name}" />
-                    </h2>
-                    <p>Vendedor: <c:out value="${product.user.name}"/></p>
-            <div class="col-6 d-flex justify-content-center">
-                <a href="#"> <img class="img-fluid rounded"
-                    src="/assets/img/unknown.jpg" alt=""></a>
-            </div>
+		<div class="card-body d-flex justify-content-center">
+			<div class="row">
+				<h2 class="card-title">
+					<c:out value="${product.name}" />
+				</h2>
+				<p>
+					Vendedor:
+					<c:out value="${product.user.name}" />
+				</p>
+				<div class="col-6 d-flex justify-content-center">
+					<a href="#"> <img class="img-fluid rounded"
+						src="/assets/img/unknown.jpg" alt=""></a>
+				</div>
 				<div class="col-6">
 					<form action="/addCart" method="POST">
-					<input type="hidden" value="${product.id}" name="id"/>
+						<input type="hidden" value="${product.id}" name="id" />
 						<ul class="list-group">
 							<li class="list-group-item"><h5>
 									Precio:
@@ -156,7 +163,8 @@
 							</li>
 							<li class="list-group-item"><h6>
 									Cantidad: <input type="number" id="cantidad" name="cantidad"
-										autocomplete="off" min="1" max="<c:out value="${product.cantidad}"/>" value="1">
+										autocomplete="off" min="1"
+										max="<c:out value="${product.cantidad}"/>" value="1">
 								</h6></li>
 						</ul>
 						<button type="submit" class="btn btn-dark">Añadir al
