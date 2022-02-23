@@ -17,6 +17,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="Comments")
@@ -25,8 +26,9 @@ public class Comment {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
-	@NotBlank
+
 	private String text;
+	private String texto;
 	@Column(updatable=false)
 	private Date createdAt;
 	private Date updatedAt;
@@ -86,6 +88,14 @@ public class Comment {
 	}
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
+	}
+
+	public String getTexto() {
+		return texto;
+	}
+
+	public void setTexto(String texto) {
+		this.texto = texto;
 	}
 	
 }

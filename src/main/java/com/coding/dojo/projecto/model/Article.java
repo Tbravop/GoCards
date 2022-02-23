@@ -28,7 +28,7 @@ public class Article {
 	private long id;
 	@Size(min=3)
 	private String title;
-	@NotBlank
+	@Size(min=3)
 	private String body;
 	private String imagen;
 	

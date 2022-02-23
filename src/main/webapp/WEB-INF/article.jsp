@@ -71,18 +71,18 @@
       	<header class="d-flex container justify-content-center">
 	    	<form:form class="mb-3" action="/post/new" method="POST" modelAttribute="articulo" enctype="multipart/form-data">
 	      		<p>
-				<form:label path="title">Titulo:</form:label>
-				<form:errors path="title"/>
-				<form:input class="form-control" path="title"/>
+					<form:label path="title">Titulo:</form:label>
+					<form:errors path="title"/>
+					<form:input class="form-control" path="title"/>
 				</p>
 				<p>
-				<form:label path="body">Descripción:</form:label>
-				<form:errors path="body"/>
-				<form:input class="form-control" path="body"/>
+					<form:label  path="body">Descripción:</form:label>
+					<form:errors path="body"/>
+					<form:input class="form-control" path="body"/>
 				</p>
 				<p class="upload">
-				<label for="customFile" class="form-label">Subir imágenes</label>
-				<input class="form-control" type="file" id="customFile" name="file"/>
+					<label for="customFile" class="form-label">Subir imágenes</label>
+					<input class="form-control" type="file" id="customFile" name="file"/>
 				</p>
 				 <a class="post" href="/foro"><input class="btn btn-primary" type="submit" value="Crear"/></a>
 			</form:form>

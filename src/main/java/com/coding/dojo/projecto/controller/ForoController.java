@@ -110,30 +110,5 @@ public class ForoController {
 		}
 			articleService.create(article);
 			return "redirect:/post/{id}";
-		
-	}
-	@GetMapping("/post/{id}/comentar")
-	public String comentario(@ModelAttribute("comentario") Comment comment) {		
-		return "comentario.jsp";		
-	}
-	@PostMapping("/post/{id}/comentar")
-	public String comentario(@PathVariable("id")Long artId, @ModelAttribute("comentario") Comment comment, BindingResult result, RedirectAttributes errors, Model model) {
-		Article art = articleService.findArticle(artId);
-		if(result.hasErrors()) {
-			errors.addFlashAttribute("errors", result.getAllErrors());
-			return "comentario.jsp";
-		}
-		else {
-			commentService.create(comment);
-			List<Comment> comentarios =  art.getComment();
-			if(comentarios.contains(comment)){
-				return "comentario.jsp";
-			}
-			else {
-				comentarios.add(comment);
-				art.setComment(comentarios);
-				return "redirect:post/{id}";
-			}			
-		}
 	}
 }

@@ -72,54 +72,20 @@
          		</div>
       		</nav>
 	      	<header class="d-flex container justify-content-center">
-					<h1>Comunidad Go Cards</h1>					
+				<h1>Comunidad Go Cards</h1>					
 			</header>	
-				<div class="container">
-					<table class="table table-striped table-hover table-bordered">
-						<thead>
-							<tr>
-								<th>Titulo</th>
-								<th>Cuerpo</th>
-								<th>Imágen</th>
-							</tr>
-						</thead>
-						<tbody>
-					
-								<tr>
-									<td><c:out value="${article.title}"/></td>
-									<td class=""><c:out value="${article.body}"/></td>
-									<td class=""><c:out value="${article.imagen}"/></td>
-								</tr>						
-					
-							</tbody>
-							</table>
-							<a class="post" href="/post/${article.id}/editar"><input class="btn btn-primary" type="submit" value="Editar"/></a>		
-							<a class="post" href="/post/${article.id}/comentar"><input class="btn btn-primary" type="submit" value="Comentar"/></a>	
-							<c:forEach items="${comentarios}" var="comentario">
-								<a href="/post/${comment.id}"></a><c:out value="${comment.text}"/>
-						</c:forEach>
-						
-				</div>
-				<section class="container my-5 py-5" action="/post/${article.id}">
-							  <div class="card-deck" >
-							    <div class="card">
-							        <img src="/assets/img/<c:out value="${article.imagen}"/>"/>
-							      <div class="card-block">
-							        <h4 class="card-title"> <c:out value="${article.title}"/></h4>
-							        <p class="card-text"><c:out value="${article.body}"/></p>
-							         <div class="form-floating">
-								  <textarea class="form-control" placeholder="Comenta aquí" id="floatingTextarea"></textarea>
-								  <label for="floatingTextarea">Comenta aquí</label>
-								  <button class="btn btn-primary type=submit" >Enviar</button>
-								</div>
-							        <a class="post" href="/post/${article.id}/editar"><input class="btn btn-primary" type="submit" value="Editar"/></a>		
-									<a class="post" href="/post/${article.id}/comentar"><input class="btn btn-primary" type="submit" value="Comentar"/></a>	
-							      </div>
-							    </div>
-				</div>
-				</section>	
-			
-																
+				<section class="container my-5 py-5">
+				  	<div class="card-deck" >
+					    <div class="card">
+							<img src="/assets/img/<c:out value="${article.imagen}"/>"/>
+					      	<div class="card-block">
+					        	<h4 class="card-title"> <c:out value="${article.title}"/></h4>
+						        <p class="card-text"><c:out value="${article.body}"/></p>
+						        <a class="post" href="/post/${article.id}/editar"><input class="btn btn-primary" type="submit" value="Editar"/></a>		
+						    </div>
+						</div>
+					</div>
+				</section>								
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>					
 	</body>
 </html>
