@@ -124,7 +124,11 @@
 			</div>
 		</div>
 	</nav>
-	<section class="d-flex justify-content-center bg-white pb-4"
+		<div id="LoNuevo" class="d-flex justify-content-center mt-4"
+		style="background-color: #312783; border-radius: 9px;">
+		<h1 class="text-center mt-1 py-2 text-white">Tus productos en venta</h1>
+	</div>
+	<section class="d-flex justify-content-center bg-white pb-4 mb-5"
 		style="border-radius: 0px 0px 25px 25px">
 		<div class="row col-12 justify-content-center">
 			<c:forEach items="${product}" var="prod">
@@ -156,12 +160,12 @@
 		</div>
 	</section>
 	<!-- Footer -->
-	<footer class="container-fluid col-12 text-white py-2"
+	<footer class="container-fluid col-12 text-white py-5"
 		style="background-color: #131313;">
-		<div class="alinear container col-10">
+		<div class="container col-10">
 			<div class="row">
-				<div class="container col-md-5 text-start">
-					<h4>GOCARDS &copy; 2021 Company, Inc</h4>
+				<div class="container col-md-5 text-start my-1">
+					<img src="/assets/img/logo.png" width="180" height="70">
 				</div>
 				<div class="container col-md-5 text-end">
 					<a href="https://github.com"><i
@@ -176,6 +180,7 @@
 					<a href="https://facebook.com"><i
 						class="fab fa-facebook-square fa-2x p-1 text-white"
 						data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"></i></a>
+					<h4>&copy; 2021 GoCards, Inc</h4>
 				</div>
 			</div>
 		</div>
