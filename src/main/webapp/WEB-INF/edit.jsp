@@ -137,7 +137,7 @@
 						<form:form action="/update/${prod.id}" method="POST"
 							modelAttribute="product">
 							<p>Tienes las opciones de actualizar/editar el valor de este
-								producto y su cantidad, para ajustarce a algo mas actual.</p>
+								producto y su cantidad, para ajustarse a algo mas actual.</p>
 
 							<input type="hidden" name="_method" value="PUT">
 							<p class="form-group">
