@@ -174,7 +174,7 @@
 	
 						<ul class="list-group">
 							<li class="list-group-item"><h5>Total: $ <c:out value="${total_carrito}"/></h5></li>
-							<a href="resumenorden.html" class="btn btn-dark">Ver Orden</a>
+							<a href="/envio" class="btn btn-dark">Pagar</a>
 						</ul>
 					</div>
 	

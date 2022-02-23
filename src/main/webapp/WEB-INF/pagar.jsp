@@ -114,6 +114,7 @@
 			<div class="card col-9 p-3">
 				<img src="https://www.sgcli.com/wp-content/uploads/2014/11/instalar-webpay-plus.png" alt="WebPay" width=80%>
 				<p>Su pedido puede tardar aproximadamente 3 días en ser aceptado por el vendedor, de no ser respondido en el tiempo se le reembolsará el dinero durante todo este proceso, recibirá correos, y puede seguir el proceso en el cuál se encuentra su compra.</p>
+				<a href="/">Seguir Comprando</a>
 			</div>	
 		</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>	
