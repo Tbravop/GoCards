@@ -70,6 +70,7 @@
           			</div>
          		</div>
       		</nav>
+      		<!-- Previews -->
 	      	<header class="d-flex container justify-content-center">
 					<h1 class="display-1">Comunidad Go Cards</h1>				
 			</header>						
@@ -154,12 +155,12 @@
 							  </div>
 							  </section>
 							  <!-- Footer -->
-								<footer class="container-fluid col-12 text-white py-2"
+								<footer class="container-fluid col-12 text-white py-5"
 									style="background-color: #131313;">
-									<div class="alinear container col-10">
+									<div class="container col-10">
 										<div class="row">
-											<div class="container col-md-5 text-start">
-												<h4>GOCARDS &copy; 2021 Company, Inc</h4>
+											<div class="container col-md-5 text-start my-1">
+												<img src="/assets/img/logo.png" width="180" height="70">
 											</div>
 											<div class="container col-md-5 text-end">
 												<a href="https://github.com"><i
@@ -174,6 +175,7 @@
 												<a href="https://facebook.com"><i
 													class="fab fa-facebook-square fa-2x p-1 text-white"
 													data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"></i></a>
+												<h4>&copy; 2021 GoCards, Inc</h4>
 											</div>
 										</div>
 									</div>

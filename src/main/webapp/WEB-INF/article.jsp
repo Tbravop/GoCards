@@ -16,7 +16,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 
-		<title>Comunidad</title>
+		<title>Crear post</title>
 	</head>
 	<body>
 		<!-- NavBar -->
@@ -68,6 +68,7 @@
        			</div>
          	</div>
       	</nav>
+      	<!-- form -->
       	<header class="d-flex container justify-content-center">
 	    	<form:form class="mb-3" action="/post/new" method="POST" modelAttribute="articulo" enctype="multipart/form-data">
 	      		<p>
@@ -87,6 +88,32 @@
 				 <a class="post" href="/foro"><input class="btn btn-primary" type="submit" value="Crear"/></a>
 			</form:form>
 		</header>
+		<!-- Footer -->
+		<footer class="container-fluid col-12 text-white py-5"
+			style="background-color: #131313;">
+			<div class="container col-10">
+				<div class="row">
+					<div class="container col-md-5 text-start my-1">
+						<img src="/assets/img/logo.png" width="180" height="70">
+					</div>
+					<div class="container col-md-5 text-end">
+						<a href="https://github.com"><i
+							class="fab fa-github-square fa-2x p-1 text-white"
+							data-bs-toggle="tooltip" data-bs-placement="top" title="GitHub"></i></a>
+						<a href="https://www.linkedin.com"><i
+							class="fab fa-linkedin fa-2x p-1 text-white"
+							data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin"></i></a>
+						<a href="https://twitter.com"><i
+							class="fab fa-twitter-square fa-2x p-1 text-white"
+							data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"></i></a>
+						<a href="https://facebook.com"><i
+							class="fab fa-facebook-square fa-2x p-1 text-white"
+							data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"></i></a>
+						<h4>&copy; 2021 GoCards, Inc</h4>
+					</div>
+				</div>
+			</div>
+		</footer>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	</body>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </html>

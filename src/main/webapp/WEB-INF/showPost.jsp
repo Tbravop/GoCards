@@ -19,7 +19,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 
 		
-		<title>Comunidad Go Cards</title>
+		<title>Comunidad Go Cards </title>
 	</head>
 	<body>
 		<!-- NavBar -->
@@ -71,8 +71,9 @@
           			</div>
          		</div>
       		</nav>
+      		<!-- form -->
 	      	<header class="d-flex container justify-content-center">
-				<h1>Comunidad Go Cards</h1>					
+				<h1 class="display-1"><c:out value="${article.title}"/></h1>					
 			</header>	
 				<section class="container my-5 py-5">
 				  	<div class="card-deck" >
